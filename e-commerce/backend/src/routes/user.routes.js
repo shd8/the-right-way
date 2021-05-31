@@ -1,21 +1,12 @@
-const { Router } = require('express');
-const usersController = require('../controllers/usersController')();
+/* eslint-disable no-underscore-dangle */
+const express = require('express');
+const userController = require('../controllers/usersController')();
 
-function usersRouter() {
-  const routes = Router();
+const router = express.Router();
 
-  routes
-    .route('/')
-    .get(usersController.getAll)
-    .post(usersController.addUser);
+router
+  .route('/')
+  .get(userController.getAll)
+  .post(userController.updateUser);
 
-  routes
-    .route('/:userId/')
-    .get(usersController.getUserById)
-    .put(usersController.updateUserById)
-    .delete(usersController.deleteUserById);
-
-  return routes;
-}
-
-module.exports = usersRouter();
+module.exports = router;

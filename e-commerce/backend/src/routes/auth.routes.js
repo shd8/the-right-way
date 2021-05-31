@@ -1,12 +1,14 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-underscore-dangle */
+const express = require('express');
 const passport = require('passport');
-const { Router } = require('express');
 const jwt = require('jsonwebtoken');
+const User = require('../models/user.model');
 
 let refreshTokens = [];
-const authRoutes = Router();
+const router = express.Router();
 
-authRoutes.post(
+router.post(
   '/signup',
   passport.authenticate('signup', { session: false }),
   async (req, res) => {
@@ -17,7 +19,7 @@ authRoutes.post(
   },
 );
 
-authRoutes.post(
+router.post(
   '/login',
   async (req, res, next) => {
     passport.authenticate(
@@ -36,34 +38,33 @@ authRoutes.post(
             async (error) => {
               if (error) return next(error);
 
-              const data = { _id: user._id, email: user.email };
+              const body = { _id: user._id, email: user.email };
               const token = jwt.sign(
-                { user: data },
-                process.env.JWT_SECRET,
-                { expiresIn: '1m' },
+                { user: body },
+                process.env.SECRET_KEY,
+                { expiresIn: process.env.TOKEN_REFRESH_TIME },
               );
               const refreshToken = jwt.sign(
-                { user: data },
-                process.env.JWT_SECRET,
+                { user: body },
+                process.env.SECRET_KEY,
               );
 
-              refreshTokens.push(refreshToken);
-
-              return res.json({
-                token,
+              refreshTokens.push(
                 refreshToken,
-              });
+              );
+
+              return res.json({ token, refreshToken });
             },
           );
         } catch (error) {
-          return next(error);
+          return res.status;
         }
       },
     )(req, res, next);
   },
 );
 
-authRoutes.post('/token', (req, res) => {
+router.post('/token', async (req, res) => {
   const { token } = req.body;
 
   if (!token) {
@@ -74,30 +75,28 @@ authRoutes.post('/token', (req, res) => {
     return res.sendStatus(403);
   }
 
-  return jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+  await jwt.verify(token, process.env.SECRET_KEY, async (err, resCb) => {
     if (err) {
       return res.sendStatus(403);
     }
 
-    const data = { _id: user._id, email: user.email };
-
+    const updatedUser = await User.findById(resCb.user._id);
     const accessToken = jwt.sign(
-      { user: data },
-      process.env.JWT_SECRET,
-      // { expiresIn: '1m' },
+      { user: updatedUser },
+      process.env.SECRET_KEY,
+      { expiresIn: process.env.TOKEN_REFRESH_TIME },
     );
-
     return res.json({
       accessToken,
     });
   });
 });
 
-authRoutes.post('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   const { token } = req.body;
   refreshTokens = refreshTokens.filter((current) => current !== token);
 
   res.send('Logout successful');
 });
 
-module.exports = authRoutes;
+module.exports = router;

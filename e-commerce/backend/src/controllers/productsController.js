@@ -14,6 +14,16 @@ function productsController() {
     }
   }
 
+  async function getById(req, res) {
+    try {
+      const { productId } = req.params;
+      const product = await Product.findById(productId);
+      return res.json(product);
+    } catch (error) {
+      return res.status(404);
+    }
+  }
+
   async function addProduct(req, res) {
     const newProduct = new Product(req.body);
     debug(req.body);
@@ -56,7 +66,7 @@ function productsController() {
   }
 
   return {
-    getAll, addProduct, deleteProductById, updateProductById,
+    getAll, addProduct, deleteProductById, updateProductById, getById,
   };
 }
 module.exports = productsController;

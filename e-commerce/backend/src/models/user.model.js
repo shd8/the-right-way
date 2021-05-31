@@ -5,8 +5,8 @@ const userSchema = Schema({
   password: String,
   address: String,
   role: String,
-  whislist: [Schema.Types.ObjectId],
-  cart: [Schema.Types.ObjectId],
+  whislist: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+  cart: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
 });
 
 userSchema.methods.isValidPassword = function isValidPassword(password) {

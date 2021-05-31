@@ -1,34 +1,30 @@
 const express = require('express');
-const debug = require('debug')('app');
+const debug = require('debug')('server');
 const morgan = require('morgan');
-// const passport = require('passport');
-const authRoutes = require('./src/routes/auth.routes');
-const usersRoutes = require('./src/routes/user.routes');
-const productsRoutes = require('./src/routes/products.routes');
+const passport = require('passport');
+
+const PORT = process.env.PORT || 4000;
 
 require('dotenv').config();
-
-require('./src/passport/passport.config');
-
 require('./src/database/mongoose.config');
+require('./src/auth/auth');
 
-const app = express();
-const port = process.env.PORT || 4000;
+const server = express();
+const authRoutes = require('./src/routes/auth.routes');
+const userProtectedRoutes = require('./src/routes/user.routes');
+const productsProtectedRoutes = require('./src/routes/products.routes');
 
-app.use(morgan('dev'));
+server.use(morgan('dev'));
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+server.use('/api/auth/', authRoutes);
+server.use('/api/users/', passport.authenticate('jwt', { session: false }), userProtectedRoutes);
+server.use('/api/products/', passport.authenticate('jwt', { session: false }), productsProtectedRoutes);
 
-app.use('/', authRoutes);
-app.use(
-  '/api/users',
-  // passport.authenticate('jwt', { session: false }),
-  usersRoutes,
-);
-app.use(
-  '/api/products',
-  productsRoutes,
-);
+server.use((err, req, res) => {
+  res.status(err.status || 500);
+  res.json({ error: err });
+});
 
-app.listen(port, debug(`server is running on port ${port}`));
+server.listen(PORT, debug(`server is running on port ${PORT}`));

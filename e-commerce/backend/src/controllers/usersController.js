@@ -1,5 +1,7 @@
-const debug = require('debug')('server:heroesController');
+/* eslint-disable no-underscore-dangle */
+const debug = require('debug')('server:usersController');
 const User = require('../models/user.model');
+const Product = require('../models/product.model');
 
 function usersController() {
   async function getAll(req, res) {
@@ -19,7 +21,7 @@ function usersController() {
     debug(req.body);
     debug(userToFind);
     try {
-      const users = await User.findById(userToFind).populate('wishlist').populate('cart');
+      const users = await User.findById(userToFind).populate([{ path: 'wishlist', model: Product }, { path: 'cart', model: Product }]);
       res.status(200);
       res.json(users);
     } catch (error) {
@@ -54,23 +56,35 @@ function usersController() {
     }
   }
 
-  async function updateUserById(req, res) {
-    const { userId } = req.params;
+  // async function updateUserById(req, res) {
+  //   const { userId } = req.params;
+  //   try {
+  //     const updatedUser = await User.findByIdAndUpdate(
+  //       userId,
+  //       req.body,
+  //       { new: true },
+  //     );
+  //     res.json(updatedUser);
+  //   } catch (error) {
+  //     debug(error);
+  //     res.sendStatus(204);
+  //   }
+  // }
+  async function updateUser(req, res) {
     try {
-      const updatedUser = await User.findByIdAndUpdate(
-        userId,
-        req.body,
-        { new: true },
-      );
-      res.json(updatedUser);
+      const updatedUser = await User.findOneAndUpdate(req.user._id,
+        { ...req.body },
+        { new: true });
+      return res.json({
+        updatedUser,
+      });
     } catch (error) {
-      debug(error);
-      res.send(204);
+      return res.status(404);
     }
   }
 
   return {
-    getAll, getUserById, addUser, deleteUserById, updateUserById,
+    getAll, getUserById, addUser, deleteUserById, updateUser,
   };
 }
 module.exports = usersController;
