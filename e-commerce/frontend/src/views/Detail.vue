@@ -1,5 +1,5 @@
 <template>
-  <p>Detail works</p>
+  <p>Detail with list of</p>
 </template>
 
 <script lang="ts">

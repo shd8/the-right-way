@@ -28,14 +28,15 @@ const routes: Array<RouteRecordRaw> = [
     component: Cart,
   },
   {
+    path: '/search/:category',
+    name: 'Search',
+    component: Search,
+    props: true,
+  },
+  {
     path: '/detail',
     name: 'Detail',
     component: Detail,
-  },
-  {
-    path: '/search',
-    name: 'Search',
-    component: Search,
   },
 ];
 

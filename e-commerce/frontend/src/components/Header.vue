@@ -69,10 +69,8 @@ export default defineComponent({
 .fa-heart,
 .fa-user {
     font-size: 1.5em;
-    color: $black;
-    background-color: $grey;
-    height: 2em;
-    width: 2em;
+    color: $purple;
+    width: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,7 +87,7 @@ export default defineComponent({
     display: flex;
     align-self: center;
     background-color: white;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     width: 80%;
     border-radius: 1em;
     align-items: center;

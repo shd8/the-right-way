@@ -1,8 +1,5 @@
 <template>
   <Header />
-    <router-link to="/detail">
-        Detail ...
-    </router-link>
   <router-view class="view"/>
 </template>
 
@@ -31,6 +28,6 @@ export default defineComponent({
 }
 
 .view {
-  padding-top: 7.8em;
+  padding-top: 7em;
 }
 </style>
