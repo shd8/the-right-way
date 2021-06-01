@@ -1,9 +1,9 @@
 <template>
-
   <Header />
     <router-link to="/detail">
         Detail ...
     </router-link>
+  <router-view class="view"/>
 </template>
 
 <script lang="ts">
@@ -26,5 +26,11 @@ export default defineComponent({
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  font-family: 'Roboto Slab', serif;
+}
+
+.view {
+  padding-top: 7.8em;
 }
 </style>
