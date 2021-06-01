@@ -2,6 +2,7 @@ const express = require('express');
 const debug = require('debug')('server');
 const morgan = require('morgan');
 const passport = require('passport');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 4000;
 
@@ -17,6 +18,7 @@ const productsRoutes = require('./src/routes/products.routes');
 server.use(morgan('dev'));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
+server.use(cors());
 
 server.use('/api/auth/', authRoutes);
 server.use('/api/users/', passport.authenticate('jwt', { session: false }), userProtectedRoutes);
