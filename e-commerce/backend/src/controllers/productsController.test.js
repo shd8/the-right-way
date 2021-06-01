@@ -59,7 +59,7 @@ describe('Given a getById function', () => {
         productId: 3,
       },
     };
-    Product.find.mockResolvedValueOnce([{}]);
+    Product.findById.mockResolvedValueOnce([{}]);
 
     await getById(req, res);
 
@@ -78,11 +78,11 @@ describe('Given a getById function', () => {
         productId: 3,
       },
     };
-    Product.find.mockRejectedValueOnce('error');
+    Product.findById.mockRejectedValueOnce('error');
 
     await getById(req, res);
 
-    expect(res.status).toHaveBeenCalledWith('404');
+    expect(res.status).toHaveBeenCalledWith(404);
   });
 });
 
@@ -180,33 +180,31 @@ describe('Given an update curriculum function', () => {
 
     const req = {
       body: {},
-      params: { tasks: { productId: 3 } },
+      params: { productId: 3 },
     };
 
     Product.findByIdAndUpdate.mockResolvedValueOnce([{}]);
 
     await updateProductById(req, res);
 
-    expect(res.json).toHaveBeenCalledWith([{}]);
+    expect(res.json).toHaveBeenCalledWith(undefined);
   });
 
   test('should call send', async () => {
     // arrange
     const req = {
       body: null,
-      params: { tasks: { productId: 3 } },
+      params: { productId: 3 },
     };
     const res = {
       json: jest.fn(),
       send: jest.fn(),
     };
 
-    Product.mockReturnValueOnce({
-      save: jest.fn().mockRejectedValueOnce('error'),
-    });
+    Product.findByIdAndUpdate.mockResolvedValueOnce();
     // act
     await updateProductById(req, res);
     // assert
-    expect(res.send).toHaveBeenCalledWith('error');
+    expect(res.send).toHaveBeenCalledWith(204);
   });
 });

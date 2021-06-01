@@ -21,7 +21,8 @@ function usersController() {
     debug(req.body);
     debug(userToFind);
     try {
-      const users = await User.findById(userToFind).populate([{ path: 'wishlist', model: Product }, { path: 'cart', model: Product }]);
+      // .populate([{ path: 'wishlist', model: Product }, { path: 'cart', model: Product }])
+      const users = await User.findById(userToFind);
       res.status(200);
       res.json(users);
     } catch (error) {

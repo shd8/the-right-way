@@ -11,7 +11,7 @@ function productsRouter() {
 
   routes
     .route('/:productId/')
-    .get(productsController.getAll)
+    .get(productsController.getById)
     .put(productsController.updateProductById)
     .delete(productsController.deleteProductById);
 
