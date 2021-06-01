@@ -1,5 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import Profile from '../views/Profile.vue';
+import Wishlist from '../views/Wishlist.vue';
+import Cart from '../views/Cart.vue';
+import Dashboard from '../views/Dashboard.vue';
+import Detail from '../views/Detail.vue';
+import Search from '../views/Search.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,10 +17,37 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    component: About,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
+  },
+  {
+    path: '/wishlist',
+    name: 'Wishlist',
+    component: Wishlist,
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart,
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
+  },
+  {
+    path: '/detail',
+    name: 'Detail',
+    component: Detail,
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search,
   },
 ];
 
