@@ -5,7 +5,7 @@ function productsController() {
   async function getAll(req, res) {
     debug('enter to function getAll');
     try {
-      const products = await Product.find({});
+      const products = await Product.find({}).populate('cart');
       res.status(200);
       res.json(products);
     } catch (error) {
@@ -53,7 +53,7 @@ function productsController() {
   async function updateProductById(req, res) {
     const { productId } = req.params;
     try {
-      const updatedProduct = await Product.findByIdAndUpdate(
+      const updatedProduct = await Product.findOneAndUpdate(
         productId,
         req.body,
         { new: true },

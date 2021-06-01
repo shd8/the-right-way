@@ -183,11 +183,11 @@ describe('Given an update curriculum function', () => {
       params: { productId: 3 },
     };
 
-    Product.findByIdAndUpdate.mockResolvedValueOnce([{}]);
+    Product.findOneAndUpdate.mockResolvedValueOnce([{}]);
 
     await updateProductById(req, res);
 
-    expect(res.json).toHaveBeenCalledWith(undefined);
+    expect(res.json).toHaveBeenCalledWith([{}]);
   });
 
   test('should call send', async () => {
@@ -201,7 +201,7 @@ describe('Given an update curriculum function', () => {
       send: jest.fn(),
     };
 
-    Product.findByIdAndUpdate.mockResolvedValueOnce();
+    Product.findOneAndUpdate.mockResolvedValueOnce();
     // act
     await updateProductById(req, res);
     // assert

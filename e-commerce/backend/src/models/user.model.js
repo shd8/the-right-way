@@ -5,7 +5,7 @@ const userSchema = Schema({
   password: String,
   address: String,
   role: String,
-  whislist: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+  wishlist: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
   cart: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
 });
 
