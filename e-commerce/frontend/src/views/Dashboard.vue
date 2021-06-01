@@ -173,4 +173,13 @@ h2 {
   }
 }
 
+@media (min-width: 1300px) {
+  .dashboard {
+    img {
+      height: 16em;
+      width: 26em;
+    }
+  }
+}
+
 </style>
