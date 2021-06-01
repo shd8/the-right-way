@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 const debug = require('debug')('server:usersController');
 const User = require('../models/user.model');
-const Product = require('../models/product.model');
 
 function usersController() {
   async function getAll(req, res) {
