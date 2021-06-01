@@ -1,14 +1,27 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/profile">Profile</router-link> |
-    <router-link to="/wishlist">Wishlist</router-link> |
-    <router-link to="/cart">Cart</router-link> |
-    <router-link to="/dashboard">Dashboard</router-link> |
-    <router-link to="/detail">Detail</router-link> |
-    <router-link to="/search">Search</router-link> |
-  </div>
+  <nav id="nav">
+    <div class="nav__buttons">
+    <router-link to="/cart">
+        <i class="fas fa-shopping-cart"></i>
+    </router-link>
+    <router-link to="/wishlist">
+        <i class="far fa-heart"></i>
+    </router-link>
+    <router-link to="/profile">
+        <i class="far fa-user"></i>
+    </router-link>
+    </div>
+    <router-link to="/">
+        <img class="peace-logo" src="../images/peace.svg" alt="" srcset="">
+    </router-link>
+    </nav>
+    <div class='search'>
+        <router-link to="/search">
+            <i class="fas fa-search"></i>
+        </router-link>
+        <input type="text"/>
+    </div>
+    <router-view/>
 </template>
 
 <script lang="ts">
@@ -23,3 +36,12 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped lang="scss">
+@import "../styles/_colors.scss";
+
+* {
+    background-color: $black;
+}
+
+</style>

@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
-import About from '../views/About.vue';
 import Profile from '../views/Profile.vue';
 import Wishlist from '../views/Wishlist.vue';
 import Cart from '../views/Cart.vue';
@@ -11,13 +9,8 @@ import Search from '../views/Search.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About,
+    name: 'Dashboard',
+    component: Dashboard,
   },
   {
     path: '/profile',
@@ -33,11 +26,6 @@ const routes: Array<RouteRecordRaw> = [
     path: '/cart',
     name: 'Cart',
     component: Cart,
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: Dashboard,
   },
   {
     path: '/detail',
