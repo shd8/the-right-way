@@ -3,10 +3,14 @@
         <nav class="nav">
             <div class="nav__buttons">
                 <router-link to="/cart">
-                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-shopping-cart">
+                        <p class="cart-number">{{getCartLength}}</p>
+                    </i>
                 </router-link>
                 <router-link to="/wishlist">
-                    <i class="far fa-heart"></i>
+                    <i class="far fa-heart">
+                        <p class="wishlist-number">{{getWishlistLength}}</p>
+                    </i>
                 </router-link>
                 <router-link to="/profile">
                     <i class="far fa-user"></i>
@@ -27,8 +31,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { mapGetters } from 'vuex';
 
 export default defineComponent({
+  computed: {
+    ...mapGetters([
+      'getCartLength',
+      'getWishlistLength',
+    ]),
+  },
   name: 'Header',
   components: {
   },
@@ -77,6 +88,10 @@ export default defineComponent({
     justify-content: center;
     border-radius: 50%;
     margin: 0.3em;
+
+    &:hover {
+        color: $light-purple;
+    }
 }
 
 .peace-logo {
@@ -102,6 +117,23 @@ export default defineComponent({
     &__input:focus {
         outline: none;
     }
+}
+
+.cart-number,
+.wishlist-number {
+    font-weight: bold;
+    font-size: 0.6em;
+    position: fixed;
+    color: white;
+    margin: 1em 0em 0em 2em;
+    padding: 0.2em 0.2em;
+    background-color: $purple;
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    border: 2px solid $black;
+    display: flex;
+    justify-content: center;
 }
 
 .fa-search {

@@ -3,6 +3,8 @@ import axios from 'axios';
 
 export default createStore({
   state: {
+    wishlistLenght: 0,
+    cartLength: 0,
     count: 0,
     pokemons: [{ 1: 'hola' }],
   },
@@ -12,6 +14,12 @@ export default createStore({
     },
     getPokemons(state) {
       return state.pokemons;
+    },
+    getWishlistLength(state) {
+      return state.wishlistLenght;
+    },
+    getCartLength(state) {
+      return state.cartLength;
     },
   },
   mutations: {
