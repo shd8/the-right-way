@@ -35,9 +35,10 @@ export default createStore({
   },
   actions: {
     getPokemonsFromApi({ commit }) {
-      axios.get('https://pokeapi.co/api/v2/pokemon/').then((response) => {
+      axios.get('http://localhost:4000/api/products/').then((response) => {
+        console.log(response);
         console.log(response.data);
-        commit('updatePokemons', response.data.results);
+        commit('updatePokemons', response.data);
       });
     },
   },
