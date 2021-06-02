@@ -1,8 +1,7 @@
 <template>
   <div class='details'>
-    <li>{{getCurrentProduct.name}}</li>
-    <li>{{getCurrentProduct.price}}</li>
-    <li>{{getCurrentProduct.stock}}</li>
+    <h2>{{getCurrentProduct.name}}</h2>
+    <hr>
     <Carousel>
         <Slide v-for="slide in getCurrentProduct.images" :key="slide">
             <img class="carousel__item" :src='slide' alt="" srcset="">
@@ -12,10 +11,21 @@
         <Pagination />
         </template>
     </Carousel>
-    <ul v-for='rating in getCurrentProduct.ratings' :key='rating._id'>
-        <p>{{rating.user}}</p>
-        <p>{{rating.rating}}</p>
-        <p>{{rating.comment}}</p>
+    <p class="details__price">$ {{getCurrentProduct.price}}</p>
+    <hr>
+    <span class="details__rate">
+      <p class='rate'>{{getCurrentProductRate}}</p>
+      <i class="fas fa-star"></i>
+    </span>
+    <p class="details__stock">We have {{getCurrentProduct.stock}} in stock!</p>
+    <ul
+    class="comments"
+    v-for='rating in getCurrentProduct.ratings' :key='rating._id'>
+      <Comment
+      :user='rating.user'
+      :rating='rating.rating'
+      :comment='rating.comment'
+      />
     </ul>
   </div>
 </template>
@@ -32,6 +42,8 @@ import {
   Slide,
 } from 'vue3-carousel';
 
+import Comment from '../components/Comment.vue';
+
 export default defineComponent({
   name: 'Detail',
   props: ['id'],
@@ -40,9 +52,11 @@ export default defineComponent({
     Slide,
     Pagination,
     Navigation,
+    Comment,
   },
   computed: {
     ...mapGetters([
+      'getCurrentProductRate',
       'getCurrentProduct',
     ]),
   },
@@ -65,8 +79,32 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
 
+hr {
+  @include hrItem;
+}
+
+h2 {
+  @include h2Item;
+}
+
 .details {
   padding-top: 7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__price {
+    font-size: 3em;
+    padding-top: 0.5em;
+  }
+
+  &__rate {
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1em;
+
+  }
 
   li {
     list-style: none;
@@ -90,6 +128,23 @@ export default defineComponent({
       height: 26em;
       width: 34em;
   }
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+}
+
+.rate {
+  padding-right: 0.2em;
+}
+
+.details__stock {
+  margin-bottom: 1em;
+}
+
+.fa-star {
+  color: $light-purple;
 }
 
 </style>

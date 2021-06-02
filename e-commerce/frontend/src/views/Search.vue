@@ -8,10 +8,12 @@
         :key="product._id"
         class="products__list"
         >
-            <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
-                <li class="product-name">{{product.name}}</li>
-            </router-link>
-            <li class="product-price">$ {{product.price}}</li>
+        <span class="products__data">
+          <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
+            <li class="product-name">{{product.name}}</li>
+          </router-link>
+          <li class="product-price">$ {{product.price}}</li>
+        </span>
             <Carousel>
                 <Slide v-for="slide in product.images" :key="slide">
                     <router-link class="link"
@@ -90,16 +92,23 @@ hr {
   flex-wrap: wrap;
   justify-content: center;
 
+  &__data {
+    display: flex;
+    align-items: center;
+  }
+
   &__list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2em;
   }
 }
 
 .product-name {
-    color: $purple;
+  color: $purple;
+  padding-right: 2em;
 }
 
 .product-price {

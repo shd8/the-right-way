@@ -8,11 +8,15 @@
       :key="product._id"
       class="products__list"
       >
-        <div v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
+        <div
+        class='product'
+        v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
+        <span class='product__data'>
           <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
             <li class="product-name">{{product.name}}</li>
           </router-link>
           <li class="product-price">$ {{product.price}}</li>
+        </span>
           <Carousel>
               <Slide v-for="slide in product.images" :key="slide">
                   <router-link class="link"
@@ -103,12 +107,25 @@ hr {
     }
 }
 
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2em;
+
+  &__data {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .product-name {
-    color: $purple;
+  color: $purple;
+  padding-right: 2em;
 }
 
 .product-price {
-    padding: 0.5em 0em;
+  padding: 0.5em 0em;
 }
 
 .search {
