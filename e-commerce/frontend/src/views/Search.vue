@@ -1,23 +1,32 @@
 <template>
 <div class="search">
-<p>Search works with a list of ALL products</p>
-  <ul v-for='product in getProducts' :key="product._id">
-    <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
-        <li>{{product.name}}</li>
-    </router-link>
-    <li>{{product.price}}</li>
-    <li>{{product.stock}}</li>
+    <h2>All our products</h2>
+    <hr>
+    <div class='products'>
+        <ul
+        v-for='product in getProducts'
+        :key="product._id"
+        class="products__list"
+        >
+            <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
+                <li class="product-name">{{product.name}}</li>
+            </router-link>
+            <li class="product-price">$ {{product.price}}</li>
+            <Carousel>
+                <Slide v-for="slide in product.images" :key="slide">
+                    <router-link class="link"
+                    :to="{ name: 'Detail', params: { id: product._id } }">
+                        <img class="carousel__item" :src='slide' alt="" srcset="">
+                    </router-link>
+                </Slide>
+                <template #addons>
+                <Navigation id="navigation" />
+                <Pagination />
+                </template>
+            </Carousel>
+        </ul>
+    </div>
 
-    <Carousel>
-        <Slide v-for="slide in product.images" :key="slide">
-            <img class="carousel__item" :src='slide' alt="" srcset="">
-        </Slide>
-        <template #addons>
-        <Navigation />
-        <Pagination />
-        </template>
-    </Carousel>
-  </ul>
 </div>
 </template>
 
@@ -31,6 +40,7 @@ import {
   Pagination,
   Slide,
 } from 'vue3-carousel';
+
 import {
   mapActions,
   mapGetters,
@@ -66,39 +76,78 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
 
+h2 {
+    padding: 0.5em 0em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    font-size: 2em;
+}
+
+hr {
+    width: 80%;
+    background-color: $purple;
+    border: none;
+    height: 1px;
+    margin-bottom: 2em;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.product-name {
+    color: $purple;
+}
+
+.product-price {
+    padding: 0.5em 0em;
+}
+
 .search {
-  padding-top: 7em;
+    padding-top: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .carousel {
-    max-width: 10em;
+    max-width: 12em;
     margin: 0em 2em;
+
+    button {
+        background-color: purple;
+    }
 }
 
 .carousel__item {
-    max-width: 9em;
-    background-color: #966BDD;
-    color: #C5A5F9;
-    border-radius: 1em;
-    border: 1px solid $light-purple;
+    height: 15em;
+    width: 12em;
+    object-fit: cover;
+    border-radius: 1em 1em 0em 1em;
+    border: 1px solid $dead-purple;
     outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carousel__slide {
-  padding: 10px;
-}
-
 .carousel__prev,
 .carousel__next {
-  box-sizing: content-box;
-  border: 5px solid white;
+    box-sizing: content-box;
+    border: 5px solid white;
 }
 
 .carousel__viewport {
-    border: 1px solid $purple;
+    border: 1px solid $light-purple;
     border-radius: 1em;
 }
 
