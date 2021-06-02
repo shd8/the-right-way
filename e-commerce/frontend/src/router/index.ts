@@ -41,9 +41,10 @@ const routes: Array<RouteRecordRaw> = [
     props: true,
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'Detail',
     component: Detail,
+    props: true,
   },
 ];
 
