@@ -1,19 +1,8 @@
 <template>
 <div class="search">
-<p>Search works with a list of ALL products</p>
+<p>Search works with a list of {{category}}</p>
   <ul v-for='product in getProducts' :key="product._id">
-    <li>{{product.category}}</li>
-    <li>{{product.name}}</li>
-    <li>{{product.price}}</li>
-    <li>{{product.stock}}</li>
-    <ul v-for='image in product.images' :key='image'>
-        <img :src='image' alt="" srcset="">
-    </ul>
-    <ul v-for='rating in product.ratings' :key='rating._id'>
-        <p>{{rating.user}}</p>
-        <p>{{rating.rating}}</p>
-        <p>{{rating.comment}}</p>
-    </ul>
+    <li>{{product}}</li>
   </ul>
 </div>
 </template>
@@ -27,7 +16,8 @@ import {
 } from 'vuex';
 
 export default defineComponent({
-  name: 'Search',
+  props: ['category'],
+  name: 'SearchCategory',
   components: {
   },
   computed: {

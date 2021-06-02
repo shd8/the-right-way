@@ -4,6 +4,7 @@ import Wishlist from '../views/Wishlist.vue';
 import Cart from '../views/Cart.vue';
 import Dashboard from '../views/Dashboard.vue';
 import Detail from '../views/Detail.vue';
+import SearchCategory from '../views/SearchCategory.vue';
 import Search from '../views/Search.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -28,9 +29,15 @@ const routes: Array<RouteRecordRaw> = [
     component: Cart,
   },
   {
-    path: '/search/:category',
+    path: '/search/',
     name: 'Search',
     component: Search,
+    props: true,
+  },
+  {
+    path: '/search/:category',
+    name: 'SearchCategory',
+    component: SearchCategory,
     props: true,
   },
   {

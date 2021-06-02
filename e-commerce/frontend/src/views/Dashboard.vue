@@ -13,7 +13,7 @@
         <hr class="line">
         <router-link
         class="dashboard__leftology category"
-        :to="{ name: 'Search', params: { category: 'leftology' } }"
+        :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
         >
           <img
           class="category__image"
@@ -29,7 +29,7 @@
         <hr class="line">
         <router-link
         class="dashboard__lefticians category"
-        :to="{ name: 'Search', params: { category: 'lefticians' } }"
+        :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
         >
           <img
           class="category__image"
@@ -45,7 +45,7 @@
         <hr class="line">
         <router-link
         class="dashboard__office category"
-        :to="{ name: 'Search', params: { category: 'office' } }"
+        :to="{ name: 'SearchCategory', params: { category: 'office' } }"
         >
           <img
           class="category__image"
@@ -61,7 +61,7 @@
         <hr class="line">
         <router-link
         class="dashboard__kitchen"
-        :to="{ name: 'Search', params: { category: 'kitchen' } }"
+        :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
         >
           <img
           class="category__image"
@@ -77,7 +77,7 @@
         <hr class="line">
         <router-link
         class="dashboard__clothes"
-        :to="{ name: 'Search', params: { category: 'clothes' } }"
+        :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
         >
           <img
           class="category__image"
