@@ -1,1 +1,18 @@
 @import './colors';
+
+@mixin carousel {
+    max-width: 12em;
+    margin: 0em 2em;
+}
+
+@mixin carouselItem {
+    height: 15em;
+    width: 12em;
+    object-fit: cover;
+    border-radius: 1em 1em 0em 1em;
+    border: 1px solid $dead-purple;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

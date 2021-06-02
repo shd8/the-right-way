@@ -80,6 +80,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
 
 h2 {
     padding: 0.5em 0em;
@@ -125,34 +126,11 @@ hr {
 }
 
 .carousel {
-    max-width: 12em;
-    margin: 0em 2em;
-
-    button {
-        background-color: purple;
-    }
+    @include carousel;
 }
 
 .carousel__item {
-    height: 15em;
-    width: 12em;
-    object-fit: cover;
-    border-radius: 1em 1em 0em 1em;
-    border: 1px solid $dead-purple;
-    outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include carouselItem;
 }
 
-.carousel__prev,
-.carousel__next {
-    box-sizing: content-box;
-    border: 5px solid white;
-}
-
-.carousel__viewport {
-    border: 1px solid $light-purple;
-    border-radius: 1em;
-}
 </style>
