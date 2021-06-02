@@ -49,7 +49,6 @@ export default createStore({
       });
     },
     fetchProductFromApi({ commit }, id) {
-      console.log(`fetching ${id}`);
       axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
         commit('updateCurrentProduct', response.data);
       });

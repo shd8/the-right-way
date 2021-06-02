@@ -1,11 +1,5 @@
 <template>
-<div class='details'>
-
-</div>
-  <p>Detail with ID {{id}}</p>
-    <li>{{getCurrentProduct}}</li>
-    <li>{{getCurrentProduct._id}}</li>
-    <li>{{getCurrentProduct.category}}</li>
+  <div class='details'>
     <li>{{getCurrentProduct.name}}</li>
     <li>{{getCurrentProduct.price}}</li>
     <li>{{getCurrentProduct.stock}}</li>
@@ -23,6 +17,7 @@
         <p>{{rating.rating}}</p>
         <p>{{rating.comment}}</p>
     </ul>
+  </div>
 </template>
 
 <script lang="ts">
@@ -72,17 +67,29 @@ export default defineComponent({
 
 .details {
   padding-top: 7em;
+
+  li {
+    list-style: none;
+  }
 }
 
 .carousel {
     @include carousel;
-    max-width: 34em;
 }
 
 .carousel__item {
     @include carouselItem;
-    height: 26em;
-    width: 34em;
+}
+
+@media (min-width: 600px) {
+    .carousel {
+      max-width: 34em;
+  }
+
+  .carousel__item {
+      height: 26em;
+      width: 34em;
+  }
 }
 
 </style>

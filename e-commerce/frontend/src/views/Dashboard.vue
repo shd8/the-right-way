@@ -104,6 +104,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
+@import "../styles/mixins.scss";
 
 *:visited {
   color: $purple;
@@ -165,11 +166,7 @@ h2 {
   }
 
   hr {
-    width: 80%;
-    background-color: #966BDD;
-    border: none;
-    height: 1px;
-    margin-bottom: 1em;
+    @include hrItem;
   }
 }
 

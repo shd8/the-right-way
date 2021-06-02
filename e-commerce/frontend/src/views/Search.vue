@@ -78,31 +78,24 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 h2 {
-    padding: 0.5em 0em;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-    font-size: 2em;
+  @include h2Item;
 }
 
 hr {
-    width: 80%;
-    background-color: $purple;
-    border: none;
-    height: 1px;
-    margin-bottom: 2em;
+  @include hrItem;
 }
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    &__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
 }
 
 .product-name {
