@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { createStore } from 'vuex';
 import axios from 'axios';
 
@@ -6,7 +7,8 @@ export default createStore({
     wishlistLenght: 0,
     cartLength: 0,
     count: 0,
-    products: [{ 1: 'hola' }],
+    products: [{ _id: 'hola' }],
+    currentProduct: {},
   },
   getters: {
     getCount(state) {
@@ -21,6 +23,10 @@ export default createStore({
     getCartLength(state) {
       return state.cartLength;
     },
+    getCurrentProduct(state) {
+      return state.currentProduct;
+    },
+    getProductById: (state) => (id: any) => state.products.find((product) => product._id === id),
   },
   mutations: {
     increaseOne(state) {
@@ -32,11 +38,20 @@ export default createStore({
     updateProducts(state: any, payload) {
       state.products = [...payload];
     },
+    updateCurrentProduct(state:any, payload) {
+      state.currentProduct = payload;
+    },
   },
   actions: {
     fetchProductsFromApi({ commit }) {
       axios.get(`${process.env.VUE_APP_API_URL}/products`).then((response) => {
         commit('updateProducts', response.data);
+      });
+    },
+    fetchProductFromApi({ commit }, id) {
+      console.log(`fetching ${id}`);
+      axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
+        commit('updateCurrentProduct', response.data);
       });
     },
   },
