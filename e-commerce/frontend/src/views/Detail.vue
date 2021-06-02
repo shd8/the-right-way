@@ -18,15 +18,17 @@
       <i class="fas fa-star"></i>
     </span>
     <p class="details__stock">We have {{getCurrentProduct.stock}} in stock!</p>
-    <ul
-    class="comments"
-    v-for='rating in getCurrentProduct.ratings' :key='rating._id'>
-      <Comment
-      :user='rating.user'
-      :rating='rating.rating'
-      :comment='rating.comment'
-      />
-    </ul>
+    <span class="comments-container">
+      <ul
+      class="comments"
+      v-for='rating in getCurrentProduct.ratings' :key='rating._id'>
+        <Comment
+        :user='rating.user'
+        :rating='rating.rating'
+        :comment='rating.comment'
+        />
+      </ul>
+    </span>
   </div>
 </template>
 
@@ -95,7 +97,7 @@ h2 {
 
   &__price {
     font-size: 3em;
-    padding-top: 0.5em;
+    padding: 0.5em 0em;
   }
 
   &__rate {
@@ -128,6 +130,10 @@ h2 {
       height: 26em;
       width: 34em;
   }
+}
+
+.comments-container {
+  padding-bottom: 3em;
 }
 
 .comments {

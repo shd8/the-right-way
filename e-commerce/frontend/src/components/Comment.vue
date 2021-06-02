@@ -64,6 +64,10 @@ export default defineComponent({
     justify-content: space-between;
     padding-bottom: 1em;
 
+    &__username {
+        font-size: 1.4em;
+    }
+
     &__rate {
         display: flex;
         align-items: center;
@@ -76,6 +80,7 @@ export default defineComponent({
 
 .rate {
     padding-right: 0.5em;
+    font-size: 1.4em;
 }
 
 .fa-star {
