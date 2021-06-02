@@ -4,26 +4,28 @@
   <hr>
   <div class='products'>
       <ul
-      v-for='product in productsByCategory'
+      v-for='product in getProducts'
       :key="product._id"
       class="products__list"
       >
-        <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
+        <div v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
+          <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
             <li class="product-name">{{product.name}}</li>
-        </router-link>
-        <li class="product-price">$ {{product.price}}</li>
-        <Carousel>
-            <Slide v-for="slide in product.images" :key="slide">
-                <router-link class="link"
-                :to="{ name: 'Detail', params: { id: product._id } }">
-                    <img class="carousel__item" :src='slide' alt="" srcset="">
-                </router-link>
-            </Slide>
-            <template #addons>
-            <Navigation id="navigation" />
-            <Pagination />
-            </template>
-        </Carousel>
+          </router-link>
+          <li class="product-price">$ {{product.price}}</li>
+          <Carousel>
+              <Slide v-for="slide in product.images" :key="slide">
+                  <router-link class="link"
+                  :to="{ name: 'Detail', params: { id: product._id } }">
+                      <img class="carousel__item" :src='slide' alt="" srcset="">
+                  </router-link>
+              </Slide>
+              <template #addons>
+              <Navigation id="navigation" />
+              <Pagination />
+              </template>
+            </Carousel>
+        </div>
       </ul>
   </div>
 
@@ -31,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import 'vue3-carousel/dist/carousel.css';
 
 import {
@@ -60,11 +62,6 @@ export default defineComponent({
     ...mapGetters([
       'getProducts',
     ]),
-    productsByCategory() {
-      const store = useStore();
-      return store.getters.getProducts
-        .filter((product:any) => product.category.toLowerCase() === this.category.toLowerCase());
-    },
   },
   methods: {
     ...mapActions([
@@ -73,7 +70,9 @@ export default defineComponent({
   },
   setup() {
     const store = useStore();
-    store.dispatch('fetchProductsFromApi');
+    onMounted(() => {
+      store.dispatch('fetchProductsFromApi');
+    });
     return {};
   },
 });
@@ -157,7 +156,3 @@ hr {
     border-radius: 1em;
 }
 </style>
-
-function commit(getProducts: any): any {
-  throw new Error('Function not implemented.');
-}
