@@ -1,8 +1,8 @@
 <template>
 <div class="search">
 <p>Search works with a list of {{category}}</p>
-  <ul v-for='pokemon in getPokemons' :key="pokemon">
-    <li>{{pokemon}}</li>
+  <ul v-for='product in getProducts' :key="product">
+    <li>{{product}}</li>
   </ul>
 </div>
 </template>
@@ -22,18 +22,17 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters([
-      'getCount',
-      'getPokemons',
+      'getProducts',
     ]),
   },
   methods: {
     ...mapActions([
-      'getPokemonsFromApi',
+      'fetchProductsFromApi',
     ]),
   },
   setup() {
     const store = useStore();
-    store.dispatch('getPokemonsFromApi');
+    store.dispatch('fetchProductsFromApi');
     return {};
   },
 });

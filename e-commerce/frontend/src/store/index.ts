@@ -6,14 +6,14 @@ export default createStore({
     wishlistLenght: 0,
     cartLength: 0,
     count: 0,
-    pokemons: [{ 1: 'hola' }],
+    products: [{ 1: 'hola' }],
   },
   getters: {
     getCount(state) {
       return state.count;
     },
-    getPokemons(state) {
-      return state.pokemons;
+    getProducts(state) {
+      return state.products;
     },
     getWishlistLength(state) {
       return state.wishlistLenght;
@@ -29,16 +29,14 @@ export default createStore({
     decreaseOne(state) {
       state.count -= 1;
     },
-    updatePokemons(state: any, payload) {
-      state.pokemons = [...payload];
+    updateProducts(state: any, payload) {
+      state.products = [...payload];
     },
   },
   actions: {
-    getPokemonsFromApi({ commit }) {
-      axios.get('http://localhost:4000/api/products/').then((response) => {
-        console.log(response);
-        console.log(response.data);
-        commit('updatePokemons', response.data);
+    fetchProductsFromApi({ commit }) {
+      axios.get(`${process.env.VUE_APP_API_URL}/products`).then((response) => {
+        commit('updateProducts', response.data);
       });
     },
   },
