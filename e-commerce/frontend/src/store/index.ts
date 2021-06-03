@@ -1,39 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-underscore-dangle */
 import { createStore } from 'vuex';
+import getters from '@/store/getters';
 import axios from 'axios';
 
 export default createStore({
   state: {
-    wishlistLenght: 0,
+    wishlistLength: 0,
     cartLength: 0,
     count: 0,
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },
   },
-  getters: {
-    getCount(state) {
-      return state.count;
-    },
-    getProducts(state) {
-      return state.products;
-    },
-    getWishlistLength(state) {
-      return state.wishlistLenght;
-    },
-    getCartLength(state) {
-      return state.cartLength;
-    },
-    getCurrentProduct(state) {
-      return state.currentProduct;
-    },
-    getCurrentProductRate(state) {
-      const ratingNumbers:any = [];
-      state.currentProduct.ratings.forEach((rate:any) => { ratingNumbers.push(rate.rating); });
-      return ratingNumbers.reduce((a:any, b:any) => a + b) / ratingNumbers.length;
-    },
-    getProductById: (state) => (id: any) => state.products.find((product) => product._id === id),
-  },
+  getters,
   mutations: {
     increaseOne(state) {
       state.count += 1;
