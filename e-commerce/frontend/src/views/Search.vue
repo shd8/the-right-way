@@ -67,9 +67,11 @@ export default defineComponent({
       'fetchProductsFromApi',
     ]),
   },
-  setup() {
+  mounted() {
     const store = useStore();
     store.dispatch('fetchProductsFromApi');
+  },
+  setup() {
     return {};
   },
 });
