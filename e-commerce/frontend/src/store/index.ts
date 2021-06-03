@@ -3,7 +3,7 @@
 import { createStore } from 'vuex';
 import getters from '@/store/getters';
 import mutations from '@/store/mutations';
-import axios from 'axios';
+import actions from '@/store/actions';
 
 export default createStore({
   state: {
@@ -15,18 +15,7 @@ export default createStore({
   },
   getters,
   mutations,
-  actions: {
-    fetchProductsFromApi({ commit }) {
-      axios.get(`${process.env.VUE_APP_API_URL}/products`).then((response) => {
-        commit('updateProducts', response.data);
-      });
-    },
-    fetchProductFromApi({ commit }, id) {
-      axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
-        commit('updateCurrentProduct', response.data);
-      });
-    },
-  },
+  actions,
   modules: {
   },
 });
