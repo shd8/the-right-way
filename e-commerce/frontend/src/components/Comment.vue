@@ -12,34 +12,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
-
-import {
-  mapActions,
-  mapGetters,
-  useStore,
-} from 'vuex';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: ['user', 'rating', 'comment'],
   name: 'Comment',
   components: {
   },
-  computed: {
-    ...mapGetters([
-      'getProducts',
-    ]),
-  },
-  methods: {
-    ...mapActions([
-      'fetchProductsFromApi',
-    ]),
-  },
   setup() {
-    const store = useStore();
-    onMounted(() => {
-      store.dispatch('fetchProductsFromApi');
-    });
     return {};
   },
 });
