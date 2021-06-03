@@ -9,4 +9,5 @@ module.exports = {
     '!src/main.js',
   ],
   transformIgnorePatterns: ['node_modules/(?!(vue3-carousel)/)'],
+  modulePathIgnorePatterns: ['src/main.ts'],
 };
