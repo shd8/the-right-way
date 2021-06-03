@@ -12,7 +12,6 @@
         class='product'
         v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
           <Product
-            class="products__data"
             :id='product._id'
             :name='product.name'
             :price='product.price'

@@ -2,6 +2,7 @@
   <div class='details'>
     <h2>{{getCurrentProduct.name}}</h2>
     <hr>
+    <AddToWishlist :id='id' class="add-to-wishlist"/>
     <Carousel>
         <Slide v-for="slide in getCurrentProduct.images" :key="slide">
             <img class="carousel__item" :src='slide' alt="" srcset="">
@@ -44,6 +45,7 @@ import {
   Slide,
 } from 'vue3-carousel';
 
+import AddToWishlist from '@/components/AddToWishlist.vue';
 import Comment from '../components/Comment.vue';
 
 export default defineComponent({
@@ -55,6 +57,7 @@ export default defineComponent({
     Pagination,
     Navigation,
     Comment,
+    AddToWishlist,
   },
   computed: {
     ...mapGetters([
@@ -105,7 +108,6 @@ h2 {
     display: flex;
     align-items: center;
     padding-bottom: 1em;
-
   }
 
   li {
@@ -119,17 +121,6 @@ h2 {
 
 .carousel__item {
     @include carouselItem;
-}
-
-@media (min-width: 600px) {
-    .carousel {
-      max-width: 34em;
-  }
-
-  .carousel__item {
-      height: 26em;
-      width: 34em;
-  }
 }
 
 .comments-container {
@@ -151,6 +142,27 @@ h2 {
 
 .fa-star {
   color: $light-purple;
+}
+
+.add-to-wishlist {
+  position: absolute;
+  z-index: 1;
+  margin: 10em 10em 0em 0em;
+}
+
+@media (min-width: 600px) {
+    .carousel {
+      max-width: 34em;
+  }
+
+  .carousel__item {
+    height: 26em;
+    width: 34em;
+  }
+
+  .add-to-wishlist {
+    margin: 10em 36em 0em 0em;
+}
 }
 
 </style>
