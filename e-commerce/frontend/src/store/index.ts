@@ -2,6 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 import { createStore } from 'vuex';
 import getters from '@/store/getters';
+import mutations from '@/store/mutations';
 import axios from 'axios';
 
 export default createStore({
@@ -13,20 +14,7 @@ export default createStore({
     currentProduct: { ratings: [{ rating: 5 }] },
   },
   getters,
-  mutations: {
-    increaseOne(state) {
-      state.count += 1;
-    },
-    decreaseOne(state) {
-      state.count -= 1;
-    },
-    updateProducts(state: any, payload) {
-      state.products = [...payload];
-    },
-    updateCurrentProduct(state:any, payload) {
-      state.currentProduct = payload;
-    },
-  },
+  mutations,
   actions: {
     fetchProductsFromApi({ commit }) {
       axios.get(`${process.env.VUE_APP_API_URL}/products`).then((response) => {
