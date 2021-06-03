@@ -11,24 +11,12 @@
         <div
         class='product'
         v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
-        <span class='product__data'>
-          <router-link class="link" :to="{ name: 'Detail', params: { id: product._id } }">
-            <li class="product-name">{{product.name}}</li>
-          </router-link>
-          <li class="product-price">$ {{product.price}}</li>
-        </span>
-          <Carousel>
-              <Slide v-for="slide in product.images" :key="slide">
-                  <router-link class="link"
-                  :to="{ name: 'Detail', params: { id: product._id } }">
-                      <img class="carousel__item" :src='slide' alt="" srcset="">
-                  </router-link>
-              </Slide>
-              <template #addons>
-              <Navigation id="navigation" />
-              <Pagination />
-              </template>
-            </Carousel>
+          <Product
+            class="products__data"
+            :id='product._id'
+            :name='product.name'
+            :price='product.price'
+            :images='product.images' />
         </div>
       </ul>
   </div>
@@ -41,26 +29,17 @@ import { defineComponent, onMounted } from 'vue';
 import 'vue3-carousel/dist/carousel.css';
 
 import {
-  Carousel,
-  Navigation,
-  Pagination,
-  Slide,
-} from 'vue3-carousel';
-
-import {
   mapActions,
   mapGetters,
   useStore,
 } from 'vuex';
+import Product from '@/components/Product.vue';
 
 export default defineComponent({
   props: ['category'],
   name: 'SearchCategory',
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+    Product,
   },
   computed: {
     ...mapGetters([
@@ -119,28 +98,11 @@ hr {
   }
 }
 
-.product-name {
-  color: $purple;
-  padding-right: 2em;
-}
-
-.product-price {
-  padding: 0.5em 0em;
-}
-
 .search {
     padding-top: 7em;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.carousel {
-    @include carousel;
-}
-
-.carousel__item {
-    @include carouselItem;
 }
 
 </style>

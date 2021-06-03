@@ -24,7 +24,7 @@ test('Products getter', () => {
 
 test('Wishlist length getter', () => {
   const state = {
-    wishlistLength: 3,
+    wishlist: [{}, {}, {}],
   };
   const result = getters.getWishlistLength(state);
 
@@ -33,7 +33,7 @@ test('Wishlist length getter', () => {
 
 test('Cart length getter', () => {
   const state = {
-    cartLength: 3,
+    cart: [{}, {}, {}],
   };
   const result = getters.getCartLength(state);
 

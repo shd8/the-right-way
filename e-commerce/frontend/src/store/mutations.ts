@@ -13,6 +13,12 @@ const mutations = {
   updateCurrentProduct(state:any, payload:any) {
     state.currentProduct = payload;
   },
+  addToCart(state:any, payload:any) {
+    state.cart.push(payload);
+  },
+  addToWishlist(state:any, payload:any) {
+    state.wishlist.push(payload);
+  },
 };
 
 export default mutations;

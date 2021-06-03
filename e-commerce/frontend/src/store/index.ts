@@ -7,8 +7,8 @@ import actions from '@/store/actions';
 
 export default createStore({
   state: {
-    wishlistLength: 0,
-    cartLength: 0,
+    wishlist: [],
+    cart: [],
     count: 0,
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },

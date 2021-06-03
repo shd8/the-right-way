@@ -9,10 +9,10 @@ const getters = {
     return state.products;
   },
   getWishlistLength(state:any) {
-    return state.wishlistLength;
+    return state.wishlist.length;
   },
   getCartLength(state:any) {
-    return state.cartLength;
+    return state.cart.length;
   },
   getCurrentProduct(state:any) {
     return state.currentProduct;
@@ -24,6 +24,12 @@ const getters = {
   },
   getProductById:
   (state:any) => (id: any) => state.products.find((product:any) => product._id === id),
+  getCart(state:any) {
+    return state.cart;
+  },
+  getWishlist(state:any) {
+    return state.wishlist;
+  },
 };
 
 export default getters;
