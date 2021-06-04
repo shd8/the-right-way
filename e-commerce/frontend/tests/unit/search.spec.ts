@@ -7,8 +7,8 @@ test('displays message', () => {
       mocks: {
         $store: {
           disptach: jest.fn(),
-          getters: {
-            getProducts: [
+          state: {
+            products: [
               {
                 _id: 1,
                 name: 'admin',
@@ -16,6 +16,9 @@ test('displays message', () => {
                 images: [],
               },
             ],
+          },
+          getters: {
+            isInWishlist: true,
           },
           actions: {
             fetchProductsFromApi: {},

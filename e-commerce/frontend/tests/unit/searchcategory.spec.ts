@@ -1,18 +1,19 @@
 import { mount } from '@vue/test-utils';
 import SearchCategory from '@/views/SearchCategory.vue';
 
-test.only('displays message', () => {
+test('displays message', () => {
   const wrapper = mount(SearchCategory, {
     global: {
       mocks: {
         $store: {
           getters: {
-            getProducts: [
+            getProductsByCategory: [
               {
                 _id: 1,
                 name: 'admin',
                 price: 1,
                 images: [],
+                category: 'ONE',
               },
             ],
           },

@@ -6,9 +6,8 @@ test('displays message', () => {
     global: {
       mocks: {
         $store: {
-          getters: {
-            getCurrentProductRate: 5,
-            getCurrentProduct: {
+          state: {
+            currentProduct: {
               name: 'product1',
               images: [],
               price: 1,
@@ -19,6 +18,9 @@ test('displays message', () => {
                 comment: 'sudo',
               },
             },
+          },
+          getters: {
+            getCurrentProductRate: 5,
           },
           actions: {
             fetchProductsFromApi: {},

@@ -25,9 +25,6 @@ export default defineComponent({
   name: 'AddToCart',
   components: {
   },
-  setup() {
-    return {};
-  },
 });
 </script>
 

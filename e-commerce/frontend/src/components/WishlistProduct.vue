@@ -52,9 +52,6 @@ export default defineComponent({
       'retrieveFromWishlist',
     ]),
   },
-  setup() {
-    return {};
-  },
 });
 </script>
 

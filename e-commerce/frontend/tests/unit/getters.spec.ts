@@ -1,27 +1,5 @@
 import getters from '@/store/getters';
 
-test('Count getter', () => {
-  const state = { count: 1 };
-  const result = getters.getCount(state);
-
-  expect(result).toBe(1);
-});
-
-test('Products getter', () => {
-  const state = {
-    products: {
-      name: 'admin product',
-      _id: 'abc',
-    },
-  };
-  const result = getters.getProducts(state);
-
-  expect(result).toEqual({
-    name: 'admin product',
-    _id: 'abc',
-  });
-});
-
 test('Wishlist length getter', () => {
   const state = {
     wishlist: [{}, {}, {}],
@@ -38,21 +16,6 @@ test('Cart length getter', () => {
   const result = getters.getCartLength(state);
 
   expect(result).toBe(3);
-});
-
-test('Current product getter', () => {
-  const state = {
-    currentProduct: {
-      _id: 'abc',
-      name: 'admin product',
-    },
-  };
-  const result = getters.getCurrentProduct(state);
-
-  expect(result).toEqual({
-    _id: 'abc',
-    name: 'admin product',
-  });
 });
 
 test('Current rate getter', () => {

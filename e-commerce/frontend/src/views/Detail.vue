@@ -36,7 +36,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import {
-  mapGetters, mapActions, useStore, mapState,
+  mapGetters, mapActions, mapState,
 } from 'vuex';
 import 'vue3-carousel/dist/carousel.css';
 
@@ -64,7 +64,6 @@ export default defineComponent({
   computed: {
     ...mapGetters([
       'getCurrentProductRate',
-      'getCurrentProduct',
     ]),
     ...mapState([
       'currentProduct',
@@ -72,13 +71,14 @@ export default defineComponent({
   },
   methods: {
     ...mapActions([
-      'fetchProductsFromApi',
+      'fetchProductFromApi',
     ]),
   },
+
   mounted() {
-    const store = useStore();
-    store.dispatch('fetchProductFromApi', this.id);
+    this.fetchProductFromApi(this.id);
   },
+
   setup() {
     return {};
   },

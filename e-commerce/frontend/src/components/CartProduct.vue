@@ -49,9 +49,6 @@ export default defineComponent({
       'retrieveFromCart',
     ]),
   },
-  setup() {
-    return {};
-  },
 });
 </script>
 

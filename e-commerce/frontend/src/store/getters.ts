@@ -23,9 +23,6 @@ const getters = {
 
   getProductById:
   (state:any) => (id: any) => state.products.find((product:any) => product._id === id),
-  getCart(state:any) {
-    return state.cart;
-  },
 
   isInWishlist:
   (state:any) => (id:any) => state.wishlist.some((productId:any) => productId === id),
