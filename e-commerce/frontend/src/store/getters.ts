@@ -35,6 +35,8 @@ const getters = {
   },
   isInWishlist:
   (state:any) => (id:any) => state.wishlist.some((productId:any) => productId === id),
+  isInCart:
+  (state:any) => (id:any) => state.cart.some((productId:any) => productId === id),
 };
 
 export default getters;

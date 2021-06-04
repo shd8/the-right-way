@@ -13,14 +13,17 @@ const mutations = {
   updateCurrentProduct(state:any, payload:any) {
     state.currentProduct = payload;
   },
-  addToCart(state:any, payload:any) {
-    state.cart.push(payload);
-  },
   addToWishlist(state:any, payload:any) {
     state.wishlist.push(payload);
   },
   retrieveFromWishlist(state:any, payload:any) {
     state.wishlist = state.wishlist.filter((productId:any) => productId !== payload);
+  },
+  addToCart(state:any, payload:any) {
+    state.cart.push(payload);
+  },
+  retrieveFromCart(state:any, payload:any) {
+    state.cart = state.cart.filter((productId:any) => productId !== payload);
   },
 };
 
