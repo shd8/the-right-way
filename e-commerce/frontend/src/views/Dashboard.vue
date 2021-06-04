@@ -5,89 +5,7 @@
     alt="logo"
     srcset=""
     class="logo">
-    <h2>Select a category to start looking products</h2>
-
-    <div class="categories">
-      <span>
-        <h3 class="subtitle">Leftology</h3>
-        <hr class="line">
-        <router-link
-        class="dashboard__leftology category"
-        :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
-        >
-          <img
-          class="category__image"
-          src="https://i.ibb.co/6gxLC4J/tecnologia-zurdo.jpg"
-          alt="leftology"
-          srcset=""
-          >
-        </router-link>
-      </span>
-
-      <span>
-        <h3 class="subtitle">Lefticians</h3>
-        <hr class="line">
-        <router-link
-        class="dashboard__lefticians category"
-        :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
-        >
-          <img
-          class="category__image"
-          src="https://i.ibb.co/yqLTYf4/instrumentos-zurdo.webp"
-          alt="lefticians"
-          srcset=""
-          >
-        </router-link>
-      </span>
-
-      <span>
-        <h3 class="subtitle">Office</h3>
-        <hr class="line">
-        <router-link
-        class="dashboard__office category"
-        :to="{ name: 'SearchCategory', params: { category: 'office' } }"
-        >
-          <img
-          class="category__image"
-          src="https://i.ibb.co/wNvQCsv/oficina-zurdo.jpg"
-          alt="office"
-          srcset=""
-          >
-        </router-link>
-      </span>
-
-      <span>
-        <h3 class="subtitle">Kitchen</h3>
-        <hr class="line">
-        <router-link
-        class="dashboard__kitchen"
-        :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
-        >
-          <img
-          class="category__image"
-          src="https://i.ibb.co/5cTDgD9/cocina-zurdo.jpg"
-          alt="kitchen"
-          srcset=""
-          >
-        </router-link>
-      </span>
-
-      <span>
-        <h3 class="subtitle">Clothes</h3>
-        <hr class="line">
-        <router-link
-        class="dashboard__clothes"
-        :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
-        >
-          <img
-          class="category__image"
-          src="https://i.ibb.co/ccbDDTZ/ropa-zurdo.jpg"
-          alt="clothes"
-          srcset=""
-          >
-        </router-link>
-      </span>
-    </div>
+    <CategorySelector />
   </div>
 
 </template>
@@ -95,10 +13,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapActions, useStore } from 'vuex';
+import CategorySelector from '@/components/CategorySelector.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
+    CategorySelector,
   },
   methods: {
     ...mapActions([
@@ -123,30 +43,11 @@ export default defineComponent({
   color: $purple;
 }
 
-h2 {
-  text-align: center;
-  font-size: 1em;
-  padding: 1em 0em;
-}
-
 .dashboard{
   padding-top: 9em;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  img {
-    height: 12em;
-    width: 20em;
-    object-fit: cover;
-    border-radius: 1em 1em 0em 1em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  }
-
-  img:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
 
   .logo{
     display: flex;
@@ -160,36 +61,4 @@ h2 {
     box-shadow: none;
   }
 }
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  span {
-    padding: 0em 1em 1em 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h3 {
-    padding: 0.2em;
-    font-size: 2em;
-  }
-
-  hr {
-    @include hrItem;
-  }
-}
-
-@media (min-width: 1300px) {
-  .dashboard {
-    img {
-      height: 16em;
-      width: 26em;
-    }
-  }
-}
-
 </style>

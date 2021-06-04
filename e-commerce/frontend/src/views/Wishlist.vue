@@ -22,6 +22,7 @@
     <div v-else class="wishlist">
       <h2 class="empty-title">Your wishlist is empty ...</h2>
       <hr>
+      <CategorySelector />
     </div>
   </div>
 </template>
@@ -30,11 +31,13 @@
 import { defineComponent } from 'vue';
 import { mapGetters } from 'vuex';
 import WishlistProduct from '@/components/WishlistProduct.vue';
+import CategorySelector from '@/components/CategorySelector.vue';
 
 export default defineComponent({
   name: 'Wishlist',
   components: {
     WishlistProduct,
+    CategorySelector,
   },
   computed: {
     ...mapGetters([
