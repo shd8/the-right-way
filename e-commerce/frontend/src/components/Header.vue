@@ -96,7 +96,7 @@ export default defineComponent({
 }
 
 .peace-logo {
-    margin-right: 2em;
+    margin-right: 2.5em;
 }
 
 .search {
