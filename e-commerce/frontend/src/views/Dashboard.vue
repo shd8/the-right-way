@@ -94,10 +94,23 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { mapActions, useStore } from 'vuex';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
+  },
+  methods: {
+    ...mapActions([
+      'fetchProductsFromApi',
+    ]),
+  },
+  mounted() {
+    const store = useStore();
+    store.dispatch('fetchProductsFromApi');
+  },
+  setup() {
+    return {};
   },
 });
 </script>
