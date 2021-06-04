@@ -8,15 +8,11 @@
       :key="product._id"
       class="products__list"
       >
-        <div
-        class='product'
-        v-if="product.category && product.category.toLowerCase() === category.toLowerCase()">
-          <Product
-            :id='product._id'
-            :name='product.name'
-            :price='product.price'
-            :images='product.images' />
-        </div>
+        <Product
+          :id='product._id'
+          :name='product.name'
+          :price='product.price'
+          :images='product.images' />
       </ul>
   </div>
 

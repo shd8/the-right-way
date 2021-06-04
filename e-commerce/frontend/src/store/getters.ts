@@ -10,7 +10,7 @@ const getters = {
   },
   getProductsByCategory:
   (state:any) => (category: any) => state.products
-    .filter((product:any) => product.category !== category),
+    .filter((product:any) => product.category?.toLowerCase() === category.toLowerCase()),
   getWishlistLength(state:any) {
     return state.wishlist.length;
   },
