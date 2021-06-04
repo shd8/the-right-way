@@ -6,6 +6,7 @@
         <li class="product-price">$ {{price}}</li>
     </span>
     <button
+    class='trash'
     @click="$store.commit('retrieveFromWishlist', id)">
         <i class="fas fa-trash"></i>
     </button>
@@ -62,43 +63,12 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
 
-.product-name {
-  color: $purple;
-  padding-right: 2em;
-}
-
-.product-price {
-    padding: 0.5em 0em;
-}
-
-.carousel {
-    @include carousel;
-}
-
-.carousel__item {
-    @include carouselItem;
-}
-
-.cart {
-    position: absolute;
-    z-index: 1;
-    margin: 18.5em 0em 0em 10em;
-}
-
-.wishlist {
-    position: absolute;
-    z-index: 1;
-    margin: 5em 10em 0em 0em;
-}
-
-@import "../styles/_colors.scss";
-
 button {
   background-color: $light-purple;
   width: 3em;
   height: 3em;
   border-style: none;
-  border-radius: 1em 0em 1em 0em;
+  border-radius: 0em 1em 0em 1em;
 
   &:hover {
     background-color: $purple;
@@ -109,6 +79,35 @@ button {
 i {
   color: white;
   font-size: 1.5em;
+}
+
+.product-name {
+  color: $purple;
+  padding-right: 2em;
+}
+
+.product-price {
+  padding: 0.5em 0em;
+}
+
+.carousel {
+  @include carousel;
+}
+
+.carousel__item {
+  @include carouselItem;
+}
+
+.cart {
+  position: absolute;
+  z-index: 1;
+  margin: 18.8em 10.4em 0em 0em;
+}
+
+.trash {
+  position: absolute;
+  z-index: 1;
+  margin: 5em 0em 0em 10em;
 }
 
 </style>
