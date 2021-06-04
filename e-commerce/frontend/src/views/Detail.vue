@@ -162,7 +162,7 @@ h2 {
 
   .add-to-wishlist {
     margin: 10em 36em 0em 0em;
-}
+  }
 }
 
 </style>
