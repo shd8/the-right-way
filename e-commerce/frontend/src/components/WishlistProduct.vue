@@ -3,7 +3,6 @@
         <router-link class="link" :to="{ name: 'Detail', params: { id: id } }">
             <li class="product-name">{{name}}</li>
         </router-link>
-        <li class="product-price">$ {{price}}</li>
     </span>
     <button
     class='trash'
@@ -83,7 +82,7 @@ i {
 
 .product-name {
   color: $purple;
-  padding-right: 2em;
+  padding-bottom: 1em;
 }
 
 .product-price {
@@ -101,13 +100,13 @@ i {
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 18.8em 10.4em 0em 0em;
+  margin: 17.3em 10.5em 0em 0em;
 }
 
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 5em 0em 0em 10em;
+  margin: 3.2em 0em 0em 10.5em;
 }
 
 </style>
