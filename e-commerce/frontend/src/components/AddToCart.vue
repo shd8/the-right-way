@@ -27,17 +27,25 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 
-    button {
-        background-color: $purple;
-        width: 3em;
-        height: 3em;
-        border-style: none;
-        border-radius: 0em 1em 0em 1em;
-    }
+button {
+  background-color: $purple;
+  width: 3em;
+  height: 3em;
+  border-style: none;
+  border-radius: 0em 1em 0em 1em;
+
+  &:hover {
+    cursor: pointer;
 
     i {
-        color: white;
-        font-size: 1.5em;
+      color: black;
     }
+  }
+}
+
+i {
+  color: white;
+  font-size: 1.5em;
+}
 
 </style>
