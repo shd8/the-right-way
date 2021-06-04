@@ -39,10 +39,6 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
 
-*:visited {
-  color: $purple;
-}
-
 .dashboard{
   padding-top: 9em;
   display: flex;
