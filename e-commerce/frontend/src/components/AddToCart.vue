@@ -1,6 +1,6 @@
 <template>
     <button  @click="$store.commit('addToCart', id)">
-        <i class="fas fa-shopping-cart"></i>
+      <i class="fas fa-shopping-cart"></i>
     </button>
 </template>
 

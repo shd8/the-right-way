@@ -1,18 +1,27 @@
 <template>
-    <button @click="$store.commit('addToWishlist', id)">
+<button
+    v-if="getWishlist.some((productId) => productId === id)"
+    @click="$store.commit('retrieveFromWishlist', id)">
+        <i class="fas fa-heart"></i>
+    </button>
+    <button v-else @click="$store.commit('addToWishlist', id)">
         <i class="far fa-heart"></i>
     </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
   computed: {
     ...mapMutations([
       'addToWishlist',
+      'retrieveFromWishlist',
+    ]),
+    ...mapGetters([
+      'getWishlist',
     ]),
   },
   name: 'AddToWishlist',

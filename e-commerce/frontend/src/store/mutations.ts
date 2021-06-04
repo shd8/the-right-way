@@ -19,6 +19,9 @@ const mutations = {
   addToWishlist(state:any, payload:any) {
     state.wishlist.push(payload);
   },
+  retrieveFromWishlist(state:any, payload:any) {
+    state.wishlist = state.wishlist.filter((productId:any) => productId !== payload);
+  },
 };
 
 export default mutations;
