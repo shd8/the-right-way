@@ -8,6 +8,9 @@ const getters = {
   getProducts(state:any) {
     return state.products;
   },
+  getProductsByCategory:
+  (state:any) => (category: any) => state.products
+    .filter((product:any) => product.category !== category),
   getWishlistLength(state:any) {
     return state.wishlist.length;
   },

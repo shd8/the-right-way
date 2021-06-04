@@ -4,7 +4,7 @@
   <hr>
   <div class='products'>
       <ul
-      v-for='product in getProducts'
+      v-for='product in getProductsByCategory(category)'
       :key="product._id"
       class="products__list"
       >
@@ -42,7 +42,7 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters([
-      'getProducts',
+      'getProductsByCategory',
     ]),
   },
   methods: {
