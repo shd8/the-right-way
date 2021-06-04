@@ -1,12 +1,12 @@
 <template>
-<button
+  <button
     v-if="getWishlist.some((productId) => productId === id)"
     @click="$store.commit('retrieveFromWishlist', id)">
         <i class="fas fa-heart"></i>
-    </button>
-    <button v-else @click="$store.commit('addToWishlist', id)">
-        <i class="far fa-heart"></i>
-    </button>
+  </button>
+  <button v-else @click="$store.commit('addToWishlist', id)">
+    <i class="far fa-heart"></i>
+  </button>
 </template>
 
 <script lang="ts">
