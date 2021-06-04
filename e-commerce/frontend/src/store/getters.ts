@@ -30,9 +30,8 @@ const getters = {
   getWishlist(state:any) {
     return state.wishlist;
   },
-  isInWishlist(state:any, id:any) {
-    return state.wishlist.some((productId:any) => productId === id);
-  },
+  isInWishlist:
+  (state:any) => (id:any) => state.wishlist.some((productId:any) => productId === id),
 };
 
 export default getters;

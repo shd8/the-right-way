@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="getWishlist.some((productId) => productId === id)"
+    v-if="isInWishlist(id)"
     @click="$store.commit('retrieveFromWishlist', id)">
         <i class="fas fa-heart"></i>
   </button>
@@ -21,7 +21,7 @@ export default defineComponent({
       'retrieveFromWishlist',
     ]),
     ...mapGetters([
-      'getWishlist',
+      'isInWishlist',
     ]),
   },
   name: 'AddToWishlist',
