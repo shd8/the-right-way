@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import SearchCategory from '@/views/SearchCategory.vue';
 
-test('displays message', () => {
+test.only('displays message', () => {
   const wrapper = mount(SearchCategory, {
     global: {
       mocks: {
@@ -18,6 +18,11 @@ test('displays message', () => {
           },
           actions: {
             fetchProductsFromApi: {},
+          },
+        },
+        $route: {
+          params: {
+            id: '3',
           },
         },
       },

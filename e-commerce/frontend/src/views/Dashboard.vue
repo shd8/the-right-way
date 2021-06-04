@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapActions, useStore } from 'vuex';
+import { mapActions } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
 
 export default defineComponent({
@@ -26,11 +26,7 @@ export default defineComponent({
     ]),
   },
   mounted() {
-    const store = useStore();
-    store.dispatch('fetchProductsFromApi');
-  },
-  setup() {
-    return {};
+    this.fetchProductsFromApi();
   },
 });
 </script>

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div v-if="getWishlist.length" class="wishlist">
+    <div v-if="wishlist.length" class="wishlist">
       <h2>Your wishlist !</h2>
       <hr>
         <div class="products">
           <ul
-            v-for='product in getWishlist'
+            v-for='product in wishlist'
             :key="product._id"
             class="products__list"
             >
@@ -29,7 +29,7 @@
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 import WishlistProduct from '@/components/WishlistProduct.vue';
 import CategorySelector from '@/components/CategorySelector.vue';
 
@@ -41,9 +41,10 @@ export default defineComponent({
   },
   computed: {
     ...mapGetters([
-      'getWishlist',
-      'getProducts',
       'getProductById',
+    ]),
+    ...mapState([
+      'wishlist',
     ]),
   },
 });

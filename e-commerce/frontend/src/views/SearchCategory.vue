@@ -20,13 +20,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 import 'vue3-carousel/dist/carousel.css';
 
 import {
   mapActions,
   mapGetters,
-  useStore,
 } from 'vuex';
 import Product from '@/components/Product.vue';
 
@@ -46,12 +45,9 @@ export default defineComponent({
       'fetchProductsFromApi',
     ]),
   },
-  setup() {
-    const store = useStore();
-    onMounted(() => {
-      store.dispatch('fetchProductsFromApi');
-    });
-    return {};
+
+  mounted() {
+    this.fetchProductsFromApi();
   },
 });
 </script>

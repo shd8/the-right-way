@@ -1,10 +1,10 @@
 <template>
   <div class='details'>
-    <h2>{{getCurrentProduct.name}}</h2>
+    <h2>{{currentProduct.name}}</h2>
     <hr>
     <AddToWishlist :id='id' class="add-to-wishlist"/>
     <Carousel>
-        <Slide v-for="slide in getCurrentProduct.images" :key="slide">
+        <Slide v-for="slide in currentProduct.images" :key="slide">
             <img class="carousel__item" :src='slide' alt="" srcset="">
         </Slide>
         <template #addons>
@@ -12,17 +12,17 @@
         <Pagination />
         </template>
     </Carousel>
-    <p class="details__price">$ {{getCurrentProduct.price}}</p>
+    <p class="details__price">$ {{currentProduct.price}}</p>
     <hr>
     <span class="details__rate">
       <p class='rate'>{{getCurrentProductRate}}</p>
       <i class="fas fa-star"></i>
     </span>
-    <p class="details__stock">We have {{getCurrentProduct.stock}} in stock!</p>
+    <p class="details__stock">We have {{currentProduct.stock}} in stock!</p>
     <span class="comments-container">
       <ul
       class="comments"
-      v-for='rating in getCurrentProduct.ratings' :key='rating._id'>
+      v-for='rating in currentProduct.ratings' :key='rating._id'>
         <Comment
         :user='rating.user'
         :rating='rating.rating'
@@ -35,7 +35,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapGetters, mapActions, useStore } from 'vuex';
+import {
+  mapGetters, mapActions, useStore, mapState,
+} from 'vuex';
 import 'vue3-carousel/dist/carousel.css';
 
 import {
@@ -63,6 +65,9 @@ export default defineComponent({
     ...mapGetters([
       'getCurrentProductRate',
       'getCurrentProduct',
+    ]),
+    ...mapState([
+      'currentProduct',
     ]),
   },
   methods: {

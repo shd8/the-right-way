@@ -4,7 +4,7 @@
     <hr>
     <div class='products'>
         <ul
-        v-for='product in getProducts'
+        v-for='product in products'
         :key="product._id"
         class="products__list"
         >
@@ -25,8 +25,7 @@ import Product from '@/components/Product.vue';
 
 import {
   mapActions,
-  mapGetters,
-  useStore,
+  mapState,
 } from 'vuex';
 
 export default defineComponent({
@@ -35,22 +34,21 @@ export default defineComponent({
   },
   name: 'Search',
   computed: {
-    ...mapGetters([
-      'getProducts',
+    ...mapState([
+      'products',
     ]),
   },
+
   methods: {
     ...mapActions([
       'fetchProductsFromApi',
     ]),
   },
+
   mounted() {
-    const store = useStore();
-    store.dispatch('fetchProductsFromApi');
+    this.fetchProductsFromApi();
   },
-  setup() {
-    return {};
-  },
+
 });
 </script>
 
