@@ -88,6 +88,7 @@ export default defineComponent({
   bottom: 1em;
   display: flex;
   align-items: baseline;
+  z-index: 100;
 
   &__price {
     background-color: white;
@@ -104,6 +105,7 @@ export default defineComponent({
     border-radius: 0em 1em 0em 1em;
     padding: 0.2em 0.5em;
     margin-right: 1em;
+    cursor: pointer;
 
   }
 }
