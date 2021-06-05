@@ -15,6 +15,14 @@ const getters = {
     return state.cart.length;
   },
 
+  getCartPrice(state:any) {
+    return state.cart
+      .map((cartId:string) => state.products.find((product:any) => product._id === cartId))
+      .map((product:any) => product.price)
+      .reduce((a:number, b:number) => a + b)
+      .toFixed(2);
+  },
+
   getCurrentProductRate(state:any) {
     const ratingNumbers:any = [];
     state.currentProduct.ratings.forEach((rate:any) => { ratingNumbers.push(rate.rating); });

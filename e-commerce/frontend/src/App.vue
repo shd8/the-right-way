@@ -20,6 +20,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+
+.body--overflow-hidden {
+    overflow: hidden;
+  }
+
 * {
   margin: 0;
   padding: 0;

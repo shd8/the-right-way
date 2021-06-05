@@ -1,5 +1,14 @@
 <template>
   <div class="dashboard">
+      <!-- <button @click='handleToggleModal'>
+    modaliza
+  </button> -->
+      <!-- <Modal
+    :isModalOpen="showModal"
+    @toggleModal='toggleModal'
+    >
+         <div></div>
+    </Modal> -->
     <img
     src="../images/logo.svg"
     alt="logo"
@@ -14,19 +23,33 @@
 import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
+// import Modal from '@/components/Modal.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
     CategorySelector,
+    // Modal,
   },
   methods: {
     ...mapActions([
       'fetchProductsFromApi',
     ]),
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+
+    handleToggleModal() {
+      this.toggleModal();
+    },
   },
   mounted() {
     this.fetchProductsFromApi();
+  },
+  data() {
+    return {
+      showModal: false,
+    };
   },
 });
 </script>

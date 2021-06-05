@@ -8,6 +8,7 @@ const actions = {
       commit('updateProducts', response.data);
     });
   },
+
   fetchProductFromApi({ commit }:any, id:any) {
     axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
       commit('updateCurrentProduct', response.data);

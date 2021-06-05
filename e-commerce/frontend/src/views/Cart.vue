@@ -19,7 +19,7 @@
         </div>
         <div class="purchase">
           <button class="purchase__button">Purchase !</button>
-          <p class="purchase__price">$999</p>
+          <p class="purchase__price">{{getCartPrice}}</p>
         </div>
     </div>
 
@@ -46,6 +46,7 @@ export default defineComponent({
   computed: {
     ...mapGetters([
       'getProductById',
+      'getCartPrice',
     ]),
     ...mapState([
       'cart',

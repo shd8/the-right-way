@@ -3,7 +3,7 @@
     <div class="categories">
       <span>
         <h3 class="subtitle">Leftology</h3>
-        <hr class="line">
+        <hr class="line hrItem">
         <router-link
         class="dashboard__leftology category"
         :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
@@ -19,7 +19,7 @@
 
       <span>
         <h3 class="subtitle">Lefticians</h3>
-        <hr class="line">
+        <hr class="line hrItem">
         <router-link
         class="dashboard__lefticians category"
         :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
@@ -35,7 +35,7 @@
 
       <span>
         <h3 class="subtitle">Office</h3>
-        <hr class="line">
+        <hr class="line hrItem">
         <router-link
         class="dashboard__office category"
         :to="{ name: 'SearchCategory', params: { category: 'office' } }"
@@ -51,7 +51,7 @@
 
       <span>
         <h3 class="subtitle">Kitchen</h3>
-        <hr class="line">
+        <hr class="line hrItem">
         <router-link
         class="dashboard__kitchen"
         :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
@@ -67,7 +67,7 @@
 
       <span>
         <h3 class="subtitle">Clothes</h3>
-        <hr class="line">
+        <hr class="line hrItem">
         <router-link
         class="dashboard__clothes"
         :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
@@ -89,9 +89,6 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'CategorySelector',
   components: {
-  },
-  setup() {
-    return {};
   },
 });
 </script>
@@ -140,9 +137,6 @@ h2 {
     font-size: 2em;
   }
 
-  hr {
-    @include hrItem;
-  }
 }
 
 @media (min-width: 1300px) {
