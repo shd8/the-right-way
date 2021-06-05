@@ -2,26 +2,26 @@
     <div class="header">
         <nav class="nav">
             <div class="nav__buttons">
-                <router-link to="/cart">
+                <router-link to="/cart" @click="scrollToTop">
                     <i class="fas fa-shopping-cart">
                         <p class="cart-number">{{getCartLength}}</p>
                     </i>
                 </router-link>
-                <router-link to="/wishlist">
+                <router-link to="/wishlist" @click="scrollToTop">
                     <i class="far fa-heart">
                         <p class="wishlist-number">{{getWishlistLength}}</p>
                     </i>
                 </router-link>
-                <router-link to="/profile">
+                <router-link to="/profile" @click="scrollToTop">
                     <i class="far fa-user"></i>
                 </router-link>
             </div>
-            <router-link class="nav__logo" to="/">
+            <router-link class="nav__logo" to="/" @click="scrollToTop">
                 <img class="peace-logo" src="../images/peace.svg" alt="" srcset="">
             </router-link>
         </nav>
         <div class='search'>
-                <router-link to="/search">
+                <router-link to="/search" @click="scrollToTop">
                     <i class="fas fa-search"></i>
                 </router-link>
                 <input class="search__input" type="text" placeholder="Search something ..."/>
@@ -39,6 +39,11 @@ export default defineComponent({
       'getCartLength',
       'getWishlistLength',
     ]),
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
   name: 'Header',
   components: {

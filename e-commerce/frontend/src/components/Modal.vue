@@ -12,7 +12,9 @@
                             color="grey-2"
                             hide-label
                             @click="toggleModal"
-                        />
+                        >
+                          <i class="far fa-times-circle"></i>
+                        </button>
                     </div>
                 </slot>
                 <slot />
@@ -59,12 +61,14 @@ export default defineComponent({
     },
   },
   data() {
-    return { title: 'Buenas', body: document.body };
+    return { body: document.body };
   },
 });
 </script>
 
 <style scoped lang="scss">
+@import "../styles/_colors.scss";
+@import "../styles/mixins.scss";
 
 // @include mq($from: tablet) {
 //     display: flex;
@@ -129,10 +133,26 @@ export default defineComponent({
     //     }
    // }
         .button {
-            padding: 0;
-                &-icon {
-                    width: auto;
-                }
+          padding: 0;
+
+          &-icon {
+              width: auto;
+          }
         }
+}
+
+.modal__header-button {
+  border: none;
+  background-color: white;
+  border-radius: 3em;
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  cursor: pointer;
+}
+
+.fa-times-circle {
+  color: $purple;
+  font-size: 5em;
 }
 </style>

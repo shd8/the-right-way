@@ -1,6 +1,10 @@
 <template>
     <span class="products__data">
-        <router-link class="link" :to="{ name: 'Detail', params: { id: id } }">
+        <router-link
+        class="link"
+        :to="{ name: 'Detail', params: { id: id } }"
+        @click="scrollToTop"
+        >
             <li class="product-name">{{name}}</li>
         </router-link>
     </span>
@@ -12,7 +16,9 @@
     <Carousel>
         <Slide v-for="slide in images" :key="slide">
             <router-link class="link"
-            :to="{ name: 'Detail', params: { id: id } }">
+            :to="{ name: 'Detail', params: { id: id } }"
+            @click="scrollToTop"
+            >
                 <img class="carousel__item" :src='slide' alt="" srcset="">
             </router-link>
         </Slide>
@@ -43,6 +49,11 @@ export default defineComponent({
     Slide,
     Pagination,
     Navigation,
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
   computed: {
     ...mapMutations([

@@ -32,11 +32,6 @@
             </span>
         </form>
      </div>
-
-    <div  v-if='isUserLogged' class="logged-container">
-        User is loged !
-    </div>
-
 </template>
 
 <script lang="ts">

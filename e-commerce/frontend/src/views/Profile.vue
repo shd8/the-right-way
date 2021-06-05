@@ -43,6 +43,20 @@
       </ul>
     </ul>
 
+    <span class="cart-length">
+      <router-link to="/cart" @click="scrollToTop">
+          <i class="fas fa-shopping-cart"></i>
+      </router-link>
+      <p class="cart-number">You have {{getCartLength}} products in the cart!</p>
+    </span>
+
+    <span class="wishlist-length">
+      <router-link to="/wishlist" @click="scrollToTop">
+          <i class="far fa-heart"></i>
+      </router-link>
+      <p class="wishlist-number">You have {{getWishlistLength}} products in the wishlist!</p>
+    </span>
+
   </div>
 
 </template>
@@ -50,16 +64,25 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Login from '@/components/Login.vue';
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default defineComponent({
   name: 'Profile',
   components: {
     Login,
   },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
+  },
   computed: {
     ...mapState([
       'currentUser',
+    ]),
+    ...mapGetters([
+      'getCartLength',
+      'getWishlistLength',
     ]),
   },
 });
@@ -99,10 +122,25 @@ p {
   justify-content: space-between;
 }
 
-.fa-user {
+.fa-user,
+.fa-shopping-cart,
+.fa-heart {
   color: $purple;
   font-size: 4em;
   padding: 0.5em;
+}
+
+.cart-number,
+.wishlist-number {
+  font-size: 1em;
+  color: black;
+}
+
+.cart-length,
+.wishlist-length {
+  display: flex;
+  align-items: center;
+  width: 80%;
 }
 
 .logged {
@@ -110,6 +148,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 7em 0em 2em 0em;
 
   &__user-data {
     width: 80%;

@@ -90,4 +90,8 @@ export default defineComponent({
   padding: 0.5em;
 }
 
+.h2Item {
+  font-size: 1.7em;
+}
+
 </style>

@@ -7,6 +7,7 @@
         <router-link
         class="dashboard__leftology category"
         :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
+        @click="scrollToTop"
         >
           <img
           class="category__image"
@@ -23,6 +24,7 @@
         <router-link
         class="dashboard__lefticians category"
         :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
+        @click="scrollToTop"
         >
           <img
           class="category__image"
@@ -39,6 +41,7 @@
         <router-link
         class="dashboard__office category"
         :to="{ name: 'SearchCategory', params: { category: 'office' } }"
+        @click="scrollToTop"
         >
           <img
           class="category__image"
@@ -55,6 +58,7 @@
         <router-link
         class="dashboard__kitchen"
         :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
+        @click="scrollToTop"
         >
           <img
           class="category__image"
@@ -71,6 +75,7 @@
         <router-link
         class="dashboard__clothes"
         :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
+        @click="scrollToTop"
         >
           <img
           class="category__image"
@@ -89,6 +94,11 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'CategorySelector',
   components: {
+  },
+  methods: {
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
 });
 </script>
@@ -140,10 +150,10 @@ h2 {
 }
 
 @media (min-width: 1300px) {
-    img {
-        height: 16em;
-        width: 26em;
-    }
+  img {
+    height: 16em;
+    width: 26em;
+  }
 }
 
 </style>
