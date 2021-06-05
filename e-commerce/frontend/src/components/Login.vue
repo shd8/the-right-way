@@ -7,16 +7,28 @@
         </h2>
         <hr class="hrItem">
 
-        <form action="" class="credentials">
-            <div class='email custom-input'>
-                <i class="fas fa-at"></i>
-                <input type="text" placeholder="email ..."/>
-            </div>
+        <form class="login-form" action="">
+            <span class="login-form__credential credentials">
+                <div class='email custom-input'>
+                    <i class="fas fa-at"></i>
+                    <input type="email" placeholder="email ..."/>
+                </div>
 
-            <div class='password custom-input'>
-                <i class="fas fa-key"></i>
-                <input type="password" placeholder="password ..."/>
-            </div>
+                <div class='password custom-input'>
+                    <i class="fas fa-key"></i>
+                    <input autocomplete="pass" type="password" placeholder="················"/>
+                </div>
+            </span>
+
+            <span class="login-form__buttons">
+                <button class="login-form__login-button">Login</button>
+                <p>Not registered yet?
+                    <button class="register-button">
+                        Click here !
+                    </button>
+                </p>
+            </span>
+
         </form>
 
      </div>
@@ -42,6 +54,44 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__buttons {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__login-button {
+        background-color: $light-purple;
+        font-size: 1.5em;
+        border-style: none;
+        border-radius: 1em;
+        padding: 0.2em 0.5em;
+        cursor: pointer;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        margin-bottom: 1em;
+    }
+
+    &__login-button:hover {
+        box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
+    }
+}
+
+.register-button {
+    background-color: white;
+    border: none;
+    font-size: 1.2em;
+    color: $purple;
+    text-decoration: underline 0.2em;
+    padding-left: 0.5em;
+}
 
 .profile-container {
     padding-top: 7em;
