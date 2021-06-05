@@ -12,6 +12,7 @@ export default createStore({
     count: 0,
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },
+    isLogged: true,
   },
   getters,
   mutations,

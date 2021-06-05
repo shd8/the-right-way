@@ -25,8 +25,8 @@
                     <i class="fas fa-search"></i>
                 </router-link>
                 <input class="search__input" type="text" placeholder="Search something ..."/>
-            </div>
         </div>
+    </div>
 </template>
 
 <script lang="ts">
@@ -42,9 +42,6 @@ export default defineComponent({
   },
   name: 'Header',
   components: {
-  },
-  setup() {
-    return {};
   },
 });
 </script>
