@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="wishlist.length" class="wishlist">
-      <h2>Your wishlist !</h2>
-      <hr>
+      <h2 class="h2Item">Your wishlist !</h2>
+      <hr class="hrItem">
         <div class="products">
           <ul
             v-for='product in wishlist'
@@ -20,8 +20,8 @@
     </div>
 
     <div v-else class="wishlist">
-      <h2 class="empty-title">Your wishlist is empty ...</h2>
-      <hr>
+      <h2 class="empty-title h2Item">Your wishlist is empty ...</h2>
+      <hr class="hrItem">
       <CategorySelector />
     </div>
   </div>
@@ -53,14 +53,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
-
-h2 {
-  @include h2Item;
-}
-
-hr {
-  @include hrItem;
-}
 
 .products {
     display: flex;

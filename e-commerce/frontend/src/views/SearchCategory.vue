@@ -1,7 +1,7 @@
 <template>
 <div class="search">
-  <h2>{{category.charAt(0).toUpperCase() + category.slice(1)}}</h2>
-  <hr>
+  <h2 class="h2Item">{{category.charAt(0).toUpperCase() + category.slice(1)}}</h2>
+  <hr class="hrItem">
   <div class='products'>
       <ul
       v-for='product in getProductsByCategory(category)'
@@ -55,14 +55,6 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
-
-h2 {
-  @include h2Item;
-}
-
-hr {
-  @include hrItem;
-}
 
 .products {
     display: flex;

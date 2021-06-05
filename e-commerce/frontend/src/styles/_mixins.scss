@@ -17,21 +17,6 @@
     align-items: center;
 }
 
-@mixin hrItem {
-    width: 80%;
-    background-color: $purple;
-    border: none;
-    height: 1px;
-    margin-bottom: 2em;
-}
-
-@mixin h2Item {
-    padding: 0.5em 0em;
-    padding-top: 1em;
-    padding-bottom: 0.5em;
-    font-size: 2em;
-}
-
 .hrItem {
     width: 80%;
     background-color: $purple;

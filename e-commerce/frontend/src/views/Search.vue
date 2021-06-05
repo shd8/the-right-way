@@ -1,7 +1,7 @@
 <template>
 <div class="search">
-    <h2>All our products</h2>
-    <hr>
+    <h2 class="h2Item">All our products</h2>
+    <hr class="hrItem">
     <div class='products'>
         <ul
         v-for='product in products'
@@ -55,14 +55,6 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
-
-h2 {
-  @include h2Item;
-}
-
-hr {
-  @include hrItem;
-}
 
 .products {
   display: flex;

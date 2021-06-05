@@ -1,7 +1,7 @@
 <template>
   <div class='details'>
-    <h2>{{currentProduct.name}}</h2>
-    <hr>
+    <h2 class="h2Item">{{currentProduct.name}}</h2>
+    <hr class="hrItem">
     <AddToWishlist :id='id' class="add-to-wishlist"/>
     <Carousel>
         <Slide v-for="slide in currentProduct.images" :key="slide">
@@ -13,7 +13,7 @@
         </template>
     </Carousel>
     <p class="details__price">$ {{currentProduct.price}}</p>
-    <hr>
+    <hr class="hrItem">
     <span class="details__rate">
       <p class='rate'>{{getCurrentProductRate}}</p>
       <i class="fas fa-star"></i>
@@ -88,14 +88,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
-
-hr {
-  @include hrItem;
-}
-
-h2 {
-  @include h2Item;
-}
 
 .details {
   padding-top: 7em;

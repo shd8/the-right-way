@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-if="cart.length" class="cart">
-      <h2>Your cart !</h2>
-      <hr>
+      <h2 class="h2Item">Your cart !</h2>
+      <hr class="hrItem">
         <div class="products">
           <ul
             v-for='product in cart'
@@ -24,8 +24,8 @@
     </div>
 
     <div v-else class="cart">
-      <h2 class="empty-title">Your cart is empty ...</h2>
-      <hr>
+      <h2 class="empty-title h2Item">Your cart is empty ...</h2>
+      <hr class="hrItem">
       <CategorySelector />
     </div>
   </div>
@@ -58,14 +58,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
-
-h2 {
-  @include h2Item;
-}
-
-hr {
-  @include hrItem;
-}
 
 .products {
     display: flex;
