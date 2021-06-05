@@ -12,7 +12,17 @@ export default createStore({
     count: 0,
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },
-    isLogged: true,
+    currentUser: {
+      email: 'ferlopeta@gmail.com',
+      password: 'fer1234',
+      address: {
+        country: 'Espein',
+        city: 'Barsalona',
+        street: 'Carré Aragó',
+        postalCode: '12312',
+      },
+    },
+    isUserLogged: false,
   },
   getters,
   mutations,

@@ -1,12 +1,11 @@
 <template>
-    <div class="profile-container">
+    <div v-if='!isUserLogged' class="login-container">
         <i class="fas fa-user"></i>
         <hr class="hrItem">
         <h2 class="h2Item">
             Login or create an account to buy stuff, save your Wishlist and your conversations !
         </h2>
         <hr class="hrItem">
-
         <form class="login-form" action="">
             <span class="login-form__credential credentials">
                 <div class='email custom-input'>
@@ -21,28 +20,36 @@
             </span>
 
             <span class="login-form__buttons">
-                <button class="login-form__login-button">Login</button>
+                <button
+                class="login-form__login-button"
+                @click="logUser"
+                >Login</button>
                 <p>Not registered yet?
                     <button class="register-button">
                         Click here !
                     </button>
                 </p>
             </span>
-
         </form>
-
      </div>
+
+     <div  v-if='isUserLogged' class="logged-container">
+        User is loged !
+     </div>
+
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
+import { mapState, mapMutations } from 'vuex';
 
 export default defineComponent({
   computed: {
-    ...mapGetters([
-      'getCartLength',
-      'getWishlistLength',
+    ...mapState([
+      'isUserLogged',
+    ]),
+    ...mapMutations([
+      'logUser',
     ]),
   },
   name: 'Login',
@@ -93,7 +100,8 @@ export default defineComponent({
     padding-left: 0.5em;
 }
 
-.profile-container {
+.login-container,
+.logged-container {
     padding-top: 7em;
     display: flex;
     flex-direction: column;
