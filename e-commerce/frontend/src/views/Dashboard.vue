@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-    <!-- <button @click='handleToggleModal'>
+    <button @click='handleToggleModal'>
       modaliza
     </button>
     <Modal
@@ -10,7 +10,7 @@
     <div class="modalized-login">
       <Login />
     </div>
-    </Modal> -->
+    </Modal>
     <img
     src="../images/logo.svg"
     alt="logo"
@@ -32,8 +32,8 @@ export default defineComponent({
   name: 'Dashboard',
   components: {
     CategorySelector,
-    // Modal,
-    // Login,
+    Modal,
+    Login,
   },
   methods: {
     ...mapActions([

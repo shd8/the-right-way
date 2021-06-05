@@ -1,12 +1,12 @@
 <template>
-    <div v-if='!isUserLogged' class="login-container">
+    <div v-if="!isUserLogged" class="login-container">
         <i class="fas fa-user"></i>
         <hr class="hrItem">
         <h2 class="h2Item">
             Login or create an account to buy stuff, save your Wishlist and your conversations !
         </h2>
         <hr class="hrItem">
-        <form class="login-form" action="">
+        <form class="login-form" action="" @submit.prevent="loginButtonPressed">
             <span class="login-form__credential credentials">
                 <div class='email custom-input'>
                     <i class="fas fa-at"></i>
@@ -33,9 +33,9 @@
         </form>
      </div>
 
-     <div  v-if='isUserLogged' class="logged-container">
+    <div  v-if='isUserLogged' class="logged-container">
         User is loged !
-     </div>
+    </div>
 
 </template>
 
@@ -54,6 +54,11 @@ export default defineComponent({
   },
   name: 'Login',
   components: {
+  },
+  methods: {
+    loginButtonPressed(e:any) {
+      e.preventDefault();
+    },
   },
 });
 </script>

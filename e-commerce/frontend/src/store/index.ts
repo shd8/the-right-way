@@ -13,6 +13,7 @@ export default createStore({
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },
     currentUser: {
+      username: 'ferlopeta',
       email: 'ferlopeta@gmail.com',
       password: 'fer1234',
       address: {
