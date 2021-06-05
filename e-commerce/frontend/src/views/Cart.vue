@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="cart-container">
+    <i class="fas fa-shopping-cart"></i>
     <div v-if="cart.length" class="cart">
       <h2 class="h2Item">Your cart !</h2>
       <hr class="hrItem">
@@ -105,6 +106,18 @@ export default defineComponent({
     margin-right: 1em;
 
   }
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-shopping-cart {
+  color: $purple;
+  font-size: 4em;
+  padding: 0.5em;
 }
 
 </style>

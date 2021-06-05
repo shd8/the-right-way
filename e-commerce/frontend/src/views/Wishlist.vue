@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="wishlist-container">
+    <i class="fas fa-heart"></i>
     <div v-if="wishlist.length" class="wishlist">
       <h2 class="h2Item">Your wishlist !</h2>
       <hr class="hrItem">
@@ -76,4 +77,17 @@ export default defineComponent({
 .empty-title {
   font-size: 1.5em;
 }
+
+.wishlist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-heart {
+  color: $purple;
+  font-size: 4em;
+  padding: 0.5em;
+}
+
 </style>

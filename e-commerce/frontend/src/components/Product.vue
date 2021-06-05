@@ -56,12 +56,13 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 .product-name {
-  color: $purple;
-  padding-right: 2em;
+    color: $purple;
+    text-align: center;
 }
 
 .product-price {
     padding: 0.5em 0em;
+    text-align: center;
 }
 
 .carousel {
