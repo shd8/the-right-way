@@ -7,15 +7,17 @@
         </h2>
         <hr class="hrItem">
 
-        <div class='email custom-input'>
-            <i class="fas fa-at"></i>
-            <input type="text" placeholder="email ..."/>
-        </div>
+        <form action="" class="credentials">
+            <div class='email custom-input'>
+                <i class="fas fa-at"></i>
+                <input type="text" placeholder="email ..."/>
+            </div>
 
-        <div class='password custom-input'>
-            <i class="fas fa-key"></i>
-            <input type="password" placeholder="password ..."/>
-        </div>
+            <div class='password custom-input'>
+                <i class="fas fa-key"></i>
+                <input type="password" placeholder="password ..."/>
+            </div>
+        </form>
 
      </div>
 </template>
@@ -65,6 +67,27 @@ export default defineComponent({
 
 .email {
     margin-top: 2em;
+}
+
+.credentials {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 800px) {
+    .credentials {
+        flex-direction: row;
+        width: 80%;
+    }
+
+    .password {
+        margin-top: 2em;
+    }
+
+    .custom-input {
+        margin: 2em 1em;
+    }
 }
 
 </style>
