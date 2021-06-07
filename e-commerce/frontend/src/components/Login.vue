@@ -21,7 +21,7 @@
                 </div>
             </span>
 
-            <span class="login-form__buttons">
+            <span>
                 <button
                 class="login-form__login-button"
                 @click="logUser"

@@ -36,6 +36,10 @@ const mutations = {
   logUser(state:any) {
     state.isUserLogged = true;
   },
+
+  logoutUser(state:any) {
+    state.isUserLogged = false;
+  },
 };
 
 export default mutations;

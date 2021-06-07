@@ -55,6 +55,13 @@
       <p class="wishlist-number">You have {{getWishlistLength}} products in the wishlist!</p>
     </span>
 
+    <span>
+      <button
+      class="logout-button"
+      @click="logoutUser"
+      >Logout</button>
+    </span>
+
   </div>
 
   <div
@@ -68,7 +75,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import LoginRegister from '@/components/LoginRegister.vue';
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default defineComponent({
   name: 'Profile',
@@ -87,6 +94,9 @@ export default defineComponent({
     ...mapGetters([
       'getCartLength',
       'getWishlistLength',
+    ]),
+    ...mapMutations([
+      'logoutUser',
     ]),
   },
   data() {
@@ -186,6 +196,22 @@ p {
     text-decoration: underline 0.2em;
     padding-left: 0.5em;
     cursor: pointer;
+}
+
+.logout-button {
+  background-color: $light-purple;
+  font-size: 1.5em;
+  border-style: none;
+  border-radius: 1em;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-bottom: 1em;
+
+  &:hover {
+    box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
+  }
 }
 
 @media (min-width: 720px) {
