@@ -33,8 +33,9 @@ const mutations = {
     state.cart = state.cart.filter((productId:any) => productId !== payload);
   },
 
-  logUser(state:any) {
-    state.isUserLogged = true;
+  logUser(state:any, payload:any) {
+    state.token = payload.token;
+    console.log(payload.user);
   },
 
   logoutUser(state:any) {

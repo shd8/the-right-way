@@ -10,6 +10,7 @@
         <hr class="hrItem">
         <form
         class="login-form"
+        method="post"
         @submit.prevent="loginButtonPressed"
         >
         <p v-if="errors.length">
@@ -48,7 +49,6 @@
         </span>
 
         <span>
-            <!-- @click="logUser" -->
             <input
             class="login-form__login-button"
             type="submit"
@@ -62,7 +62,7 @@
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions, mapMutations } from 'vuex';
 
 export default defineComponent({
   computed: {
@@ -76,14 +76,17 @@ export default defineComponent({
   name: 'Login',
   methods: {
     loginButtonPressed(e:any) {
+      e.preventDefault();
+
       let result;
+
       if (this.email && this.password) {
-        this.logUserRequest({
+        const userData = {
           email: this.email,
           password: this.password,
-        });
-        console.log(this.email);
-        console.log(this.password);
+        };
+
+        this.logUserRequest(userData);
         result = true;
       }
 
@@ -96,7 +99,6 @@ export default defineComponent({
         this.errors.push('Password is required');
       }
 
-      e.preventDefault();
       return result;
     },
   },
