@@ -53,7 +53,7 @@ router.post(
                 refreshToken,
               );
 
-              return res.json({ token, refreshToken });
+              return res.json({ user, token, refreshToken });
             },
           );
         } catch (error) {
