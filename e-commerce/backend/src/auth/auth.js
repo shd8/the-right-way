@@ -25,10 +25,15 @@ passport.use(
         if (!user) {
           const newUser = await UserModel.create({
             email: email.toLowerCase(),
-            password: md5(password),
-            name: req.body.name.toLowerCase(),
-            lastname: req.body.lastname.toLowerCase(),
-            phone: req.body.phone,
+            password,
+            address: {
+              country: req.body.country,
+              city: req.body.city,
+              street: req.body.street,
+              postalCode: req.body.postalCode,
+            },
+            username: req.body.username,
+
           });
 
           return done(null, newUser);
