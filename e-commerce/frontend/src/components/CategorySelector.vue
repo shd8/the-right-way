@@ -2,10 +2,27 @@
     <h2>Select a category to start looking products</h2>
     <div class="categories">
       <span>
+        <h3 class="all">All our products</h3>
+        <hr class="line hrItem">
+        <router-link
+        class="clothes"
+        :to="{ name: 'Search', params: { category: 'clothes' } }"
+        @click="scrollToTop"
+        >
+          <img
+          class="category__image"
+          src="https://i.ibb.co/52CNKnW/for-sale.jpg"
+          alt="all"
+          srcset=""
+          >
+        </router-link>
+      </span>
+
+      <span>
         <h3 class="subtitle">Leftology</h3>
         <hr class="line hrItem">
         <router-link
-        class="dashboard__leftology category"
+        class="leftology category"
         :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
         @click="scrollToTop"
         >
@@ -22,7 +39,7 @@
         <h3 class="subtitle">Lefticians</h3>
         <hr class="line hrItem">
         <router-link
-        class="dashboard__lefticians category"
+        class="lefticians category"
         :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
         @click="scrollToTop"
         >
@@ -39,7 +56,7 @@
         <h3 class="subtitle">Office</h3>
         <hr class="line hrItem">
         <router-link
-        class="dashboard__office category"
+        class="office category"
         :to="{ name: 'SearchCategory', params: { category: 'office' } }"
         @click="scrollToTop"
         >
@@ -56,7 +73,7 @@
         <h3 class="subtitle">Kitchen</h3>
         <hr class="line hrItem">
         <router-link
-        class="dashboard__kitchen"
+        class="kitchen"
         :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
         @click="scrollToTop"
         >
@@ -73,7 +90,7 @@
         <h3 class="subtitle">Clothes</h3>
         <hr class="line hrItem">
         <router-link
-        class="dashboard__clothes"
+        class="clothes"
         :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
         @click="scrollToTop"
         >
