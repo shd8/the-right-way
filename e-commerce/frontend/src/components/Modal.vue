@@ -95,6 +95,7 @@ export default defineComponent({
     &--displayed {
     visibility: visible;
     opacity: 1;
+    overflow-y: scroll;
 }
     &__window {
         position: relative;

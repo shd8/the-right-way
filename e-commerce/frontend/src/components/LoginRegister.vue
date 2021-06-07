@@ -88,4 +88,21 @@ export default defineComponent({
   align-items: center;
 }
 
+@media (min-width: 800px) {
+    .register {
+      display: flex;
+      flex-direction: column;
+        // flex-direction: row;
+        width: 80%;
+    }
+
+    // .email {
+    //     margin-top: 2em;
+    // }
+
+    // .custom-input {
+    //     margin-bottom: 2em;
+    // }
+}
+
 </style >

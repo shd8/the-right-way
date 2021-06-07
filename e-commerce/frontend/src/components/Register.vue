@@ -173,7 +173,7 @@ export default defineComponent({
 @media (min-width: 800px) {
     .credentials {
         // flex-direction: row;
-        width: 60%;
+        // width: 60%;
     }
 }
 

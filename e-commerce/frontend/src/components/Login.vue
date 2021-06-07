@@ -8,25 +8,53 @@
             Login or create an account to buy stuff, save your Wishlist and your conversations !
         </h2>
         <hr class="hrItem">
-        <form class="login-form" action="" @submit.prevent="loginButtonPressed">
-            <span class="login-form__credential credentials">
-                <div class='email custom-input'>
-                    <i class="fas fa-at"></i>
-                    <input type="email" placeholder="email ..."/>
-                </div>
+        <form
+        class="login-form"
+        @submit.prevent="loginButtonPressed"
+        >
+        <p v-if="errors.length">
+            <b>Please, check the following errors:</b>
+            <ul>
+            <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+        </p>
+        <span class="login-form__credential credentials">
+            <label
+            class='email custom-input'
+            for="email"
+            >
+                <i class="fas fa-at"></i>
+                <input
+                name="email"
+                type="email"
+                placeholder="email ..."
+                v-model="email"
+                />
+            </label>
 
-                <div class='password custom-input'>
-                    <i class="fas fa-key"></i>
-                    <input autocomplete="pass" type="password" placeholder="················"/>
-                </div>
-            </span>
+            <label
+            class='password custom-input'
+            for="password"
+            >
+                <i class="fas fa-key"></i>
+                <input
+                name="password"
+                autocomplete="pass"
+                type="password"
+                placeholder="················"
+                v-model="password"
+                />
+            </label>
+        </span>
 
-            <span>
-                <button
-                class="login-form__login-button"
-                @click="logUser"
-                >Login</button>
-            </span>
+        <span>
+            <!-- @click="logUser" -->
+            <input
+            class="login-form__login-button"
+            type="submit"
+            value="Log in"
+            />
+        </span>
         </form>
      </div>
 
@@ -34,22 +62,50 @@
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default defineComponent({
   computed: {
     ...mapState([
       'isUserLogged',
     ]),
-    ...mapMutations([
-      'logUser',
+    ...mapActions([
+      'logUserRequest',
     ]),
   },
   name: 'Login',
   methods: {
     loginButtonPressed(e:any) {
+      let result;
+      if (this.email && this.password) {
+        this.logUserRequest({
+          email: this.email,
+          password: this.password,
+        });
+        console.log(this.email);
+        console.log(this.password);
+        result = true;
+      }
+
+      this.errors = [];
+
+      if (!this.email) {
+        this.errors.push('Email is required');
+      }
+      if (!this.password) {
+        this.errors.push('Password is required');
+      }
+
       e.preventDefault();
+      return result;
     },
+  },
+  data():any {
+    return {
+      errors: [],
+      email: null,
+      password: null,
+    };
   },
 });
 </script>
@@ -113,6 +169,10 @@ export default defineComponent({
     margin-top: 2em;
 }
 
+.custom-input {
+    margin-bottom: 1em;
+}
+
 .credentials {
     width: 100%;
     display: flex;
@@ -121,16 +181,16 @@ export default defineComponent({
 
 @media (min-width: 800px) {
     .credentials {
-        flex-direction: row;
+        // flex-direction: row;
         width: 80%;
     }
 
-    .password {
+    .email {
         margin-top: 2em;
     }
 
     .custom-input {
-        margin: 2em 1em;
+        margin-bottom: 2em;
     }
 }
 

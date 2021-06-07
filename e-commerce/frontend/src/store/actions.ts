@@ -14,6 +14,10 @@ const actions = {
       commit('updateCurrentProduct', response.data);
     });
   },
+
+  logUserRequest({ commit }:any, userData:any) {
+    console.log(userData);
+  },
 };
 
 export default actions;
