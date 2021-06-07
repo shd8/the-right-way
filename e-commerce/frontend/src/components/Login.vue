@@ -85,7 +85,7 @@ export default defineComponent({
           email: this.email,
           password: this.password,
         };
-
+        console.log(userData);
         this.logUserRequest(userData);
         result = true;
       }

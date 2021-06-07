@@ -35,6 +35,7 @@ const mutations = {
 
   logUser(state:any, payload:any) {
     state.token = payload.token;
+    console.log('llega al mutation');
     console.log(payload.user);
   },
 

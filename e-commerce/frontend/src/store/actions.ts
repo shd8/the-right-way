@@ -16,6 +16,12 @@ const actions = {
   },
 
   logUserRequest({ commit }:any, userData:any) {
+    console.log('llega al action');
+    console.log(userData);
+    // const mockedData = {
+    //   email: 'ferlopeta@gmail.com',
+    //   password: 12345,
+    // };
     axios.post(process.env.VUE_APP_AUTH_URL, userData)
       .then((response) => {
         commit('logUser', response.data);
