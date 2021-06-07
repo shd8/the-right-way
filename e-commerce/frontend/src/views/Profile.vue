@@ -1,9 +1,5 @@
 <template>
 
-  <div class="login">
-    <Login />
-  </div>
-
   <div v-if='$store.state.isUserLogged' class="logged">
     <i class="fas fa-user"></i>
     <h2 class="h2Item">Welcome {{currentUser.username}}</h2>
@@ -61,17 +57,23 @@
 
   </div>
 
+  <div
+  v-else
+  class="notLogged">
+    <LoginRegister />
+  </div>
+
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Login from '@/components/Login.vue';
+import LoginRegister from '@/components/LoginRegister.vue';
 import { mapState, mapGetters } from 'vuex';
 
 export default defineComponent({
   name: 'Profile',
   components: {
-    Login,
+    LoginRegister,
   },
   methods: {
     scrollToTop() {
@@ -86,6 +88,11 @@ export default defineComponent({
       'getCartLength',
       'getWishlistLength',
     ]),
+  },
+  data() {
+    return {
+      showRegister: false,
+    };
   },
 });
 </script>
@@ -145,7 +152,7 @@ p {
   width: 80%;
 }
 
-.login {
+.notLogged {
   padding-top: 7em;
 }
 
@@ -154,7 +161,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0em 0em 2em 0em;
+  padding: 7em 0em 2em 0em;
 
   &__user-data {
     width: 80%;
@@ -170,6 +177,15 @@ p {
     align-items: center;
     width: 100%;
   }
+}
+.register-button {
+    background-color: white;
+    border: none;
+    font-size: 1.2em;
+    color: $purple;
+    text-decoration: underline 0.2em;
+    padding-left: 0.5em;
+    cursor: pointer;
 }
 
 @media (min-width: 720px) {

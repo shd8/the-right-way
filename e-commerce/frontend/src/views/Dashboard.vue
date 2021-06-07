@@ -8,7 +8,7 @@
     @toggleModal='toggleModal'
     >
     <div class="modalized-login">
-      <Login />
+      <LoginRegister />
     </div>
     </Modal>
     <img
@@ -26,14 +26,14 @@ import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
 import Modal from '@/components/Modal.vue';
-import Login from '@/components/Login.vue';
+import LoginRegister from '@/components/LoginRegister.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
     CategorySelector,
     Modal,
-    Login,
+    LoginRegister,
   },
   methods: {
     ...mapActions([

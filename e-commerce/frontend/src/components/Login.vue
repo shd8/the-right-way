@@ -1,5 +1,7 @@
 <template>
-    <div v-if="!isUserLogged" class="login-container">
+    <div
+    v-if="!isUserLogged" class="login-container"
+    >
         <i class="fas fa-user"></i>
         <hr class="hrItem">
         <h2 class="h2Item">
@@ -24,17 +26,13 @@
                 class="login-form__login-button"
                 @click="logUser"
                 >Login</button>
-                <p>Not registered yet?
-                    <button class="register-button">
-                        Click here !
-                    </button>
-                </p>
             </span>
         </form>
      </div>
+
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import { defineComponent } from 'vue';
 import { mapState, mapMutations } from 'vuex';
 
@@ -48,8 +46,6 @@ export default defineComponent({
     ]),
   },
   name: 'Login',
-  components: {
-  },
   methods: {
     loginButtonPressed(e:any) {
       e.preventDefault();
@@ -89,15 +85,6 @@ export default defineComponent({
     &__login-button:hover {
         box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
     }
-}
-
-.register-button {
-    background-color: white;
-    border: none;
-    font-size: 1.2em;
-    color: $purple;
-    text-decoration: underline 0.2em;
-    padding-left: 0.5em;
 }
 
 .login-container,
