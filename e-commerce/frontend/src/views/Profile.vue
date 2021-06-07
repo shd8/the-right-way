@@ -1,6 +1,8 @@
 <template>
 
-  <Login />
+  <div class="login">
+    <Login />
+  </div>
 
   <div v-if='$store.state.isUserLogged' class="logged">
     <i class="fas fa-user"></i>
@@ -143,12 +145,16 @@ p {
   width: 80%;
 }
 
+.login {
+  padding-top: 7em;
+}
+
 .logged {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7em 0em 2em 0em;
+  padding: 0em 0em 2em 0em;
 
   &__user-data {
     width: 80%;
