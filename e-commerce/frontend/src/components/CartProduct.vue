@@ -23,7 +23,6 @@
             </router-link>
         </Slide>
         <template #addons>
-        <Navigation id="navigation" />
         <Pagination />
         </template>
     </Carousel>
@@ -35,7 +34,6 @@ import 'vue3-carousel/dist/carousel.css';
 
 import {
   Carousel,
-  Navigation,
   Pagination,
   Slide,
 } from 'vue3-carousel';
@@ -48,7 +46,6 @@ export default defineComponent({
     Carousel,
     Slide,
     Pagination,
-    Navigation,
   },
   methods: {
     scrollToTop() {

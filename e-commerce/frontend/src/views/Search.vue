@@ -36,6 +36,7 @@ export default defineComponent({
   computed: {
     ...mapState([
       'products',
+      'isUserLogged',
     ]),
   },
 
@@ -48,7 +49,6 @@ export default defineComponent({
   mounted() {
     this.fetchProductsFromApi();
   },
-
 });
 </script>
 

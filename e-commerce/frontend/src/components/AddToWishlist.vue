@@ -1,17 +1,20 @@
 <template>
-  <button
-    v-if="isInWishlist(id)"
-    @click="$store.dispatch('retrieveFromUserWishlist', id)">
+
+    <button
+      v-if="isInWishlist(id)"
+      @click="$store.dispatch('retrieveFromUserWishlist', id)"
+      >
         <i class="fas fa-heart"></i>
-  </button>
-  <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
-    <i class="far fa-heart"></i>
-  </button>
+    </button>
+    <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
+      <i class="far fa-heart"></i>
+    </button>
+
 </template>
 
-<script lang="ts">
+<script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapState } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
@@ -25,13 +28,29 @@ export default defineComponent({
     ...mapGetters([
       'isInWishlist',
     ]),
+
+    ...mapState([
+      'isUserLogged',
+    ]),
+  },
+
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+
+    handleToggleModal() {
+      this.toggleModal();
+    },
   },
 
   name: 'AddToWishlist',
   components: {
   },
-  setup() {
-    return {};
+  data() {
+    return {
+      showModal: false,
+    };
   },
 });
 </script>

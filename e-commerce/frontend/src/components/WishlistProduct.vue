@@ -25,7 +25,6 @@
             </router-link>
         </Slide>
         <template #addons>
-        <Navigation id="navigation" />
         <Pagination />
         </template>
     </Carousel>
@@ -38,7 +37,6 @@ import AddToCart from '@/components/AddToCart.vue';
 
 import {
   Carousel,
-  Navigation,
   Pagination,
   Slide,
 } from 'vue3-carousel';
@@ -51,7 +49,6 @@ export default defineComponent({
     Carousel,
     Slide,
     Pagination,
-    Navigation,
     AddToCart,
   },
   methods: {

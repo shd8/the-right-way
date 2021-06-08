@@ -39,6 +39,7 @@ export default defineComponent({
     ...mapActions([
       'fetchProductsFromApi',
     ]),
+
     toggleModal() {
       this.showModal = !this.showModal;
     },
