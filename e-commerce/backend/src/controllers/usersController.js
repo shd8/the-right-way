@@ -56,8 +56,8 @@ function usersController() {
 
   async function updateUser(req, res) {
     try {
-      const updatedUser = await User.findOneAndUpdate(req.user._id,
-        { ...req.body },
+      const updatedUser = await User.findByIdAndUpdate(req.body._id,
+        req.body,
         { new: true });
       return res.json({
         updatedUser,
