@@ -8,7 +8,17 @@
             Fill in all the fields and click on register
         </h2>
         <hr class="hrItem">
-        <form class="login-form" action="" @submit.prevent="loginButtonPressed">
+        <form
+        class="login-form"
+        method="post"
+        @submit.prevent="register"
+        >
+        <p v-if="errors.length">
+            <b>Please, check the following errors:</b>
+            <ul>
+            <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul>
+        </p>
             <span class="login-form__credential credentials">
 
                 <div class="credentials-title">
@@ -21,17 +31,33 @@
 
                 <div class='custom-input'>
                     <i class="fas fa-user fa-user-input"></i>
-                    <input type="text" placeholder="username ..."/>
+                    <input
+                    name="username"
+                    type="username"
+                    placeholder="username ..."
+                    v-model="username"
+                    />
                 </div>
 
                 <div class='custom-input'>
                     <i class="fas fa-at"></i>
-                    <input type="email" placeholder="email ..."/>
+                    <input
+                    name="email"
+                    type="email"
+                    placeholder="email ..."
+                    v-model="email"
+                    />
                 </div>
 
                 <div class='custom-input'>
                     <i class="fas fa-key"></i>
-                    <input autocomplete="pass" type="password" placeholder="password"/>
+                    <input
+                    autocomplete="pass"
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    v-model="password"
+                    />
                 </div>
 
                 <div class="address-title">
@@ -44,41 +70,61 @@
 
                 <div class='custom-input'>
                     <i class="fas fa-globe-europe"></i>
-                    <input type="text" placeholder="country ..."/>
+                    <input
+                    type="text"
+                    placeholder="country ..."
+                    name="country"
+                    v-model="country"
+                    />
                 </div>
 
                 <div class='custom-input'>
                     <i class="fas fa-city"></i>
-                    <input type="text" placeholder="city ..."/>
+                    <input
+                    type="text"
+                    placeholder="city ..."
+                    name="city"
+                    v-model="city"
+                    />
                 </div>
 
                 <div class='custom-input'>
                     <i class="fas fa-road"></i>
-                    <input type="text" placeholder="street ..."/>
+                    <input
+                    type="text"
+                    placeholder="street ..."
+                    name="street"
+                    v-model="street"
+                    />
                 </div>
 
                 <div class='custom-input'>
                     <i class="far fa-envelope"></i>
-                    <input type="text" placeholder="postal code ..."/>
+                    <input
+                    type="text"
+                    placeholder="postal code ..."
+                    name="postalCode"
+                    v-model="postalCode"
+                    />
                 </div>
             </span>
 
             <span>
-                <button
+                <input
                 class="login-form__login-button"
-                @click="logUser">
-                    Register
-                </button>
+                type="submit"
+                value="Register"
+                />
             </span>
         </form>
     </div>
 
 </template>
 
-<script lang="ts" scoped>
+<script lang="ts">
 
 import { defineComponent } from 'vue';
-import { mapState, mapMutations } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'Register',
@@ -87,9 +133,88 @@ export default defineComponent({
     ...mapState([
       'isUserLogged',
     ]),
-    ...mapMutations([
-      'logUser',
+
+    ...mapActions([
+      'registerUserRequest',
     ]),
+  },
+
+  methods: {
+    register(e:any) {
+      e.preventDefault();
+
+      let result;
+
+      if (
+        this.username
+        && this.email
+        && this.password
+        && this.country
+        && this.city
+        && this.street
+        && this.postalCode
+      ) {
+        const userData = {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+          country: this.country,
+          city: this.city,
+          street: this.street,
+          postalCode: this.postalCode,
+        };
+        this.registerUserRequest(userData);
+        result = true;
+      }
+      console.log(
+        this.username,
+        this.email,
+        this.password,
+        this.country,
+        this.city,
+        this.street,
+        this.postalCode,
+      );
+
+      this.errors = [];
+
+      if (!this.username) {
+        this.errors.push('Username is required');
+      }
+      if (!this.email) {
+        this.errors.push('Email is required');
+      }
+      if (!this.password) {
+        this.errors.push('Password is required');
+      }
+      if (!this.country) {
+        this.errors.push('Country is required');
+      }
+      if (!this.city) {
+        this.errors.push('City is required');
+      }
+      if (!this.street) {
+        this.errors.push('Street is required');
+      }
+      if (!this.postalCode) {
+        this.errors.push('Postal code is required');
+      }
+
+      return result;
+    },
+  },
+
+  data():any {
+    return {
+      errors: [],
+      username: null,
+      email: null,
+      password: null,
+      country: null,
+      city: null,
+      street: null,
+      postalCode: null,
+    };
   },
 });
 </script>

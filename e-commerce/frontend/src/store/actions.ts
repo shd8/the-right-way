@@ -23,6 +23,13 @@ const actions = {
       });
   },
 
+  registerUserRequest({ commit }:any, userData:any) {
+    axios.post(process.env.VUE_APP_AUTH_REGISTER_URL, userData);
+    // .then((response) => {
+    //   commit('logUser', response.data);
+    // });
+  },
+
   addToUserWishlist({ commit, state }:any, id:any) {
     commit('addToWishlist', id);
 
