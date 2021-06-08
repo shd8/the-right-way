@@ -34,17 +34,17 @@ const mutations = {
   },
 
   logUser(state:any, payload:any) {
+    state.isUserLogged = true;
     state.token = payload.token;
-    state.currentUser.username = payload.username;
-    state.currentUser.email = payload.email;
-    state.currentUser.password = payload.password;
-    state.currentUser.address.city = payload.city;
-    state.currentUser.address.street = payload.street;
-    state.currentUser.address.postalCOde = payload.postalCode;
-    state.wishlist = payload.wishlist;
-    state.cart = payload.cart;
-
-    console.log(payload.user);
+    state.currentUser.username = payload.user.username;
+    state.currentUser.email = payload.user.email;
+    state.currentUser.password = payload.user.password;
+    state.currentUser.address.country = payload.user.address.country;
+    state.currentUser.address.city = payload.user.address.city;
+    state.currentUser.address.street = payload.user.address.street;
+    state.currentUser.address.postalCode = payload.user.address.postalCode;
+    state.wishlist = payload.user.wishlist;
+    state.cart = payload.user.cart;
   },
 
   logoutUser(state:any) {
