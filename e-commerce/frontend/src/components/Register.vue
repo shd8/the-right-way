@@ -76,7 +76,6 @@
 </template>
 
 <script lang="ts">
-/* eslint-disable no-unused-expressions */
 
 import { defineComponent } from 'vue';
 import { mapState, mapMutations } from 'vuex';
@@ -168,13 +167,6 @@ export default defineComponent({
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-@media (min-width: 800px) {
-    .credentials {
-        // flex-direction: row;
-        // width: 60%;
-    }
 }
 
 </style>

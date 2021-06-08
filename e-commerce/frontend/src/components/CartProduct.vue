@@ -39,7 +39,7 @@ import {
   Pagination,
   Slide,
 } from 'vue3-carousel';
-import { mapMutations, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'WishlistProduct',
@@ -56,9 +56,6 @@ export default defineComponent({
     },
   },
   computed: {
-    ...mapMutations([
-      'retrieveFromCart',
-    ]),
 
     ...mapActions([
       'retrieveFromUserCart',

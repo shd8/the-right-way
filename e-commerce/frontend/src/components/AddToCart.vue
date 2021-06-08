@@ -9,15 +9,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
   computed: {
-    ...mapMutations([
-      'addToCart',
-      'retrieveFromCart',
-    ]),
 
     ...mapActions([
       'addToUserCart',

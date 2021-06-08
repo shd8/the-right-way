@@ -62,7 +62,7 @@
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapState, mapActions, mapMutations } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default defineComponent({
   computed: {

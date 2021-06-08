@@ -11,15 +11,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapMutations, mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
   computed: {
-    ...mapMutations([
-      // 'addToWishlist',
-      // 'retrieveFromWishlist',
-    ]),
 
     ...mapActions([
       'addToUserWishlist',
