@@ -21,7 +21,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(cors());
 
 server.use('/api/auth/', authRoutes);
-server.use('/api/users/', userProtectedRoutes);
+server.use('/api/users/', passport.authenticate('jwt', { session: false }), userProtectedRoutes);
 server.use('/api/products/', productsRoutes);
 
 server.use((err, req, res) => {
