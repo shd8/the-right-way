@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 const mutations = {
@@ -36,6 +37,7 @@ const mutations = {
   logUser(state:any, payload:any) {
     state.isUserLogged = true;
     state.token = payload.token;
+    state.currentUser._id = payload.user._id;
     state.currentUser.username = payload.user.username;
     state.currentUser.email = payload.user.email;
     state.currentUser.password = payload.user.password;

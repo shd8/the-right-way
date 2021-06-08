@@ -13,6 +13,7 @@ export default createStore({
     products: [{ _id: 'hola' }],
     currentProduct: { ratings: [{ rating: 5 }] },
     currentUser: {
+      _id: 0,
       username: 'a',
       email: 'a@a.com',
       password: 'aaa',
@@ -24,7 +25,7 @@ export default createStore({
       },
     },
     isUserLogged: false,
-    token: 0,
+    token: 1,
   },
   getters,
   mutations,

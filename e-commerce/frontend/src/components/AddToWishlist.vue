@@ -4,26 +4,32 @@
     @click="$store.commit('retrieveFromWishlist', id)">
         <i class="fas fa-heart"></i>
   </button>
-  <button v-else @click="$store.commit('addToWishlist', id)">
+  <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
     <i class="far fa-heart"></i>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapMutations, mapGetters } from 'vuex';
+import { mapMutations, mapGetters, mapActions } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
   computed: {
     ...mapMutations([
-      'addToWishlist',
+      // 'addToWishlist',
       'retrieveFromWishlist',
     ]),
+
+    ...mapActions([
+      'addToUserWishlist',
+    ]),
+
     ...mapGetters([
       'isInWishlist',
     ]),
   },
+
   name: 'AddToWishlist',
   components: {
   },
