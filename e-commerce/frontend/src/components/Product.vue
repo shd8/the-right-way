@@ -110,23 +110,26 @@ export default defineComponent({
 
 .modal {
   button {
-    background-color: $light-purple;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3em;
     height: 3em;
     border-style: none;
-    border-radius: 1em 0em 1em 0em;
+    border: 1px solid $purple;
+    border-radius: 50%;
     position: absolute;
     z-index: 2;
-    margin: 5em 0em 0em -6.5em;
+    margin: 3.5em 0em 0em -8em;
 
     &:hover {
-      background-color: $purple;
       cursor: pointer;
     }
   }
 
   i {
-    color: white;
+    color: $purple;
     font-size: 1.5em;
   }
 }
@@ -165,7 +168,7 @@ export default defineComponent({
 .wishlist {
   position: absolute;
   z-index: 1;
-  margin: 5em 10em 0em 0em;
+  margin: 3.8em 14em 0em 0em;
 }
 
 </style>
