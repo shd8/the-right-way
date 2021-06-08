@@ -10,7 +10,7 @@
     </span>
     <button
     class='trash'
-    @click="$store.commit('retrieveFromWishlist', id)">
+    @click="$store.dispatch('retrieveFromUserWishlist', id)">
         <i class="fas fa-trash"></i>
     </button>
     <AddToCart :id='id' class="cart" />
@@ -42,7 +42,7 @@ import {
   Pagination,
   Slide,
 } from 'vue3-carousel';
-import { mapMutations } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default defineComponent({
   name: 'WishlistProduct',
@@ -60,8 +60,8 @@ export default defineComponent({
     },
   },
   computed: {
-    ...mapMutations([
-      'retrieveFromWishlist',
+    ...mapActions([
+      'retrieveFromUserWishlist',
     ]),
   },
 });

@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import axios from 'axios';
@@ -25,32 +26,35 @@ const actions = {
   addToUserWishlist({ commit, state }:any, id:any) {
     commit('addToWishlist', id);
 
-    const config = {
+    const data = {
+      wishlist: state.wishlist,
+      _id: state.currentUser._id,
+    };
+
+    const authorization = {
       headers: {
         Authorization: `Bearer ${state.token}`,
-        body: {
-          wishlist: state.wishlist,
-
-        },
       },
     };
-    console.log(`Config: ${config.headers.Authorization}`);
-    // eslint-disable-next-line no-underscore-dangle
-    console.log();
-    console.log(`User data ${config.headers.body.wishlist}`);
-    // axios.post(process.env.VUE_APP_API_USERS, config);
+
+    axios.post(process.env.VUE_APP_API_USERS, data, authorization);
   },
 
-  updateUserData({ commit, token, state }:any) {
-    const config = {
+  retrieveFromUserWishlist({ commit, state }:any, id:any) {
+    commit('retrieveFromWishlist', id);
+
+    const data = {
+      wishlist: state.wishlist,
+      _id: state.currentUser._id,
+    };
+
+    const authorization = {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${state.token}`,
       },
     };
-    console.log(`Config: ${config}`);
-    console.log(`User data ${state.currentUser}`);
-    console.log(`VUE_APP_API_USERS ${process.env.VUE_APP_API_USERS}`);
-    // axios.post(process.env.VUE_APP_API_USERS, userData);
+
+    axios.post(process.env.VUE_APP_API_USERS, data, authorization);
   },
 
 };

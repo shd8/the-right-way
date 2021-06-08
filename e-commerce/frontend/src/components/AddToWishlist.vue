@@ -1,7 +1,7 @@
 <template>
   <button
     v-if="isInWishlist(id)"
-    @click="$store.commit('retrieveFromWishlist', id)">
+    @click="$store.dispatch('retrieveFromUserWishlist', id)">
         <i class="fas fa-heart"></i>
   </button>
   <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
@@ -18,11 +18,12 @@ export default defineComponent({
   computed: {
     ...mapMutations([
       // 'addToWishlist',
-      'retrieveFromWishlist',
+      // 'retrieveFromWishlist',
     ]),
 
     ...mapActions([
       'addToUserWishlist',
+      'retrieveFromUserWishlist',
     ]),
 
     ...mapGetters([
