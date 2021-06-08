@@ -55,7 +55,6 @@ function usersController() {
   }
 
   async function updateUser(req, res) {
-    console.log(req.body);
     try {
       const updatedUser = await User.findOneAndUpdate(req.user._id,
         { ...req.body },
