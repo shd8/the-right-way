@@ -35,6 +35,15 @@ const mutations = {
 
   logUser(state:any, payload:any) {
     state.token = payload.token;
+    state.currentUser.username = payload.username;
+    state.currentUser.email = payload.email;
+    state.currentUser.password = payload.password;
+    state.currentUser.address.city = payload.city;
+    state.currentUser.address.street = payload.street;
+    state.currentUser.address.postalCOde = payload.postalCode;
+    state.wishlist = payload.wishlist;
+    state.cart = payload.cart;
+
     console.log(payload.user);
   },
 
