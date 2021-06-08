@@ -57,6 +57,40 @@ const actions = {
     axios.post(process.env.VUE_APP_API_USERS, data, authorization);
   },
 
+  addToUserCart({ commit, state }:any, id:any) {
+    commit('addToCart', id);
+
+    const data = {
+      cart: state.cart,
+      _id: state.currentUser._id,
+    };
+
+    const authorization = {
+      headers: {
+        Authorization: `Bearer ${state.token}`,
+      },
+    };
+
+    axios.post(process.env.VUE_APP_API_USERS, data, authorization);
+  },
+
+  retrieveFromUserCart({ commit, state }:any, id:any) {
+    commit('retrieveFromCart', id);
+
+    const data = {
+      cart: state.cart,
+      _id: state.currentUser._id,
+    };
+
+    const authorization = {
+      headers: {
+        Authorization: `Bearer ${state.token}`,
+      },
+    };
+
+    axios.post(process.env.VUE_APP_API_USERS, data, authorization);
+  },
+
 };
 
 export default actions;

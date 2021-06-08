@@ -1,15 +1,15 @@
 <template>
-  <button v-if="isInCart(id)" @click="$store.commit('retrieveFromCart', id)" >
+  <button v-if="isInCart(id)" @click="$store.dispatch('retrieveFromUserCart', id)" >
     <i class="fas fa-shopping-cart in-cart"></i>
   </button>
-  <button  v-else @click="$store.commit('addToCart', id)">
+  <button  v-else @click="$store.dispatch('addToUserCart', id)">
     <i class="fas fa-shopping-cart"></i>
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default defineComponent({
   props: ['id'],
@@ -18,6 +18,12 @@ export default defineComponent({
       'addToCart',
       'retrieveFromCart',
     ]),
+
+    ...mapActions([
+      'addToUserCart',
+      'retrieveFromUserCart',
+    ]),
+
     ...mapGetters([
       'isInCart',
     ]),
