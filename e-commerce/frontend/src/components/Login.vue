@@ -85,7 +85,6 @@ export default defineComponent({
           email: this.email,
           password: this.password,
         };
-
         this.logUserRequest(userData);
         result = true;
       }
