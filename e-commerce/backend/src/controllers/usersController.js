@@ -55,6 +55,7 @@ function usersController() {
   }
 
   async function updateUser(req, res) {
+    console.log(req.body);
     try {
       const updatedUser = await User.findOneAndUpdate(req.user._id,
         { ...req.body },
@@ -67,8 +68,23 @@ function usersController() {
     }
   }
 
+  async function updateUserById(req, res) {
+    const { userId } = req.params;
+
+    try {
+      const updatedUser = await User.findByIdAndUpdate(userId,
+        { ...req.body },
+        { new: true });
+      return res.json({
+        updatedUser,
+      });
+    } catch (error) {
+      return res.status(404);
+    }
+  }
+
   return {
-    getAll, getUserById, addUser, deleteUserById, updateUser,
+    getAll, getUserById, addUser, deleteUserById, updateUser, updateUserById,
   };
 }
 module.exports = usersController;

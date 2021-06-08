@@ -11,6 +11,7 @@ routes
 
 routes
   .route('/:userId/')
-  .get(userController.getUserById);
+  .get(userController.getUserById)
+  .post(userController.updateUserById);
 
 module.exports = routes;
