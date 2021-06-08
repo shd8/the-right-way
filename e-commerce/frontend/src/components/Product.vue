@@ -1,8 +1,22 @@
 <template>
 
-  <div v-if='!isUserLogged' class="modal">
+  <div v-if='!isUserLogged' class="modal-heart">
     <button @click='handleToggleModal'>
       <i class="far fa-heart"></i>
+    </button>
+      <Modal
+      :isModalOpen="showModal"
+      @toggleModal='toggleModal'
+      >
+        <div class="modalized-login">
+          <LoginRegister />
+        </div>
+      </Modal>
+  </div>
+
+  <div v-if='!isUserLogged' class="modal-cart">
+    <button @click='handleToggleModal'>
+      <i class="fas fa-dollar-sign"></i>
     </button>
       <Modal
       :isModalOpen="showModal"
@@ -25,7 +39,7 @@
       <li class="product-price">$ {{price}}</li>
   </div>
   <AddToWishlist :id='id' class="wishlist" v-if='isUserLogged'/>
-  <AddToCart :id='id' class="cart" />
+  <AddToCart :id='id' class="cart" v-if="isUserLogged"/>
   <Carousel>
       <Slide v-for="slide in images" :key="slide">
           <router-link
@@ -108,7 +122,7 @@ export default defineComponent({
     text-align: center;
 }
 
-.modal {
+.modal-cart {
   button {
     background-color: white;
     display: flex;
@@ -122,6 +136,32 @@ export default defineComponent({
     position: absolute;
     z-index: 2;
     margin: 3.5em 0em 0em -8em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  i {
+    color: $purple;
+    font-size: 1.5em;
+  }
+}
+
+.modal-heart {
+  button {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3em;
+    height: 3em;
+    border-style: none;
+    border: 1px solid $purple;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    margin: 20.5em 0em 0em 5em;
 
     &:hover {
       cursor: pointer;
@@ -162,13 +202,13 @@ export default defineComponent({
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 18.5em 0em 0em 10em;
+  margin: 3.5em 13.5em 0em 0em;
 }
 
 .wishlist {
   position: absolute;
   z-index: 1;
-  margin: 3.8em 14em 0em 0em;
+  margin: 20em 0em 0em 14em;
 }
 
 </style>

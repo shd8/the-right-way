@@ -5,7 +5,7 @@
         :to="{ name: 'Detail', params: { id: id } }"
         @click="scrollToTop"
         >
-            <li class="product-name">{{name}}</li>
+          <li class="product-name">{{name}}</li>
         </router-link>
     </span>
     <button
@@ -69,20 +69,20 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 button {
-  background-color: $light-purple;
+  background-color: white;
   width: 3em;
   height: 3em;
   border-style: none;
-  border-radius: 0em 1em 0em 1em;
+  border-radius: 50%;
+  border: 1px solid $purple;
 
   &:hover {
-    background-color: $purple;
     cursor: pointer;
   }
 }
 
 i {
-  color: white;
+  color: $purple;
   font-size: 1.5em;
 }
 
@@ -106,13 +106,13 @@ i {
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 17.3em 10.5em 0em 0em;
+  margin: 2em 13.5em 0em 0em;
 }
 
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 3.2em 0em 0em 10.5em;
+  margin: 19em 0em 0em 14em;
 }
 
 </style>

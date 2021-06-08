@@ -69,8 +69,8 @@ button {
   border: 1px solid $purple;
   border-radius: 50%;
   position: absolute;
-  z-index: 1;
-  margin: 3.5em 14em 0em 0em;
+  z-index: 2;
+  margin: 20.5em 0em 0em 5em;
 
   &:hover {
     cursor: pointer;

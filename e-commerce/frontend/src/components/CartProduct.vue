@@ -1,12 +1,12 @@
 <template>
     <span class="products__data">
-        <router-link
-        class="link"
-        :to="{ name: 'Detail', params: { id: id } }"
-        @click="scrollToTop"
-        >
-            <li class="product-name">{{name}}</li>
-        </router-link>
+      <router-link
+      class="link"
+      :to="{ name: 'Detail', params: { id: id } }"
+      @click="scrollToTop"
+      >
+        <li class="product-name">{{name}}</li>
+      </router-link>
     </span>
     <button
     class='trash'
@@ -19,7 +19,7 @@
             :to="{ name: 'Detail', params: { id: id } }"
             @click="scrollToTop"
             >
-                <img class="carousel__item" :src='slide' alt="" srcset="">
+              <img class="carousel__item" :src='slide' alt="" srcset="">
             </router-link>
         </Slide>
         <template #addons>
@@ -66,20 +66,20 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 button {
-  background-color: $light-purple;
+  background-color: white;
   width: 3em;
   height: 3em;
   border-style: none;
-  border-radius: 0em 1em 0em 1em;
+  border-radius: 50%;
+  border: 1px solid $purple;
 
   &:hover {
-    background-color: $purple;
     cursor: pointer;
   }
 }
 
 i {
-  color: white;
+  color: $purple;
   font-size: 1.5em;
 }
 
@@ -103,7 +103,7 @@ i {
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 3.2em 0em 0em 10.5em;
+  margin: 2em 14em 0em 0em;
 }
 
 </style>

@@ -1,16 +1,5 @@
 <template>
   <div class="dashboard">
-    <button @click='handleToggleModal'>
-      modaliza
-    </button>
-    <Modal
-    :isModalOpen="showModal"
-    @toggleModal='toggleModal'
-    >
-    <div class="modalized-login">
-      <LoginRegister />
-    </div>
-    </Modal>
     <img
     src="../images/logo.svg"
     alt="logo"
@@ -25,15 +14,11 @@
 import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
-import Modal from '@/components/Modal.vue';
-import LoginRegister from '@/components/LoginRegister.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
     CategorySelector,
-    Modal,
-    LoginRegister,
   },
   methods: {
     ...mapActions([
@@ -80,14 +65,6 @@ export default defineComponent({
   .logo:hover {
     box-shadow: none;
   }
-}
-
-.modalized-login {
-  background-color: white;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 </style>
