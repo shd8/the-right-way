@@ -4,7 +4,6 @@
             <div v-show="isModalOpen">
                 <slot name="header">
                     <div class="modal__header p-6 pt-4 pb-4">
-                        <h4 class="modal__header-title m-0" v-text="title" />
                         <button
                             class="modal__header-button"
                             icon="menu-close"
