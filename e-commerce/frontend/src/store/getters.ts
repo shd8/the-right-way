@@ -1,32 +1,35 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+  State, User, Product, Rating,
+} from '@/types/interfaces';
+
 const getters = {
 
   getProductsByCategory:
-  (state:any) => (category: any) => state.products
-    .filter((product:any) => product.category?.toLowerCase() === category.toLowerCase()),
+  (state:State) => (category: string): Array<Product> => state.products
+    .filter((product) => product.category?.toLowerCase() === category.toLowerCase()),
 
-  getWishlistLength(state:any) {
+  getWishlistLength(state:State): number {
     return state.wishlist.length;
   },
 
-  getCartLength(state:any) {
+  getCartLength(state:State): number {
     return state.cart.length;
   },
 
-  getCartPrice(state:any) {
+  getCartPrice(state:State): number {
     return state.cart
-      .map((cartId:string) => state.products.find((product:any) => product._id === cartId))
-      .map((product:any) => product.price)
+      .map((cartId: string) => state.products.find((product: Product) => product._id === cartId))
+      .map((product: any) => product.price)
       .reduce((a:number, b:number) => a + b)
       .toFixed(2);
   },
 
-  getCurrentProductRate(state:any) {
-    const ratingNumbers:any = [];
-    state.currentProduct.ratings.forEach((rate:any) => { ratingNumbers.push(rate.rating); });
-    return (ratingNumbers.reduce((a:any, b:any) => a + b) / ratingNumbers.length).toFixed(2);
+  getCurrentProductRate(state:State): string {
+    return (state.currentProduct.ratings
+      .map((rate: Rating) => rate.rating)
+      .reduce((a:number, b:number) => a + b, 0) / state.currentProduct.ratings.length)
+      .toFixed(2);
   },
 
   getProductById:
