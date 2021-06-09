@@ -76,10 +76,9 @@ export default defineComponent({
 }
 
 .search {
-    padding-top: 7em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 </style>

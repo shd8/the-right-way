@@ -1,7 +1,13 @@
 <template>
     <div class="header">
-        <nav class="nav">
-            <div class="nav__buttons">
+        <nav
+        class="nav"
+        :class="{'right-nav': rightMode}"
+        >
+            <div
+            class="nav__buttons"
+            :class="{'right-mode-buttons': rightMode}"
+            >
                 <router-link to="/cart" @click="scrollToTop">
                     <i class="fas fa-shopping-cart">
                         <p class="cart-number">{{getCartLength}}</p>
@@ -16,7 +22,12 @@
                     <i class="far fa-user"></i>
                 </router-link>
             </div>
-            <router-link class="nav__logo" to="/" @click="scrollToTop">
+            <router-link
+            class="nav__logo"
+            to="/"
+            @click="scrollToTop"
+            :class="{'right-mode-logo': rightMode}"
+            >
                 <img class="peace-logo" src="../images/peace.svg" alt="" srcset="">
             </router-link>
         </nav>
@@ -31,13 +42,17 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default defineComponent({
   computed: {
     ...mapGetters([
       'getCartLength',
       'getWishlistLength',
+    ]),
+
+    ...mapState([
+      'rightMode',
     ]),
   },
   methods: {
@@ -77,6 +92,19 @@ export default defineComponent({
     &__logo {
         display: flex;
     }
+}
+
+.right-nav {
+    flex-direction: row-reverse;
+}
+
+.right-mode-buttons {
+    padding-right: 1em;
+    flex-direction: row-reverse;
+}
+
+.right-mode-logo {
+    padding-left: 1em;
 }
 
 .fa-shopping-cart,

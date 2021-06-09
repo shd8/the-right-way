@@ -1,15 +1,19 @@
 <template>
   <Header />
+  <SwitchToRight class="switch-right-toggle" />
+
   <router-view class="view"/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import SwitchToRight from '@/components/SwitchToRight.vue';
 import Header from './components/Header.vue';
 
 export default defineComponent({
   components: {
     Header,
+    SwitchToRight,
   },
 
 });
@@ -28,7 +32,9 @@ export default defineComponent({
   font-family: 'Roboto Slab', serif;
 }
 
-.view {
-  padding-top: 7em;
+.switch-right-toggle {
+  padding-top: 8em;
+  margin: 0em 1em;
 }
+
 </style>

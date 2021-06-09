@@ -48,12 +48,17 @@ export default {
 <style lang="scss" scoped>
 
 .right-toggle {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .right {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.fa-hand-paper {
+  padding: 0em 1em;
 }
 
 </style>

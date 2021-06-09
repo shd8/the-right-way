@@ -166,7 +166,6 @@ p {
 }
 
 .notLogged {
-  padding-top: 7em;
   display: flex;
   flex-direction: column;
   align-items: center;
