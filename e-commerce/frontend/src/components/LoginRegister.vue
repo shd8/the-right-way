@@ -16,7 +16,7 @@
   </div>
 
   <div
-  class="register"
+  class='register'
   v-show="showRegister"
   >
     <Register />
@@ -86,23 +86,24 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2em 0em;
+}
+
+.register--displayed {
+  display: none;
+}
+
+.register {
+  padding-bottom: 7em;
 }
 
 @media (min-width: 800px) {
-    .register {
-      display: flex;
-      flex-direction: column;
-        // flex-direction: row;
-        width: 80%;
-    }
 
-    // .email {
-    //     margin-top: 2em;
-    // }
-
-    // .custom-input {
-    //     margin-bottom: 2em;
-    // }
+  .register {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
 }
 
 </style >
