@@ -91,14 +91,17 @@ export default defineComponent({
     ...mapState([
       'currentUser',
     ]),
+
     ...mapGetters([
       'getCartLength',
       'getWishlistLength',
     ]),
+
     ...mapMutations([
       'logoutUser',
     ]),
   },
+
   data() {
     return {
       showRegister: false,

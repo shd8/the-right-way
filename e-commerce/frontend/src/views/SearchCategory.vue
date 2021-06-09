@@ -40,6 +40,7 @@ export default defineComponent({
       'getProductsByCategory',
     ]),
   },
+
   methods: {
     ...mapActions([
       'fetchProductsFromApi',

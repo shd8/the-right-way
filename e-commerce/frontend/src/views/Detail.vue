@@ -65,6 +65,7 @@ export default defineComponent({
     ...mapGetters([
       'getCurrentProductRate',
     ]),
+
     ...mapState([
       'currentProduct',
     ]),
@@ -77,10 +78,6 @@ export default defineComponent({
 
   mounted() {
     this.fetchProductFromApi(this.id);
-  },
-
-  setup() {
-    return {};
   },
 });
 </script>

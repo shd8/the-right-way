@@ -49,6 +49,7 @@ export default defineComponent({
       'getProductById',
       'getCartPrice',
     ]),
+
     ...mapState([
       'cart',
     ]),

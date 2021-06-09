@@ -44,9 +44,11 @@ export default defineComponent({
     ...mapGetters([
       'getProductById',
     ]),
+
     ...mapState([
       'wishlist',
     ]),
+
   },
 });
 </script>
