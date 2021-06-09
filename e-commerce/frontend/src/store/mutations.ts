@@ -52,6 +52,11 @@ const mutations = {
   logoutUser(state:State): void {
     state.isUserLogged = false;
   },
+
+  changeRightMode(state: State): void {
+    state.rightMode = !state.rightMode;
+  },
+
 };
 
 export default mutations;

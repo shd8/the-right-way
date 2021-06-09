@@ -57,6 +57,7 @@ interface State {
     },
     isUserLogged: boolean,
     token: string,
+    rightMode: boolean,
   }
 
 export {

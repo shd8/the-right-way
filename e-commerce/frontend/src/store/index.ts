@@ -33,6 +33,7 @@ export default createStore({
     },
     isUserLogged: false,
     token: '',
+    rightMode: false,
   },
   getters,
   mutations,
