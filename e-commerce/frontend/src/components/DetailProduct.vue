@@ -1,6 +1,6 @@
 <template>
 
-  <div v-if='!isUserLogged' class="modal-heart">
+  <div v-if='!isUserLogged'  :class="['modal-heart', displayModalClass]">
     <button @click='handleToggleModal'>
       <i class="far fa-heart"></i>
     </button>
@@ -14,7 +14,7 @@
       </Modal>
   </div>
 
-  <div v-if='!isUserLogged' class="modal-dollar">
+  <div v-if='!isUserLogged' :class="['modal-dollar', displayModalClass]">
     <button @click='handleToggleModal'>
       <i class="fas fa-dollar-sign"></i>
     </button>
@@ -81,6 +81,10 @@ export default defineComponent({
     ...mapState([
       'isUserLogged',
     ]),
+
+    displayModalClass():any {
+      return this.showModal ? 'modal-icon--displayed' : '';
+    },
   },
 
   methods: {
@@ -147,7 +151,6 @@ i {
 }
 
 .cart {
-  position: absolute;
   margin: 8.5em 14em 0em 0em;
 }
 
@@ -158,16 +161,27 @@ i {
 .modal-heart,
 .modal-dollar {
   position: absolute;
+  z-index: 1;
 }
 
 .modal-dollar {
   margin: 7em 11em 0em 0em;
-  z-index: 1;
 }
 
 .modal-heart {
   margin: 21em 0em 0em 11em;
-  z-index: 1;
+}
+
+.modal-icon--displayed {
+  z-index: 100;
+}
+
+.modal--displayed {
+  padding-top: 5em;
+
+  .modal-dollar {
+    z-index: 100;
+  }
 }
 
 @media (min-width: 600px) {
@@ -213,10 +227,6 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.modal--displayed {
-  padding-top: 5em;
 }
 
 </style>
