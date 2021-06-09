@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import axios from 'axios';
 
@@ -10,7 +9,7 @@ const actions = {
     });
   },
 
-  fetchProductFromApi({ commit }:any, id:any) {
+  fetchProductFromApi({ commit }:any, id:string) {
     axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
       commit('updateCurrentProduct', response.data);
     });

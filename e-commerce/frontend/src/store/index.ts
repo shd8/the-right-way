@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-underscore-dangle */
 import { createStore } from 'vuex';
 import getters from '@/store/getters';
@@ -10,22 +9,30 @@ export default createStore({
     wishlist: [],
     cart: [],
     count: 0,
-    products: [{ _id: 'hola' }],
-    currentProduct: { ratings: [{ rating: 5 }] },
+    products: [],
+    currentProduct: {
+      _id: '',
+      name: '',
+      category: '',
+      price: 0,
+      stock: 0,
+      images: [],
+      ratings: [],
+    },
     currentUser: {
-      _id: 0,
-      username: 'a',
-      email: 'a@a.com',
-      password: 'aaa',
+      _id: '',
+      username: '',
+      email: '',
+      password: '',
       address: {
-        country: 'aaa',
-        city: 'aaa',
-        street: 'aaa',
-        postalCode: 'aaa',
+        country: '',
+        city: '',
+        street: '',
+        postalCode: '',
       },
     },
     isUserLogged: false,
-    token: 1,
+    token: '',
   },
   getters,
   mutations,

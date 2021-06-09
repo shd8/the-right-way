@@ -1,40 +1,40 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { Product, UserFromApi, State } from '@/types/interfaces';
+
 const mutations = {
-  increaseOne(state:any) {
+  increaseOne(state:State): void {
     state.count += 1;
   },
 
-  decreaseOne(state:any) {
+  decreaseOne(state:State): void {
     state.count -= 1;
   },
 
-  updateProducts(state: any, payload:any) {
+  updateProducts(state: State, payload: Array<Product>): void {
     state.products = [...payload];
   },
 
-  updateCurrentProduct(state:any, payload:any) {
+  updateCurrentProduct(state:State, payload: Product): void {
     state.currentProduct = payload;
   },
 
-  addToWishlist(state:any, payload:any) {
+  addToWishlist(state:State, payload:string): void {
     state.wishlist.push(payload);
   },
 
-  retrieveFromWishlist(state:any, payload:any) {
-    state.wishlist = state.wishlist.filter((productId:any) => productId !== payload);
+  retrieveFromWishlist(state:State, payload:string): void {
+    state.wishlist = state.wishlist.filter((productId:string) => productId !== payload);
   },
 
-  addToCart(state:any, payload:any) {
+  addToCart(state:State, payload:string): void {
     state.cart.push(payload);
   },
 
-  retrieveFromCart(state:any, payload:any) {
-    state.cart = state.cart.filter((productId:any) => productId !== payload);
+  retrieveFromCart(state:State, payload:string): void {
+    state.cart = state.cart.filter((productId:string) => productId !== payload);
   },
 
-  logUser(state:any, payload:any) {
+  logUser(state:State, payload: UserFromApi): void {
     state.isUserLogged = true;
     state.token = payload.token;
     state.currentUser._id = payload.user._id;
@@ -49,7 +49,7 @@ const mutations = {
     state.cart = payload.user.cart;
   },
 
-  logoutUser(state:any) {
+  logoutUser(state:State): void {
     state.isUserLogged = false;
   },
 };
