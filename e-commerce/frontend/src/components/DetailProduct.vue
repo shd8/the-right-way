@@ -14,7 +14,7 @@
       </Modal>
   </div>
 
-  <div v-if='!isUserLogged' class="modal-cart">
+  <div v-if='!isUserLogged' class="modal-dollar">
     <button @click='handleToggleModal'>
       <i class="fas fa-dollar-sign"></i>
     </button>
@@ -36,6 +36,7 @@
         <img class="carousel__item" :src='slide' alt="" srcset="">
       </Slide>
       <template #addons>
+      <Navigation />
       <Pagination />
       </template>
   </Carousel>
@@ -54,6 +55,7 @@ import {
   Carousel,
   Pagination,
   Slide,
+  Navigation,
 } from 'vue3-carousel';
 import { mapActions, mapState } from 'vuex';
 
@@ -65,6 +67,7 @@ export default defineComponent({
     Slide,
     Pagination,
     Modal,
+    Navigation,
     LoginRegister,
     AddToWishlist,
     AddToCart,
@@ -143,14 +146,45 @@ i {
   @include carouselItem;
 }
 
-.wishlist {
+.cart {
   position: absolute;
-  margin: 2em 13.5em 0em 0em;
+  margin: 8.5em 14em 0em 0em;
+}
+
+.wishlist {
+  margin: 25.5em 0em 0em 14em;
+}
+
+.modal-heart,
+.modal-dollar {
+  position: absolute;
+}
+
+.modal-dollar {
+  margin: 7em 11em 0em 0em;
+  z-index: 1;
+}
+
+.modal-heart {
+  margin: 21em 0em 0em 11em;
+  z-index: 1;
 }
 
 @media (min-width: 600px) {
-    .carousel {
+  .carousel {
       max-width: 34em;
+  }
+
+  .cart {
+    margin: 6.5em 30em 0em 0em;
+  }
+
+  .wishlist {
+    margin: 29em 0em 0em 31em;
+  }
+
+  button {
+    font-size: 1.1em;
   }
 
   .carousel__item {
@@ -161,6 +195,28 @@ i {
   .add-to-wishlist {
     margin: 10em 36em 0em 0em;
   }
+
+  .modal-dollar {
+    margin: 7em 33.5em 0em 0em;
+    z-index: 100;
+  }
+
+  .modal-heart {
+    margin: 32em 0em 0em 33em;
+    z-index: 100;
+  }
+}
+
+.modalized-login {
+  background-color: white;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal--displayed {
+  padding-top: 5em;
 }
 
 </style>
