@@ -73,27 +73,7 @@ import { mapState } from 'vuex';
 
 export default defineComponent({
   name: 'Product',
-  props: {
-    id: {
-      type: String,
-      default: '',
-    },
-    name: {
-      type: String,
-      default: '',
-    },
-    price: {
-      type: Number,
-      default: 0,
-    },
-
-    images: {
-      type: Array,
-      default: () => [],
-    },
-  },
-
-  // ['id', 'name', 'price', 'images'],
+  props: ['id', 'name', 'price', 'images'],
   components: {
     Carousel,
     Slide,

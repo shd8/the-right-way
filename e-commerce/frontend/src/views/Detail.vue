@@ -2,16 +2,15 @@
   <div class='details'>
     <h2 class="h2Item">{{currentProduct.name}}</h2>
     <hr class="hrItem">
-    <AddToWishlist :id='id' class="add-to-wishlist"/>
-    <Carousel>
-        <Slide v-for="slide in currentProduct.images" :key="slide">
-            <img class="carousel__item" :src='slide' alt="" srcset="">
-        </Slide>
-        <template #addons>
-        <Navigation />
-        <Pagination />
-        </template>
-    </Carousel>
+
+    <DetailProduct
+    v-if="getProductById(id)"
+    :id='getProductById(id)._id'
+    :name='getProductById(id).name'
+    :price='getProductById(id).price'
+    :images='getProductById(id).images'
+    />
+
     <p class="details__price">$ {{currentProduct.price}}</p>
     <hr class="hrItem">
     <span class="details__rate">
@@ -40,30 +39,21 @@ import {
 } from 'vuex';
 import 'vue3-carousel/dist/carousel.css';
 
-import {
-  Carousel,
-  Navigation,
-  Pagination,
-  Slide,
-} from 'vue3-carousel';
-
-import AddToWishlist from '@/components/AddToWishlist.vue';
+import DetailProduct from '@/components/DetailProduct.vue';
 import Comment from '../components/Comment.vue';
 
 export default defineComponent({
   name: 'Detail',
   props: ['id'],
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
     Comment,
-    AddToWishlist,
+    DetailProduct,
   },
   computed: {
     ...mapGetters([
       'getCurrentProductRate',
+      'getProductById',
+
     ]),
 
     ...mapState([
@@ -79,6 +69,7 @@ export default defineComponent({
   mounted() {
     this.fetchProductFromApi(this.id);
   },
+
 });
 </script>
 
