@@ -3,18 +3,19 @@
     class="right-toggle"
     :class="{'right-mode-toggle': rightMode}"
     >
-        <p>Right mode</p>
-        <i
-        class="far fa-hand-paper"
-        :class="['', rightClass]"
-        ></i>
+      <p v-show="rightMode">Right mode</p>
+      <p v-show="!rightMode">Lefty mode</p>
+      <i
+      class="far fa-hand-paper"
+      :class="['', rightClass]"
+      ></i>
 
-        <div>
-            <Toggle
-            v-model="value"
-            @change="$store.commit('changeRightMode')"
-            />
-        </div>
+      <div>
+          <Toggle
+          v-model="value"
+          @change="$store.commit('changeRightMode')"
+          />
+      </div>
     </div>
 
 </template>
