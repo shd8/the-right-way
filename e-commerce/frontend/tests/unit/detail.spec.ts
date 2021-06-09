@@ -5,8 +5,9 @@ test('displays message', async () => {
   const wrapper = mount(Detail, {
     global: {
       mocks: {
-
-        isInWishlist: true,
+        methods: {
+          handleToggleModal: jest.fn(),
+        },
         $store: {
           state: {
             currentProduct: {
@@ -35,6 +36,10 @@ test('displays message', async () => {
       id: 2,
     },
   });
+
+  const isInWishlist = jest.fn();
+
+  isInWishlist.mockResolvedValue(() => true);
 
   // Assert the rendered text of the component
   await expect(wrapper.text()).toContain('We have 1 in stock!');
