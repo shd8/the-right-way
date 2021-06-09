@@ -78,7 +78,6 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 .details {
-  padding-top: 7em;
   display: flex;
   flex-direction: column;
   align-items: center;

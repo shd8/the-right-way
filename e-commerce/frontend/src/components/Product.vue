@@ -1,6 +1,10 @@
 <template>
 
-  <div v-if='!isUserLogged' class="modal-heart">
+  <div
+  v-if='!isUserLogged'
+  class="modal-heart"
+  :class="{'modal-heart-right-mode': rightMode}"
+  >
     <button @click='handleToggleModal'>
       <i class="far fa-heart"></i>
     </button>
@@ -14,7 +18,11 @@
       </Modal>
   </div>
 
-  <div v-if='!isUserLogged' class="modal-cart">
+  <div
+  v-if='!isUserLogged'
+  class="modal-cart"
+  :class="{'modal-cart-right-mode': rightMode}"
+  >
     <button @click='handleToggleModal'>
       <i class="fas fa-dollar-sign"></i>
     </button>
@@ -38,8 +46,18 @@
       </router-link>
       <li class="product-price">$ {{price}}</li>
   </div>
-  <AddToWishlist :id='id' class="wishlist" v-if='isUserLogged'/>
-  <AddToCart :id='id' class="cart" v-if="isUserLogged"/>
+  <AddToWishlist
+  :id='id'
+  class="wishlist"
+  v-if='isUserLogged'
+  :class="{'right-mode-wishlist': rightMode}"
+  />
+  <AddToCart
+  :id='id'
+  class="cart"
+  v-if="isUserLogged"
+  :class="{'right-mode-cart': rightMode}"
+  />
   <Carousel>
       <Slide v-for="slide in images" :key="slide">
           <router-link
@@ -47,7 +65,7 @@
           :to="{ name: 'Detail', params: { id: id } }"
           @click="scrollToTop"
           >
-              <img class="carousel__item" :src='slide' alt="" srcset="">
+            <img class="carousel__item" :src='slide' alt="" srcset="">
           </router-link>
       </Slide>
       <template #addons>
@@ -87,6 +105,7 @@ export default defineComponent({
   computed: {
     ...mapState([
       'isUserLogged',
+      'rightMode',
     ]),
   },
 
@@ -174,6 +193,18 @@ export default defineComponent({
   }
 }
 
+.modal-heart-right-mode {
+  button {
+    margin: 20.5em 0em 0em -8.5em;
+  }
+}
+
+.modal-cart-right-mode {
+  button {
+    margin: 3.5em 0em 0em 5.5em;
+  }
+}
+
 .modalized-login {
   background-color: white;
   border-radius: 1em;
@@ -209,6 +240,15 @@ export default defineComponent({
   position: absolute;
   z-index: 1;
   margin: 20em 0em 0em 14em;
+}
+
+.right-mode-cart {
+  margin: 3.5em 0em 0em 13.5em;
+}
+
+.right-mode-wishlist {
+
+  margin: 20em 14em 0em 0em;
 }
 
 </style>
