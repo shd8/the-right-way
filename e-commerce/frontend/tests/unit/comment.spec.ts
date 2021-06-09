@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import Comment from '@/components/Comment.vue';
 // import router from '@/router/index';
 
-test('displays message', () => {
+test('displays message', async () => {
   const wrapper = mount(Comment, {
     props: {
       user: 'admin',
@@ -12,5 +12,5 @@ test('displays message', () => {
   });
 
   // Assert the rendered text of the component
-  expect(wrapper.text()).toContain('admin5sudo');
+  await expect(wrapper.text()).toContain('admin5sudo');
 });

@@ -1,10 +1,12 @@
 import { mount } from '@vue/test-utils';
 import Detail from '@/views/Detail.vue';
 
-test('displays message', () => {
+test('displays message', async () => {
   const wrapper = mount(Detail, {
     global: {
       mocks: {
+
+        isInWishlist: true,
         $store: {
           state: {
             currentProduct: {
@@ -21,6 +23,7 @@ test('displays message', () => {
           },
           getters: {
             getCurrentProductRate: 5,
+            isInWishlist: true,
           },
           actions: {
             fetchProductsFromApi: {},
@@ -34,5 +37,5 @@ test('displays message', () => {
   });
 
   // Assert the rendered text of the component
-  expect(wrapper.text()).toContain('We have 1 in stock!');
+  await expect(wrapper.text()).toContain('We have 1 in stock!');
 });

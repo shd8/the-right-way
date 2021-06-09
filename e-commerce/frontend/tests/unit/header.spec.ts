@@ -1,10 +1,11 @@
 import { mount } from '@vue/test-utils';
 import Header from '@/components/Header.vue';
-// import router from '@/router/index';
+import router from '@/router/index';
 
 test('displays message', () => {
   const wrapper = mount(Header, {
     global: {
+      plugins: [router],
       mocks: {
         $store: {
           getters: {

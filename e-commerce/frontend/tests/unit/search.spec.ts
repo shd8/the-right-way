@@ -1,9 +1,11 @@
 import { mount } from '@vue/test-utils';
 import Search from '@/views/Search.vue';
+import router from '@/router/index';
 
-test('displays message', () => {
+test('displays message', async () => {
   const wrapper = mount(Search, {
     global: {
+      plugins: [router],
       mocks: {
         $store: {
           disptach: jest.fn(),
@@ -21,8 +23,14 @@ test('displays message', () => {
             isInWishlist: true,
           },
           actions: {
-            fetchProductsFromApi: {},
+            fetchProductsFromApi: jest.fn(),
           },
+        },
+        methods: {
+          mapActions: jest.fn(),
+        },
+        mounted: {
+          fetchProductsFromApi: jest.fn(),
         },
       },
     },
@@ -32,5 +40,5 @@ test('displays message', () => {
   });
 
   // Assert the rendered text of the component
-  expect(wrapper.text()).toContain('We have 1 in stock!');
+  await expect(wrapper.text()).toContain('We have 1 in stock!');
 });

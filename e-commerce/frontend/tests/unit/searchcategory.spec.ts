@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import SearchCategory from '@/views/SearchCategory.vue';
 
-test('displays message', () => {
+test('displays message', async () => {
   const wrapper = mount(SearchCategory, {
     global: {
       mocks: {
@@ -13,7 +13,7 @@ test('displays message', () => {
                 name: 'admin',
                 price: 1,
                 images: [],
-                category: 'ONE',
+                category: 'LEFTOLOGY',
               },
             ],
           },
@@ -34,5 +34,5 @@ test('displays message', () => {
   });
 
   // Assert the rendered text of the component
-  expect(wrapper.text()).toContain('We have 1 in stock!');
+  await expect(wrapper.text()).toContain('We have 1 in stock!');
 });
