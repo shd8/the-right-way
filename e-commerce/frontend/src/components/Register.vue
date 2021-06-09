@@ -1,123 +1,122 @@
 <template>
-    <div
-    v-if="!isUserLogged" class="register-container"
-    >
-        <i class="fas fa-user"></i>
-        <hr class="hrItem">
-        <h2 class="h2Item">
-            Fill in all the fields and click on register
-        </h2>
-        <hr class="hrItem">
-        <form
-        class="login-form"
-        method="post"
-        @submit.prevent="register"
-        >
-        <p v-if="errors.length">
-            <b>Please, check the following errors:</b>
-            <ul>
-            <li v-for="error in errors" :key="error">{{ error }}</li>
-            </ul>
-        </p>
-            <span class="login-form__credential credentials">
+  <div
+  v-if="!isUserLogged" class="register-container"
+  >
+      <i class="fas fa-user"></i>
+      <hr class="hrItem">
+      <h2 class="h2Item">
+          Fill in all the fields and click on register
+      </h2>
+      <hr class="hrItem">
+      <form
+      class="login-form"
+      method="post"
+      @submit.prevent="register"
+      >
+      <p v-show="errors.length">
+          <b>Please, check the following errors:</b>
+          <ul>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+          </ul>
+      </p>
+          <span class="login-form__credential credentials">
+              <div class="credentials-title">
+                  <h3>
+                      <i class="fas fa-user fa-user-input"></i>
+                      Credentials
+                  </h3>
+                  <hr class="hrItem">
+              </div>
 
-                <div class="credentials-title">
-                    <h3>
-                        <i class="fas fa-user fa-user-input"></i>
-                        Credentials
-                    </h3>
-                    <hr class="hrItem">
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-user fa-user-input"></i>
+                  <input
+                  name="username"
+                  type="username"
+                  placeholder="username ..."
+                  v-model="username"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-user fa-user-input"></i>
-                    <input
-                    name="username"
-                    type="username"
-                    placeholder="username ..."
-                    v-model="username"
-                    />
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-at"></i>
+                  <input
+                  name="email"
+                  type="email"
+                  placeholder="email ..."
+                  v-model="email"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-at"></i>
-                    <input
-                    name="email"
-                    type="email"
-                    placeholder="email ..."
-                    v-model="email"
-                    />
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-key"></i>
+                  <input
+                  autocomplete="pass"
+                  type="password"
+                  placeholder="password"
+                  name="password"
+                  v-model="password"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-key"></i>
-                    <input
-                    autocomplete="pass"
-                    type="password"
-                    placeholder="password"
-                    name="password"
-                    v-model="password"
-                    />
-                </div>
+              <div class="address-title">
+              <h3>
+                  <i class="fas fa-map-marker-alt"></i>
+                  Address
+              </h3>
+              <hr class="hrItem">
+              </div>
 
-                <div class="address-title">
-                <h3>
-                    <i class="fas fa-map-marker-alt"></i>
-                    Address
-                </h3>
-                <hr class="hrItem">
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-globe-europe"></i>
+                  <input
+                  type="text"
+                  placeholder="country ..."
+                  name="country"
+                  v-model="country"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-globe-europe"></i>
-                    <input
-                    type="text"
-                    placeholder="country ..."
-                    name="country"
-                    v-model="country"
-                    />
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-city"></i>
+                  <input
+                  type="text"
+                  placeholder="city ..."
+                  name="city"
+                  v-model="city"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-city"></i>
-                    <input
-                    type="text"
-                    placeholder="city ..."
-                    name="city"
-                    v-model="city"
-                    />
-                </div>
+              <div class='custom-input'>
+                  <i class="fas fa-road"></i>
+                  <input
+                  type="text"
+                  placeholder="street ..."
+                  name="street"
+                  v-model="street"
+                  />
+              </div>
 
-                <div class='custom-input'>
-                    <i class="fas fa-road"></i>
-                    <input
-                    type="text"
-                    placeholder="street ..."
-                    name="street"
-                    v-model="street"
-                    />
-                </div>
+              <div class='custom-input'>
+                  <i class="far fa-envelope"></i>
+                  <input
+                  type="text"
+                  placeholder="postal code ..."
+                  name="postalCode"
+                  v-model="postalCode"
+                  />
+              </div>
+          </span>
 
-                <div class='custom-input'>
-                    <i class="far fa-envelope"></i>
-                    <input
-                    type="text"
-                    placeholder="postal code ..."
-                    name="postalCode"
-                    v-model="postalCode"
-                    />
-                </div>
-            </span>
-
-            <span>
-                <input
-                class="login-form__login-button"
-                type="submit"
-                value="Register"
-                />
-            </span>
-        </form>
-    </div>
+          <span>
+              <input
+              class="login-form__login-button"
+              type="submit"
+              value="Register"
+              />
+          </span>
+      </form>
+  </div>
 
 </template>
 
@@ -142,8 +141,6 @@ export default defineComponent({
     register(e:Event) {
       e.preventDefault();
 
-      let result;
-
       if (
         this.username
         && this.email
@@ -163,7 +160,6 @@ export default defineComponent({
           postalCode: this.postalCode,
         };
         this.registerUserRequest(userData);
-        result = true;
       }
 
       this.errors = [];
@@ -189,8 +185,6 @@ export default defineComponent({
       if (!this.postalCode) {
         this.errors.push('Postal code is required');
       }
-
-      return result;
     },
   },
 

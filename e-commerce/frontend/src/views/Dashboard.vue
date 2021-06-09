@@ -5,6 +5,9 @@
     alt="logo"
     srcset=""
     class="logo">
+
+    <SwitchToRight />
+
     <CategorySelector />
   </div>
 
@@ -14,11 +17,13 @@
 import { defineComponent } from 'vue';
 import { mapActions } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
+import SwitchToRight from '@/components/SwitchToRight.vue';
 
 export default defineComponent({
   name: 'Dashboard',
   components: {
     CategorySelector,
+    SwitchToRight,
   },
   methods: {
     ...mapActions([
