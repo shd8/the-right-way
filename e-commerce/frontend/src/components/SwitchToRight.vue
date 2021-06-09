@@ -1,5 +1,8 @@
 <template>
-    <div class="right-toggle">
+    <div
+    class="right-toggle"
+    :class="{'right-mode-toggle': rightMode}"
+    >
         <p>Right mode</p>
         <i
         class="far fa-hand-paper"
@@ -51,6 +54,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+
+.right-mode-toggle {
+  justify-content: flex-start;
 }
 
 .right {
