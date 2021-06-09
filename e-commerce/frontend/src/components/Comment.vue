@@ -19,9 +19,6 @@ export default defineComponent({
   name: 'Comment',
   components: {
   },
-  setup() {
-    return {};
-  },
 });
 </script>
 

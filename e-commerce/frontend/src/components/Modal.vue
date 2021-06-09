@@ -48,19 +48,25 @@ export default defineComponent({
         : this.body.classList.remove('body--overflow-hidden');
     },
   },
+
   mounted() {
     this.isModalOpen ? this.body.classList.add('body--overflow-hidden') : '';
   },
+
   unmounted(): void {
     this.body.classList.remove('body--overflow-hidden');
   },
+
   methods: {
     toggleModal() {
       this.$emit('toggle-modal');
     },
   },
+
   data() {
-    return { body: document.body };
+    return {
+      body: document.body,
+    };
   },
 });
 </script>

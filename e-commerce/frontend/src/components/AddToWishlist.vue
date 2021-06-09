@@ -47,6 +47,7 @@ export default defineComponent({
   name: 'AddToWishlist',
   components: {
   },
+
   data() {
     return {
       showModal: false,

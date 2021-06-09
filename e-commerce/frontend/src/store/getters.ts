@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-underscore-dangle */
 import {
-  State, User, Product, Rating,
+  State, Product, Rating,
 } from '@/types/interfaces';
 
 const getters = {
@@ -17,7 +18,7 @@ const getters = {
     return state.cart.length;
   },
 
-  getCartPrice(state:State): number {
+  getCartPrice(state:State): string {
     return state.cart
       .map((cartId: string) => state.products.find((product: Product) => product._id === cartId))
       .map((product: any) => product.price)
@@ -33,13 +34,16 @@ const getters = {
   },
 
   getProductById:
-  (state:any) => (id: any) => state.products.find((product:any) => product._id === id),
+  (state:State) => (id: string): any => state.products
+    .find((product: Product) => product._id === id),
 
   isInWishlist:
-  (state:any) => (id:any) => state.wishlist.some((productId:any) => productId === id),
+  (state:State) => (id:string): boolean => state.wishlist
+    .some((productId:string) => productId === id),
 
   isInCart:
-  (state:any) => (id:any) => state.cart.some((productId:any) => productId === id),
+  (state:State) => (id:string): boolean => state.cart
+    .some((productId:string) => productId === id),
 
 };
 

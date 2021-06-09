@@ -122,7 +122,6 @@
 </template>
 
 <script lang="ts">
-
 import { defineComponent } from 'vue';
 import { mapState, mapActions } from 'vuex';
 
@@ -140,7 +139,7 @@ export default defineComponent({
   },
 
   methods: {
-    register(e:any) {
+    register(e:Event) {
       e.preventDefault();
 
       let result;
@@ -166,15 +165,6 @@ export default defineComponent({
         this.registerUserRequest(userData);
         result = true;
       }
-      console.log(
-        this.username,
-        this.email,
-        this.password,
-        this.country,
-        this.city,
-        this.street,
-        this.postalCode,
-      );
 
       this.errors = [];
 
@@ -204,16 +194,16 @@ export default defineComponent({
     },
   },
 
-  data():any {
+  data(): any {
     return {
       errors: [],
-      username: null,
-      email: null,
-      password: null,
-      country: null,
-      city: null,
-      street: null,
-      postalCode: null,
+      username: '',
+      email: '',
+      password: '',
+      country: '',
+      city: '',
+      street: '',
+      postalCode: '',
     };
   },
 });

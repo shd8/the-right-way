@@ -69,13 +69,15 @@ export default defineComponent({
     ...mapState([
       'isUserLogged',
     ]),
+
     ...mapActions([
       'logUserRequest',
     ]),
+
   },
   name: 'Login',
   methods: {
-    loginButtonPressed(e:any) {
+    loginButtonPressed(e:Event) {
       e.preventDefault();
 
       let result;
@@ -104,8 +106,8 @@ export default defineComponent({
   data():any {
     return {
       errors: [],
-      email: null,
-      password: null,
+      email: '',
+      password: '',
     };
   },
 });

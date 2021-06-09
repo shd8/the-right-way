@@ -75,17 +75,21 @@ export default defineComponent({
   name: 'Product',
   props: {
     id: {
-      default: {},
+      type: String,
+      default: '',
     },
     name: {
+      type: String,
       default: '',
     },
     price: {
+      type: Number,
       default: 0,
     },
 
     images: {
-      default: [],
+      type: Array,
+      default: () => [],
     },
   },
 
