@@ -36,11 +36,9 @@ const actions = {
     commit('emptyCart');
     // });
     const data = {
-      wishlist: state.wishlist,
+      cart: state.cart,
       _id: state.currentUser._id,
     };
-
-    console.log(state.wishlist);
 
     const authorization = {
       headers: {
