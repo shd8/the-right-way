@@ -40,7 +40,7 @@ const actions = {
       _id: state.currentUser._id,
     };
 
-    console.log(data);
+    console.log(state.wishlist);
 
     const authorization = {
       headers: {

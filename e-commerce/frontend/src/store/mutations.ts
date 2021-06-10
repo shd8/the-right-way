@@ -55,6 +55,8 @@ const mutations = {
 
   logoutUser(state:State): void {
     state.isUserLogged = false;
+    state.cart.splice(0, state.cart.length);
+    state.wishlist.splice(0, state.wishlist.length);
   },
 
   changeRightMode(state: State): void {
