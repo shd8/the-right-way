@@ -35,6 +35,7 @@ export default defineComponent({
 .switch-right-toggle {
   padding-top: 8em;
   margin: 0em 1em;
+  z-index: 1;
 }
 
 </style>

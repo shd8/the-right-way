@@ -69,4 +69,8 @@ export default {
   padding: 0em 1em;
 }
 
+// i {
+//   z-index: -1;
+// }
+
 </style>

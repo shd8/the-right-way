@@ -31,20 +31,49 @@
                 <img class="peace-logo" src="../images/peace.svg" alt="" srcset="">
             </router-link>
         </nav>
+
         <div class='search'>
                 <router-link to="/search" @click="scrollToTop">
                     <i class="fas fa-search"></i>
                 </router-link>
-                <input class="search__input" type="text" placeholder="Search something ..."/>
+                <input
+                class="search__input"
+                type="text"
+                placeholder="Search something ..."
+                v-model="searchInput"
+                v-on:input="filterWithSearchInput"
+                />
         </div>
     </div>
+
+    <!-- v-show="filteredProducts.length" -->
+    <div
+    class="filtered-search"
+    >
+        <ul
+        v-for='product in filteredProducts'
+        :key="product._id"
+        class="filtered-search__products"
+        >
+          <SearchProduct
+          :id='product._id'
+          :name='product.name'
+          :price='product.price'
+          :image='product.images[0]'
+          :category='product.category'
+          />
+        </ul>
+    </div>
+
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapGetters, mapState } from 'vuex';
+import SearchProduct from '@/components/SearchProduct.vue';
 
 export default defineComponent({
+  name: 'Header',
   computed: {
     ...mapGetters([
       'getCartLength',
@@ -53,15 +82,35 @@ export default defineComponent({
 
     ...mapState([
       'rightMode',
+      'products',
     ]),
+
   },
   methods: {
+
     scrollToTop() {
       window.scrollTo(0, 0);
     },
+
+    filterWithSearchInput() {
+      if (this.searchInput !== '') {
+        this.filteredProducts = this.products
+          .filter((product:any) => product.name.toLowerCase()
+            .includes(this.searchInput.toLowerCase()));
+      } else {
+        this.filteredProducts = [];
+      }
+    },
   },
-  name: 'Header',
+
   components: {
+    SearchProduct,
+  },
+  data():any {
+    return {
+      searchInput: '',
+      filteredProducts: [],
+    };
   },
 });
 </script>
@@ -175,6 +224,24 @@ export default defineComponent({
     padding: 0.2em 0.5em;
     transform: rotateY(180deg);
     color: $black;
+}
+
+.filtered-search {
+    position: fixed;
+    padding-top: 7.5em;
+    z-index: 98;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 1em;
+    width: 100%;
+    border-radius: 1em;
+    align-items: center;
+
+    &__products {
+        width: 80%;
+        align-self: center;
+    }
 }
 
 </style>

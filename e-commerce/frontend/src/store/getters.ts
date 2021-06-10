@@ -33,6 +33,16 @@ const getters = {
       .toFixed(2);
   },
 
+  getRateByProductId:
+  (state:State) => (id:string):any => {
+    const product: any = state.products
+      .find((element: any) => element._id === id);
+
+    return (product.ratings
+      .map((rate: Rating) => rate.rating)
+      .reduce((a:number, b:number) => a + b, 0) / product.ratings.length).toFixed(2);
+  },
+
   getProductById:
   (state:State) => (id: string): any => state.products
     .find((product: Product) => product._id === id),
