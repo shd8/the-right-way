@@ -10,10 +10,16 @@
     </span>
     <button
     class='trash'
-    @click="$store.dispatch('retrieveFromUserWishlist', id)">
-        <i class="fas fa-trash"></i>
+    @click="$store.dispatch('retrieveFromUserWishlist', id)"
+    :class="{'right-mode-trash': rightMode}"
+    >
+      <i class="fas fa-trash"></i>
     </button>
-    <AddToCart :id='id' class="cart" />
+    <AddToCart
+    :id='id'
+    class="cart"
+    :class="{'right-mode-cart': rightMode}"
+    />
     <Carousel>
         <Slide v-for="slide in images" :key="slide">
             <router-link
@@ -40,7 +46,7 @@ import {
   Pagination,
   Slide,
 } from 'vue3-carousel';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default defineComponent({
   name: 'WishlistProduct',
@@ -59,6 +65,10 @@ export default defineComponent({
   computed: {
     ...mapActions([
       'retrieveFromUserWishlist',
+    ]),
+
+    ...mapState([
+      'rightMode',
     ]),
   },
 });
@@ -109,10 +119,18 @@ i {
   margin: 2em 13.5em 0em 0em;
 }
 
+.right-mode-cart {
+  margin: 2em 0em 0em 13.5em;
+}
+
 .trash {
   position: absolute;
   z-index: 1;
   margin: 19em 0em 0em 14em;
+}
+
+.right-mode-trash {
+  margin: 19em 14em 0em 0em;
 }
 
 </style>
