@@ -18,7 +18,10 @@
                 :images='getProductById(product).images' />
           </ul>
         </div>
-        <div class="purchase">
+        <div
+        class="purchase"
+        :class="{'right-mode-purchase': rightMode}"
+        >
           <button class="purchase__button">Purchase !</button>
           <p class="purchase__price">{{getCartPrice}}</p>
         </div>
@@ -52,6 +55,7 @@ export default defineComponent({
 
     ...mapState([
       'cart',
+      'rightMode',
     ]),
   },
 });
@@ -113,6 +117,14 @@ export default defineComponent({
 
   &__button:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+
+.right-mode-purchase {
+  flex-direction: row-reverse;
+
+  button {
+    margin: 0em 0em 0em 1em ;
   }
 }
 

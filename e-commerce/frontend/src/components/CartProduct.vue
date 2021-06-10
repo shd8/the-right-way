@@ -10,6 +10,7 @@
     </span>
     <button
     class='trash'
+    :class="{'right-mode-trash': rightMode}"
     @click="$store.dispatch('retrieveFromUserCart', id)">
         <i class="fas fa-trash"></i>
     </button>
@@ -37,7 +38,7 @@ import {
   Pagination,
   Slide,
 } from 'vue3-carousel';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default defineComponent({
   name: 'WishlistProduct',
@@ -56,6 +57,10 @@ export default defineComponent({
 
     ...mapActions([
       'retrieveFromUserCart',
+    ]),
+
+    ...mapState([
+      'rightMode',
     ]),
   },
 });
@@ -104,6 +109,10 @@ i {
   position: absolute;
   z-index: 1;
   margin: 2em 14em 0em 0em;
+}
+
+.right-mode-trash {
+  margin: 2em 0em 0em 14em;
 }
 
 </style>
