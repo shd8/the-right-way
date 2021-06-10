@@ -1,7 +1,13 @@
 <template>
 
-  <div v-if='!isUserLogged'  :class="['modal-heart', displayModalClass]">
-    <button @click='handleToggleModal'>
+  <div
+  v-if='!isUserLogged'
+  :class="['modal-heart', displayModalClass]"
+  >
+    <button
+    @click='handleToggleModal'
+    :class="{'modal-heart-right-mode': rightMode}"
+    >
       <i class="far fa-heart"></i>
     </button>
       <Modal
@@ -15,7 +21,10 @@
   </div>
 
   <div v-if='!isUserLogged' :class="['modal-dollar', displayModalClass]">
-    <button @click='handleToggleModal'>
+    <button
+    @click='handleToggleModal'
+    :class="{'modal-dollar-right-mode': rightMode}"
+    >
       <i class="fas fa-dollar-sign"></i>
     </button>
       <Modal
@@ -80,6 +89,7 @@ export default defineComponent({
 
     ...mapState([
       'isUserLogged',
+      'rightMode',
     ]),
 
     displayModalClass():any {
@@ -172,6 +182,14 @@ i {
   margin: 21em 0em 0em 11em;
 }
 
+.modal-heart-right-mode {
+  margin: 0em 27.5em 0em 0em;
+}
+
+.modal-dollar-right-mode {
+  margin: 0em 0em 0em 27.5em;
+}
+
 .modal-icon--displayed {
   z-index: 100;
 }
@@ -212,12 +230,18 @@ i {
 
   .modal-dollar {
     margin: 7em 33.5em 0em 0em;
-    z-index: 100;
   }
 
   .modal-heart {
     margin: 32em 0em 0em 33em;
-    z-index: 100;
+  }
+
+  .modal-heart-right-mode {
+    margin: 0em 60.5em 0em 0em;
+  }
+
+  .modal-dollar-right-mode {
+    margin: 0em 0em 0em 61.5em;
   }
 }
 
