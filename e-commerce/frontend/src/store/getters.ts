@@ -35,7 +35,7 @@ const getters = {
 
   getRateByProductId:
   (state:State) => (id:string):any => {
-    const product: any = state.products
+    const product:any = state.products
       .find((element: any) => element._id === id);
 
     return (product.ratings

@@ -96,7 +96,8 @@ export default defineComponent({
       if (this.searchInput !== '') {
         this.filteredProducts = this.products
           .filter((product:any) => product.name.toLowerCase()
-            .includes(this.searchInput.toLowerCase()));
+            .includes(this.searchInput.toLowerCase()))
+          .slice(0, 5);
       } else {
         this.filteredProducts = [];
       }

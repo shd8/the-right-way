@@ -74,11 +74,7 @@ export default defineComponent({
     &__category,
     &__price,
     &__rate {
-        padding: 0em 0em 1em 2em;
-    }
-
-    &__name {
-        padding-top: 1em;
+        padding: 0em 0em 0.1em 2em;
     }
 }
 
