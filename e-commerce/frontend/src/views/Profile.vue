@@ -41,14 +41,20 @@
       </ul>
     </ul>
 
-    <span class="cart-length">
+    <span
+    class="cart-length"
+    :class="{'right-mode-cart-length': rightMode}"
+    >
       <router-link to="/cart" @click="scrollToTop">
           <i class="fas fa-shopping-cart"></i>
       </router-link>
       <p class="cart-number">You have {{getCartLength}} products in the cart!</p>
     </span>
 
-    <span class="wishlist-length">
+    <span
+    class="wishlist-length"
+    :class="{'right-mode-wishlist-length': rightMode}"
+    >
       <router-link to="/wishlist" @click="scrollToTop">
           <i class="far fa-heart"></i>
       </router-link>
@@ -90,6 +96,7 @@ export default defineComponent({
   computed: {
     ...mapState([
       'currentUser',
+      'rightMode',
     ]),
 
     ...mapGetters([
@@ -165,6 +172,11 @@ p {
   width: 80%;
 }
 
+.right-mode-cart-length,
+.right-mode-wishlist-length {
+  flex-direction: row-reverse;
+}
+
 .notLogged {
   display: flex;
   flex-direction: column;
@@ -176,7 +188,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7em 0em 2em 0em;
+  padding: 0em 0em 2em 0em;
 
   &__user-data {
     width: 80%;

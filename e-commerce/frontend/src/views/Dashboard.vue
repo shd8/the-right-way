@@ -1,10 +1,25 @@
 <template>
   <div class="dashboard">
     <img
+    v-show="!rightMode"
     src="../images/logo.svg"
     alt="logo"
     srcset=""
     class="logo">
+
+    <img
+    v-show="rightMode"
+    src="../images/wrong-hand.svg"
+    alt="logo"
+    srcset=""
+    class="logo-hand">
+
+    <img
+    v-show="rightMode"
+    src="../images/logo-wrong.svg"
+    alt="logo"
+    srcset=""
+    class="wrong-logo">
 
     <CategorySelector />
   </div>
@@ -13,7 +28,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import CategorySelector from '@/components/CategorySelector.vue';
 
 export default defineComponent({
@@ -21,6 +36,13 @@ export default defineComponent({
   components: {
     CategorySelector,
   },
+
+  computed: {
+    ...mapState([
+      'rightMode',
+    ]),
+  },
+
   methods: {
     ...mapActions([
       'fetchProductsFromApi',
@@ -54,6 +76,8 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
 
+  .wrong-logo,
+  .logo-hand,
   .logo{
     display: flex;
     align-self: center;
@@ -62,9 +86,20 @@ export default defineComponent({
     box-shadow: none;
   }
 
+  .wrong-logo:hover,
+  .logo-hand:hover,
   .logo:hover {
     box-shadow: none;
   }
+}
+
+.logo-hand {
+  transform: rotateY(180deg);
+  font-size: 1.1em;
+}
+
+.wrong-logo {
+  font-size: 1.2em;
 }
 
 </style>
