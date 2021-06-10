@@ -22,7 +22,10 @@
         class="purchase"
         :class="{'right-mode-purchase': rightMode}"
         >
-          <button class="purchase__button">Purchase !</button>
+          <button
+          class="purchase__button"
+          @click="purchase"
+          >Purchase !</button>
           <p class="purchase__price">{{getCartPrice}}</p>
         </div>
     </div>
@@ -37,7 +40,7 @@
 
 <script lang="ts" scoped>
 import { defineComponent } from 'vue';
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 import CartProduct from '@/components/CartProduct.vue';
 import CategorySelector from '@/components/CategorySelector.vue';
 
@@ -57,6 +60,16 @@ export default defineComponent({
       'cart',
       'rightMode',
     ]),
+  },
+
+  methods: {
+    ...mapActions([
+      'purchaseRequest',
+    ]),
+
+    purchase() {
+      this.purchaseRequest();
+    },
   },
 });
 </script>

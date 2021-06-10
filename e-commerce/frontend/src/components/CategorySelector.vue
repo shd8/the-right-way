@@ -141,6 +141,7 @@ h2 {
     object-fit: cover;
     border-radius: 1em 1em 0em 1em;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 
   img:hover {

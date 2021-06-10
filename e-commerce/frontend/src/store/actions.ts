@@ -30,6 +30,27 @@ const actions = {
     // });
   },
 
+  purchaseRequest({ commit, state }:ActionContext<State, State>): void {
+    // axios.post(process.env.VUE_APP_AUTH_LOGIN_URL)
+    //   .then((response) => {
+    commit('emptyCart');
+    // });
+    const data = {
+      wishlist: state.wishlist,
+      _id: state.currentUser._id,
+    };
+
+    console.log(data);
+
+    const authorization = {
+      headers: {
+        Authorization: `Bearer ${state.token}`,
+      },
+    };
+
+    axios.post(process.env.VUE_APP_API_USERS, data, authorization);
+  },
+
   addToUserWishlist({ commit, state }:ActionContext<State, State>, id:string): void {
     commit('addToWishlist', id);
 
