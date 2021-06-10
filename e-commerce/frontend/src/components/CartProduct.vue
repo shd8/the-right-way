@@ -109,6 +109,7 @@ i {
   position: absolute;
   z-index: 1;
   margin: 2em 14em 0em 0em;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-trash {

@@ -137,8 +137,15 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 .product-name {
-    color: $purple;
-    text-align: center;
+  color: $purple;
+  text-align: center;
+}
+
+.modal-cart,
+.modal-heart {
+  button {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
 }
 
 .modal-cart {
@@ -223,11 +230,16 @@ export default defineComponent({
 }
 
 .carousel {
-    @include carousel;
+  @include carousel;
 }
 
 .carousel__item {
-    @include carouselItem;
+  @include carouselItem;
+}
+
+.cart,
+.wishlist {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .cart {
@@ -247,7 +259,6 @@ export default defineComponent({
 }
 
 .right-mode-wishlist {
-
   margin: 20em 14em 0em 0em;
 }
 

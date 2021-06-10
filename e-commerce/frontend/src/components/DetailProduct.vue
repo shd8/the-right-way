@@ -37,8 +37,18 @@
       </Modal>
   </div>
 
-  <AddToWishlist :id='id' class="wishlist" v-if='isUserLogged'/>
-  <AddToCart :id='id' class="cart" v-if="isUserLogged"/>
+  <AddToWishlist
+  :id='id'
+  class="wishlist"
+  v-if='isUserLogged'
+  :class="{'wishlist-right-mode': rightMode}"
+  />
+  <AddToCart
+  :id='id'
+  class="cart"
+  v-if="isUserLogged"
+  :class="{'cart-right-mode': rightMode}"
+  />
 
   <Carousel>
       <Slide v-for="slide in images" :key="slide">
@@ -162,16 +172,30 @@ i {
 
 .cart {
   margin: 8.5em 14em 0em 0em;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .wishlist {
   margin: 25.5em 0em 0em 14em;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.cart-right-mode {
+  margin: 8.5em 0em 0em 13.5em;
+}
+
+.wishlist-right-mode {
+  margin: 25.5em 13.5em 0em 0em;
 }
 
 .modal-heart,
 .modal-dollar {
   position: absolute;
   z-index: 1;
+
+  button {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
 }
 
 .modal-dollar {
@@ -204,7 +228,7 @@ i {
 
 @media (min-width: 600px) {
   .carousel {
-      max-width: 34em;
+    max-width: 34em;
   }
 
   .cart {
@@ -213,6 +237,14 @@ i {
 
   .wishlist {
     margin: 29em 0em 0em 31em;
+  }
+
+  .cart-right-mode {
+    margin: 6em 0em 0em 30.5em;
+  }
+
+  .wishlist-right-mode {
+    margin: 29em 31em 0em 0em;
   }
 
   button {
