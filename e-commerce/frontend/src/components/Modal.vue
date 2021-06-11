@@ -197,6 +197,11 @@ export default defineComponent({
     right: 3em;
     top: 3em;
   }
+
+  .modal__window--displayed {
+    width: 80%;
+    height: 80%;
+  }
 }
 
 </style>

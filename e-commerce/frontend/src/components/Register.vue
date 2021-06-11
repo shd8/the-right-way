@@ -29,7 +29,7 @@
                   <hr class="hrItem">
               </div>
 
-              <div class='custom-input'>
+              <div class='custom-input username-input'>
                   <i class="fas fa-user fa-user-input"></i>
                   <input
                   name="username"
@@ -266,6 +266,10 @@ export default defineComponent({
   padding: 0.5em;
 }
 
+.fa-map-marker-alt {
+  padding: 0.5em;
+}
+
 .fa-user-input {
   font-size: 1em;
 }
@@ -301,16 +305,28 @@ export default defineComponent({
     width: 100%;
   }
 
+@media (min-width: 900px) {
+  .register-container {
+      .top-user-icon {
+      display: block;
+    }
+  }
+}
+
 @media (min-width: 720px) {
   .form-credentials,
   .form-address {
     width: 50%;
   }
 
-  .register-container {
-      .top-user-icon {
-      display: block;
-    }
+  .username-input {
+    margin-top: 3.5em;
+  }
+
+  .credentials {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: 1em;
   }
 }
 

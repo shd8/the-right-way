@@ -86,7 +86,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em 0em;
 }
 
 .register--displayed {
