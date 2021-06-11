@@ -1,6 +1,7 @@
 import mutations from '@/store/mutations';
+import { State } from '@/types/interfaces';
 
-let mockedState:any;
+let mockedState:State;
 
 describe('Given a mutation', () => {
   beforeEach(() => {
