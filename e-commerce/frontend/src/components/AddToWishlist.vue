@@ -1,5 +1,4 @@
 <template>
-
     <button
       v-if="isInWishlist(id)"
       @click="$store.dispatch('retrieveFromUserWishlist', id)"
@@ -32,16 +31,6 @@ export default defineComponent({
     ...mapState([
       'isUserLogged',
     ]),
-  },
-
-  methods: {
-    toggleModal() {
-      this.showModal = !this.showModal;
-    },
-
-    handleToggleModal() {
-      this.toggleModal();
-    },
   },
 
   name: 'AddToWishlist',
