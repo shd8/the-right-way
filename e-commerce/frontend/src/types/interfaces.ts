@@ -40,7 +40,6 @@ interface UserFromApi {
 interface State {
     wishlist: Array<string>,
     cart: Array<string>,
-    count: number,
     products: Array<Product>,
     currentProduct: Product,
     currentUser: {

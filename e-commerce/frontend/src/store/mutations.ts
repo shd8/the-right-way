@@ -2,13 +2,6 @@
 import { Product, UserFromApi, State } from '@/types/interfaces';
 
 const mutations = {
-  increaseOne(state:State): void {
-    state.count += 1;
-  },
-
-  decreaseOne(state:State): void {
-    state.count -= 1;
-  },
 
   updateProducts(state: State, payload: Array<Product>): void {
     state.products = [...payload];
@@ -57,6 +50,7 @@ const mutations = {
     state.isUserLogged = false;
     state.cart.splice(0, state.cart.length);
     state.wishlist.splice(0, state.wishlist.length);
+    state.token = '';
   },
 
   changeRightMode(state: State): void {

@@ -8,7 +8,6 @@ export default createStore({
   state: {
     wishlist: [],
     cart: [],
-    count: 0,
     products: [],
     currentProduct: {
       _id: '',
