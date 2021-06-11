@@ -2,8 +2,8 @@
   <div
   v-if="!isUserLogged" class="register-container"
   >
-      <i class="fas fa-user"></i>
-      <hr class="hrItem">
+      <i class="fas fa-user top-user-icon"></i>
+      <hr class="hrItem top-hrItem">
       <h2 class="h2Item">
           Fill in all the fields and click on register
       </h2>
@@ -19,8 +19,9 @@
           <li v-for="error in errors" :key="error">{{ error }}</li>
           </ul>
       </p>
-          <span class="login-form__credential credentials">
-              <div class="credentials-title">
+          <section class="login-form__credential credentials">
+            <div class="form-credentials">
+                <div class="credentials-title">
                   <h3>
                       <i class="fas fa-user fa-user-input"></i>
                       Credentials
@@ -58,8 +59,10 @@
                   v-model="password"
                   />
               </div>
+            </div>
 
-              <div class="address-title">
+          <div class="form-address">
+               <div class="address-title">
               <h3>
                   <i class="fas fa-map-marker-alt"></i>
                   Address
@@ -106,16 +109,18 @@
                   v-model="postalCode"
                   />
               </div>
-          </span>
+          </div>
 
-          <span>
+          </section>
+
+      </form>
+          <section>
               <input
               class="login-form__login-button"
               type="submit"
               value="Register"
               />
-          </span>
-      </form>
+          </section>
   </div>
 
 </template>
@@ -207,6 +212,10 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
 
+.top-hrItem {
+  margin-bottom: 0em;
+}
+
 .login-form {
     width: 100%;
     display: flex;
@@ -241,6 +250,9 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
     width: 100%;
+    .top-user-icon {
+      display: none;
+  }
 }
 
 .credentials-title,
@@ -255,7 +267,7 @@ export default defineComponent({
 }
 
 .fa-user-input {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .fa-map-marker-alt {
@@ -275,7 +287,31 @@ export default defineComponent({
 .credentials {
     width: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
+}
+
+.custom-input {
+  width: 90%;
+  margin: 1em 1em;
+}
+
+.form-credentials,
+  .form-address {
+    width: 100%;
+  }
+
+@media (min-width: 720px) {
+  .form-credentials,
+  .form-address {
+    width: 50%;
+  }
+
+  .register-container {
+      .top-user-icon {
+      display: block;
+    }
+  }
 }
 
 </style>

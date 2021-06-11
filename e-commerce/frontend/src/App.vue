@@ -32,6 +32,10 @@ export default defineComponent({
   font-family: 'Roboto Slab', serif;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .switch-right-toggle {
   padding-top: 8em;
   margin: 0em 1em;

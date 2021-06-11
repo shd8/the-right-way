@@ -93,9 +93,9 @@ export default defineComponent({
   display: none;
 }
 
-.register {
-  padding-bottom: 7em;
-}
+// .register {
+//   padding-bottom: 7em;
+// }
 
 @media (min-width: 800px) {
 

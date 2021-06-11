@@ -1,24 +1,28 @@
 <template>
     <div :class="['modal', displayModalClass]" @click="toggleModal">
-        <div :class="['modal__window', displayWindowClass]" @click.stop>
-            <div v-show="isModalOpen">
-                <slot name="header">
-                    <div class="modal__header p-6 pt-4 pb-4">
-                        <button
-                            class="modal__header-button"
-                            icon="menu-close"
-                            icon-size="xs"
-                            color="grey-2"
-                            hide-label
-                            @click="toggleModal"
-                        >
-                          <i class="far fa-times-circle"></i>
-                        </button>
-                    </div>
-                </slot>
-                <slot />
-            </div>
+      <transition name="slide-fade">
+        <div
+        :class="['modal__window', displayWindowClass]"
+        @click.stop
+        v-show="isModalOpen"
+        >
+          <slot name="header">
+              <div class="modal__header p-6 pt-4 pb-4">
+                  <button
+                      class="modal__header-button"
+                      icon="menu-close"
+                      icon-size="xs"
+                      color="grey-2"
+                      hide-label
+                      @click="toggleModal"
+                  >
+                    <i class="far fa-times-circle"></i>
+                  </button>
+              </div>
+          </slot>
+          <slot />
         </div>
+      </transition>
     </div>
 </template>
 
@@ -83,6 +87,15 @@ export default defineComponent({
 //     height: 100vh;
 // }
 .modal {
+
+  @keyframes slide-fade-in {
+    0% {
+      transform: translateY(-10%)
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
     display: flex;
     position: fixed;
     top: 0;
@@ -107,7 +120,7 @@ export default defineComponent({
         transition: height ease-in 0.3s;
         transition: opacity ease-in 0.2s;
         background: get-color('white');
-        width: rem(725px);
+        width: 80%;
         height: 100vh;
 // @include mq($from: tablet) {
 //     transform: translateY(-70%);
@@ -115,7 +128,8 @@ export default defineComponent({
 //     height: auto;
 // }
     &--displayed {
-        transform: translateY(0%);
+      transform: translateY(0%);
+      width: 100%;
     }
 }
     &__header {
@@ -152,13 +166,37 @@ export default defineComponent({
   background-color: white;
   border-radius: 3em;
   position: absolute;
-  right: 2em;
-  top: 1em;
+  right: 0.5em;
+  top: 0.5em;
   cursor: pointer;
 }
 
 .fa-times-circle {
   color: $purple;
-  font-size: 5em;
+  font-size: 3em;
 }
+
+.slide-fade-enter-active {
+  // transition: opacity 0.5s;
+  animation: slide-fade-in 0.5s;
+}
+
+.slide-fade-leave-active {
+  // transition: opacity 0.5s;
+  animation: slide-fade-in 0.5s reverse;
+
+}
+
+@media (min-width: 720px) {
+    .fa-times-circle {
+    color: $purple;
+    font-size: 5em;
+  }
+
+  .modal__header-button {
+    right: 3em;
+    top: 3em;
+  }
+}
+
 </style>

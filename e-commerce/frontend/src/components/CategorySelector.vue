@@ -6,7 +6,7 @@
         <hr class="line hrItem">
         <router-link
         class="clothes"
-        :to="{ name: 'Search', params: { category: 'clothes' } }"
+        :to="{ name: 'Search' }"
         @click="scrollToTop"
         >
           <img
