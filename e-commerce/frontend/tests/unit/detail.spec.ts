@@ -2,6 +2,18 @@ import { mount } from '@vue/test-utils';
 import Detail from '@/views/Detail.vue';
 
 test('displays message', () => {
+  const mockedResult = {
+    name: 'product1',
+    images: [],
+    price: 1,
+    stock: 1,
+    rating: {
+      user: 'admin',
+      rating: 1,
+      comment: 'sudo',
+    },
+  };
+
   const wrapper = mount(Detail, {
     global: {
       mocks: {
@@ -23,6 +35,7 @@ test('displays message', () => {
             },
           },
           getters: {
+            getProductById: () => mockedResult,
             getCurrentProductRate: 5,
             isInWishlist: true,
           },
@@ -36,10 +49,6 @@ test('displays message', () => {
       id: 2,
     },
   });
-
-  const isInWishlist = jest.fn();
-
-  isInWishlist.mockResolvedValue(() => true);
 
   // Assert the rendered text of the component
   expect(wrapper.text()).toContain('We have 1 in stock!');
