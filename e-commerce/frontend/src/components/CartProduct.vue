@@ -5,7 +5,7 @@
       :to="{ name: 'Detail', params: { id: id } }"
       @click="scrollToTop"
       >
-        <li class="product-name">{{name}}</li>
+        <span class="product-name">{{name}}</span>
       </router-link>
     </span>
     <button

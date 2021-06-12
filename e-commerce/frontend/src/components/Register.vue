@@ -14,7 +14,7 @@
       @submit.prevent="register"
       >
       <p v-show="errors.length">
-          <b>Please, check the following errors:</b>
+          <strong>Please, check the following errors:</strong>
           <ul>
           <li v-for="error in errors" :key="error">{{ error }}</li>
           </ul>

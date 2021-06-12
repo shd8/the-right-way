@@ -6,13 +6,15 @@
         >
         <img class="product__image" :src='image' alt="" srcset="">
         <span class="product__info info">
-            <li class="info__name">{{name}}</li>
-            <li class="info__category">{{category}}</li>
-            <li class="info__price">$ {{price}}</li>
-            <li class="info__rate">
-                {{getRateByProductId(id)}}
-                <em class="fas fa-star"></em>
-            </li>
+            <ul>
+                <li class="info__name">{{name}}</li>
+                <li class="info__category">{{category}}</li>
+                <li class="info__price">$ {{price}}</li>
+                <li class="info__rate">
+                    {{getRateByProductId(id)}}
+                    <em class="fas fa-star"></em>
+                </li>
+            </ul>
         </span>
     </router-link>
 
@@ -77,8 +79,19 @@ export default defineComponent({
     }
 }
 
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
 @media (min-width: 750px) {
     .info {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    ul {
         flex-direction: row;
         align-items: center;
     }
