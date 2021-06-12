@@ -34,9 +34,16 @@ export default defineComponent({
 
 <style lang="scss">
 
+#app,
+html,
+body,
+.view {
+  height: 100%;
+}
+
 .body--overflow-hidden {
-    overflow: hidden;
-  }
+  overflow: hidden;
+}
 
 * {
   margin: 0;
