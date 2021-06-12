@@ -3,37 +3,10 @@ import { createStore } from 'vuex';
 import getters from '@/store/getters';
 import mutations from '@/store/mutations';
 import actions from '@/store/actions';
+import state from '@/store/state';
 
 export default createStore({
-  state: {
-    wishlist: [],
-    cart: [],
-    products: [],
-    currentProduct: {
-      _id: '',
-      name: '',
-      category: '',
-      price: 0,
-      stock: 0,
-      images: [],
-      ratings: [],
-    },
-    currentUser: {
-      _id: '',
-      username: '',
-      email: '',
-      password: '',
-      address: {
-        country: '',
-        city: '',
-        street: '',
-        postalCode: '',
-      },
-    },
-    isUserLogged: false,
-    token: '',
-    rightMode: false,
-  },
+  state,
   getters,
   mutations,
   actions,
