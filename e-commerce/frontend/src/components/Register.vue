@@ -2,7 +2,7 @@
   <div
   v-if="!isUserLogged" class="register-container"
   >
-      <i class="fas fa-user top-user-icon"></i>
+      <em class="fas fa-user top-user-icon"></em>
       <hr class="hrItem top-hrItem">
       <h2 class="h2Item">
           Fill in all the fields and click on register
@@ -23,14 +23,14 @@
             <div class="form-credentials">
                 <div class="credentials-title">
                   <h3>
-                      <i class="fas fa-user fa-user-input"></i>
+                      <em class="fas fa-user fa-user-input"></em>
                       Credentials
                   </h3>
                   <hr class="hrItem">
               </div>
 
               <div class='custom-input username-input'>
-                  <i class="fas fa-user fa-user-input"></i>
+                  <em class="fas fa-user fa-user-input"></em>
                   <input
                   name="username"
                   type="username"
@@ -40,7 +40,7 @@
               </div>
 
               <div class='custom-input'>
-                  <i class="fas fa-at"></i>
+                  <em class="fas fa-at"></em>
                   <input
                   name="email"
                   type="email"
@@ -50,7 +50,7 @@
               </div>
 
               <div class='custom-input'>
-                  <i class="fas fa-key"></i>
+                  <em class="fas fa-key"></em>
                   <input
                   autocomplete="pass"
                   type="password"
@@ -64,14 +64,14 @@
           <div class="form-address">
                <div class="address-title">
               <h3>
-                  <i class="fas fa-map-marker-alt"></i>
+                  <em class="fas fa-map-marker-alt"></em>
                   Address
               </h3>
               <hr class="hrItem">
               </div>
 
               <div class='custom-input'>
-                  <i class="fas fa-globe-europe"></i>
+                  <em class="fas fa-globe-europe"></em>
                   <input
                   type="text"
                   placeholder="country ..."
@@ -81,7 +81,7 @@
               </div>
 
               <div class='custom-input'>
-                  <i class="fas fa-city"></i>
+                  <em class="fas fa-city"></em>
                   <input
                   type="text"
                   placeholder="city ..."
@@ -91,7 +91,7 @@
               </div>
 
               <div class='custom-input'>
-                  <i class="fas fa-road"></i>
+                  <em class="fas fa-road"></em>
                   <input
                   type="text"
                   placeholder="street ..."
@@ -101,7 +101,7 @@
               </div>
 
               <div class='custom-input'>
-                  <i class="far fa-envelope"></i>
+                  <em class="far fa-envelope"></em>
                   <input
                   type="text"
                   placeholder="postal code ..."

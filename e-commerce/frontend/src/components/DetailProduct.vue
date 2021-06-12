@@ -1,5 +1,4 @@
 <template>
-
   <div
   v-if='!isUserLogged'
   :class="['modal-heart', displayModalClass]"
@@ -8,7 +7,7 @@
     @click='handleToggleModal'
     :class="{'modal-heart-right-mode': rightMode}"
     >
-      <i class="far fa-heart"></i>
+      <em class="far fa-heart"></em>
     </button>
       <Modal
       :isModalOpen="showModal"
@@ -25,7 +24,7 @@
     @click='handleToggleModal'
     :class="{'modal-dollar-right-mode': rightMode}"
     >
-      <i class="fas fa-dollar-sign"></i>
+      <em class="fas fa-dollar-sign"></em>
     </button>
       <Modal
       :isModalOpen="showModal"
@@ -152,7 +151,7 @@ button {
   }
 }
 
-i {
+em {
   color: $purple;
   font-size: 1.5em;
 }

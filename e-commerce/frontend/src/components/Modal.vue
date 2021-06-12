@@ -16,7 +16,7 @@
                       hide-label
                       @click="toggleModal"
                   >
-                    <i class="far fa-times-circle"></i>
+                    <em class="far fa-times-circle"></em>
                   </button>
               </div>
           </slot>

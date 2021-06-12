@@ -3,10 +3,10 @@
       v-if="isInWishlist(id)"
       @click="$store.dispatch('retrieveFromUserWishlist', id)"
       >
-        <i class="fas fa-heart"></i>
+        <em class="fas fa-heart"></em>
     </button>
     <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
-      <i class="far fa-heart"></i>
+      <em class="far fa-heart"></em>
     </button>
 
 </template>
@@ -67,7 +67,7 @@ button {
   }
 }
 
-i {
+em {
   color: $purple;
   font-size: 1.5em;
 }

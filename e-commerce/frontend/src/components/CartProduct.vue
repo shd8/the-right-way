@@ -12,7 +12,7 @@
     class='trash'
     :class="{'right-mode-trash': rightMode}"
     @click="$store.dispatch('retrieveFromUserCart', id)">
-        <i class="fas fa-trash"></i>
+        <em class="fas fa-trash"></em>
     </button>
     <Carousel>
         <Slide v-for="slide in images" :key="slide">
@@ -83,7 +83,7 @@ button {
   }
 }
 
-i {
+em {
   color: $purple;
   font-size: 1.5em;
 }

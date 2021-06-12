@@ -4,7 +4,7 @@
             <p class="head__username">{{user}}</p>
             <div class="head__rate">
                 <p class="rate">{{rating}}</p>
-                <i class="fas fa-star"></i>
+                <em class="fas fa-star"></em>
             </div>
         </span>
         <p class="content">{{comment}}</p>

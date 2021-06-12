@@ -13,7 +13,7 @@
     @click="$store.dispatch('retrieveFromUserWishlist', id)"
     :class="{'right-mode-trash': rightMode}"
     >
-      <i class="fas fa-trash"></i>
+      <em class="fas fa-trash"></em>
     </button>
     <AddToCart
     :id='id'
@@ -91,7 +91,7 @@ button {
   }
 }
 
-i {
+em {
   color: $purple;
   font-size: 1.5em;
 }

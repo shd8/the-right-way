@@ -12,17 +12,17 @@
             :class="{'right-mode-buttons': rightMode}"
             >
                 <router-link to="/cart" @click="scrollToTop">
-                    <i class="fas fa-shopping-cart">
+                    <em class="fas fa-shopping-cart">
                         <p class="cart-number">{{getCartLength}}</p>
-                    </i>
+                    </em>
                 </router-link>
                 <router-link to="/wishlist" @click="scrollToTop">
-                    <i class="far fa-heart">
+                    <em class="far fa-heart">
                         <p class="wishlist-number">{{getWishlistLength}}</p>
-                    </i>
+                    </em>
                 </router-link>
                 <router-link to="/profile" @click="scrollToTop">
-                    <i class="far fa-user"></i>
+                    <em class="far fa-user"></em>
                 </router-link>
             </div>
             <router-link
@@ -37,7 +37,7 @@
 
         <div class='search'>
                 <router-link to="/search" @click="scrollToTop">
-                    <i class="fas fa-search"></i>
+                    <em class="fas fa-search"></em>
                 </router-link>
                 <input
                 class="search__input"
@@ -49,7 +49,6 @@
         </div>
     </div>
 
-    <!-- v-show="filteredProducts.length" -->
     <div
     class="filtered-search"
     >

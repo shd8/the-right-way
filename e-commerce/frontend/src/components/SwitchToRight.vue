@@ -5,10 +5,10 @@
     >
       <p v-show="rightMode">Right mode</p>
       <p v-show="!rightMode">Lefty mode</p>
-      <i
+      <em
       class="far fa-hand-paper"
       :class="['', rightClass]"
-      ></i>
+      ></em>
 
       <div>
           <Toggle
@@ -68,9 +68,5 @@ export default {
 .fa-hand-paper {
   padding: 0em 1em;
 }
-
-// i {
-//   z-index: -1;
-// }
 
 </style>

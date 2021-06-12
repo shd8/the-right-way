@@ -1,64 +1,62 @@
 <template>
+  <div
+  v-if="!isUserLogged" class="login-container"
+  >
+      <em class="fas fa-user"></em>
+      <hr class="hrItem">
+      <h2 class="h2Item">
+          Login or create an account to buy stuff, save your Wishlist and your conversations !
+      </h2>
+      <hr class="hrItem">
+      <form
+      class="login-form"
+      method="post"
+      @submit.prevent="loginButtonPressed"
+      >
+      <p v-if="errors.length">
+          <b>Please, check the following errors:</b>
+          <ul>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+          </ul>
+      </p>
+      <span class="login-form__credential credentials">
+          <label
+          class='email custom-input'
+          for="email"
+          >
+              <em class="fas fa-at"></em>
+              <input
+              name="email"
+              type="email"
+              placeholder="email ..."
+              v-model="email"
+              />
+          </label>
 
-    <div
-    v-if="!isUserLogged" class="login-container"
-    >
-        <i class="fas fa-user"></i>
-        <hr class="hrItem">
-        <h2 class="h2Item">
-            Login or create an account to buy stuff, save your Wishlist and your conversations !
-        </h2>
-        <hr class="hrItem">
-        <form
-        class="login-form"
-        method="post"
-        @submit.prevent="loginButtonPressed"
-        >
-        <p v-if="errors.length">
-            <b>Please, check the following errors:</b>
-            <ul>
-            <li v-for="error in errors" :key="error">{{ error }}</li>
-            </ul>
-        </p>
-        <span class="login-form__credential credentials">
-            <label
-            class='email custom-input'
-            for="email"
-            >
-                <i class="fas fa-at"></i>
-                <input
-                name="email"
-                type="email"
-                placeholder="email ..."
-                v-model="email"
-                />
-            </label>
+          <label
+          class='password custom-input'
+          for="password"
+          >
+              <em class="fas fa-key"></em>
+              <input
+              name="password"
+              autocomplete="pass"
+              type="password"
+              placeholder="················"
+              v-model="password"
+              />
+          </label>
+      </span>
 
-            <label
-            class='password custom-input'
-            for="password"
-            >
-                <i class="fas fa-key"></i>
-                <input
-                name="password"
-                autocomplete="pass"
-                type="password"
-                placeholder="················"
-                v-model="password"
-                />
-            </label>
-        </span>
-
-        <span>
-            <input
-            class="login-form__login-button"
-            type="submit"
-            value="Log in"
-            />
-        </span>
-        </form>
-     </div>
-
+      <span>
+          <input
+          class="login-form__login-button"
+          type="submit"
+          value="Log in"
+          />
+      </span>
+      </form>
+    </div>
 </template>
 
 <script lang="ts" scoped>

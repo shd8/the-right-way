@@ -1,9 +1,9 @@
 <template>
   <button v-if="isInCart(id)" @click="$store.dispatch('retrieveFromUserCart', id)" >
-    <i class="fas fa-shopping-cart"></i>
+    <em class="fas fa-shopping-cart"></em>
   </button>
   <button  v-else @click="$store.dispatch('addToUserCart', id)">
-    <i class="fas fa-dollar-sign"></i>
+    <em class="fas fa-dollar-sign"></em>
   </button>
 </template>
 
@@ -52,7 +52,7 @@ button {
   }
 }
 
-i {
+em {
   color: $purple;
   font-size: 1.5em;
 }

@@ -6,7 +6,7 @@
   :class="{'modal-heart-right-mode': rightMode}"
   >
     <button @click='handleToggleModal'>
-      <i class="far fa-heart"></i>
+      <em class="far fa-heart"></em>
     </button>
       <Modal
       :isModalOpen="showModal"
@@ -24,7 +24,7 @@
   :class="{'modal-cart-right-mode': rightMode}"
   >
     <button @click='handleToggleModal'>
-      <i class="fas fa-dollar-sign"></i>
+      <em class="fas fa-dollar-sign"></em>
     </button>
       <Modal
       :isModalOpen="showModal"
@@ -168,7 +168,7 @@ export default defineComponent({
     }
   }
 
-  i {
+  em {
     color: $purple;
     font-size: 1.5em;
   }
@@ -194,7 +194,7 @@ export default defineComponent({
     }
   }
 
-  i {
+  em {
     color: $purple;
     font-size: 1.5em;
   }
@@ -221,10 +221,6 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
 }
-
-// .modal--displayed {
-//   padding-top: 5em;
-// }
 
 .product-price {
   padding: 0.5em 0em;

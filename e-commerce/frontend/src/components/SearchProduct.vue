@@ -1,5 +1,4 @@
 <template>
-
     <router-link
         :to="{ name: 'Detail', params: { id: id } }"
         @click="scrollToTop"
@@ -12,7 +11,7 @@
             <li class="info__price">$ {{price}}</li>
             <li class="info__rate">
                 {{getRateByProductId(id)}}
-                <i class="fas fa-star"></i>
+                <em class="fas fa-star"></em>
             </li>
         </span>
     </router-link>
