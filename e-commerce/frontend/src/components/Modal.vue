@@ -79,13 +79,6 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/mixins.scss";
 
-// @include mq($from: tablet) {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 100vw;
-//     height: 100vh;
-// }
 .modal {
 
   @keyframes slide-fade-in {
@@ -122,11 +115,7 @@ export default defineComponent({
         background: get-color('white');
         width: 80%;
         height: 100vh;
-// @include mq($from: tablet) {
-//     transform: translateY(-70%);
-//     transition: all 500ms ease;
-//     height: auto;
-// }
+
     &--displayed {
       transform: translateY(0%);
       width: 100%;
@@ -136,22 +125,12 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px get-color('grey-5');
-    // @include mq($from: tablet) {
-    //     position: relative;
-    //     justify-content: center;
-    // }
+
     &-title {
         font-size: rem(22px);
         font-weight: get-font-weight('bold');
     }
     }
-    //&__header-button {
-    // @include mq($from: tablet) {
-    //         position: absolute;
-    //         top: rem(16px);
-    //         right: rem(16px);
-    //     }
-   // }
         .button {
           padding: 0;
 
