@@ -27,7 +27,7 @@
             :to="{ name: 'Detail', params: { id: id } }"
             @click="scrollToTop"
             >
-                <img class="carousel__item" :src='slide' alt="" srcset="">
+              <img class="carousel__item" :src='slide' alt="" srcset="">
             </router-link>
         </Slide>
         <template #addons>
