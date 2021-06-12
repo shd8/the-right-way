@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import DetailProduct from '@/components/DetailProduct.vue';
 
 describe('Given an detail product component', () => {
-  test('Should mount detail product component when not logged', async () => {
+  test('Should mount detail product component when not logged', () => {
     const wrapper = mount(DetailProduct, {
       props: {
         id: '123',
@@ -93,7 +93,7 @@ describe('Given an detail product component', () => {
       },
     });
     // Assert the rendered text of the component
-    await expect(wrapper.text()).toContain('Login or create an account to buy stuff, save your Wishlist and your conversations ! Not registered yet?  Click here !  Fill in all the fields and click on register Please, check the following errors: Credentials  Address Do you already have an account?  Enter here !  Login or create an account to buy stuff, save your Wishlist and your conversations ! Not registered yet?  Click here !  Fill in all the fields and click on register Please, check the following errors: Credentials  Address Do you already have an account?  Enter here ! arrowLeftarrowRight');
+    expect(wrapper.text()).toContain('Login or create an account to buy stuff, save your Wishlist and your conversations ! Not registered yet?  Click here !  Fill in all the fields and click on register Please, check the following errors: Credentials  Address Do you already have an account?  Enter here !  Login or create an account to buy stuff, save your Wishlist and your conversations ! Not registered yet?  Click here !  Fill in all the fields and click on register Please, check the following errors: Credentials  Address Do you already have an account?  Enter here ! arrowLeftarrowRight');
   });
 
 //   test('Should mount detail product component when logged', async () => {

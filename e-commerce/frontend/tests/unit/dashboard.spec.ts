@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import Dashboard from '@/views/Dashboard.vue';
 import router from '@/router/index';
 
-test('displays message', async () => {
+test('displays message', () => {
   const wrapper = mount(Dashboard, {
     global: {
       plugins: [router],
@@ -17,5 +17,5 @@ test('displays message', async () => {
   });
 
   // Assert the rendered text of the component
-  await expect(wrapper.text()).toContain('Select a category to start looking products');
+  expect(wrapper.text()).toContain('Select a category to start looking products');
 });

@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import AddToCart from '@/components/AddToCart.vue';
 
 describe('Given an Add to cart component', () => {
-  test('Should mount AddToCart', async () => {
+  test('Should mount AddToCart', () => {
     const wrapper = mount(AddToCart, {
       global: {
         mocks: {
@@ -84,6 +84,6 @@ describe('Given an Add to cart component', () => {
       },
     });
     // Assert the rendered text of the component
-    await expect(wrapper.text()).toContain('');
+    expect(wrapper.text()).toContain('');
   });
 });

@@ -4,10 +4,6 @@ import router from '@/router/index';
 
 describe('Given a category selector', () => {
   test('click on first routes to ./clothes', async () => {
-    // const $route = {
-    //   path: '/search/clothes',
-    // };
-
     const wrapper = mount(CategorySelector, {
       props: {
         id: '1',
@@ -18,8 +14,6 @@ describe('Given a category selector', () => {
       global: {
         plugins: [router],
         mocks: {
-          // router,
-          // $route,
           $router: {
             push: jest.fn(),
           },

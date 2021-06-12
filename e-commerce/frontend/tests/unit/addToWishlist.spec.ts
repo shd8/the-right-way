@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import AddToWishlist from '@/components/AddToWishlist.vue';
 
 describe('Given an Add to wishlist component', () => {
-  test('Should mount AddToWishlist', async () => {
+  test('Should mount AddToWishlist', () => {
     const wrapper = mount(AddToWishlist, {
       global: {
         mocks: {
@@ -85,6 +85,6 @@ describe('Given an Add to wishlist component', () => {
     });
 
     // Assert the rendered text of the component
-    await expect(wrapper.text()).toContain('');
+    expect(wrapper.text()).toContain('');
   });
 });

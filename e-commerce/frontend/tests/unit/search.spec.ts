@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import Search from '@/views/Search.vue';
 import router from '@/router/index';
 
-test('displays message', async () => {
+test('displays message', () => {
   const wrapper = mount(Search, {
     global: {
       plugins: [router],
@@ -40,5 +40,5 @@ test('displays message', async () => {
   });
 
   // Assert the rendered text of the component
-  await expect(wrapper.text()).toContain('We have 1 in stock!');
+  expect(wrapper.text()).toContain('We have 1 in stock!');
 });

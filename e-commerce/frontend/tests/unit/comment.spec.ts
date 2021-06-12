@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import Comment from '@/components/Comment.vue';
 
 describe('Given an Comment component', () => {
-  test('Should mount comment component', async () => {
+  test('Should mount comment component', () => {
     const wrapper = mount(Comment, {
       props: {
         user: 'Admin',
@@ -89,6 +89,6 @@ describe('Given an Comment component', () => {
       },
     });
     // Assert the rendered text of the component
-    await expect(wrapper.text()).toContain('Admin3Sudo');
+    expect(wrapper.text()).toContain('Admin3Sudo');
   });
 });

@@ -266,33 +266,30 @@ export default defineComponent({
   padding: 0.5em;
 }
 
-.fa-map-marker-alt {
-  padding: 0.5em;
-}
-
 .fa-user-input {
   font-size: 1em;
 }
 
 .fa-map-marker-alt {
-    color: $purple;
-    font-size: 1em;
+  padding: 0.5em;
+  color: $purple;
+  font-size: 1em;
 }
 
 .hrItem {
-    width: 90%;
+  width: 90%;
 }
 
 .h2Item {
-    padding-top: 0.5em;
-    font-size: 1.5em;
+  padding-top: 0.5em;
+  font-size: 1.5em;
 }
 
 .credentials {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .custom-input {

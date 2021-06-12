@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import App from '@/App.vue';
 import router from '@/router/index';
 
-test('displays message', async () => {
+test('displays message', () => {
   const wrapper = mount(App, {
     global: {
       plugins: [router],
@@ -86,5 +86,5 @@ test('displays message', async () => {
     },
   });
   // Assert the rendered text of the component
-  await expect(wrapper.text()).toContain('2Right modeLefty mode');
+  expect(wrapper.text()).toContain('2Right modeLefty mode');
 });

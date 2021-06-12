@@ -3,7 +3,7 @@ import CartProduct from '@/components/CartProduct.vue';
 import router from '@/router/index';
 
 describe('Given an Cart Product component', () => {
-  test('Should mount Cart Product', async () => {
+  test('Should mount Cart Product', () => {
     const wrapper = mount(CartProduct, {
       props: {
         id: '1',
@@ -92,6 +92,6 @@ describe('Given an Cart Product component', () => {
       },
     });
     // Assert the rendered text of the component
-    await expect(wrapper.text()).toContain('');
+    expect(wrapper.text()).toContain('');
   });
 });
