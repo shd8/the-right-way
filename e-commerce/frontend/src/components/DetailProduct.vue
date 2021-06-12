@@ -52,7 +52,7 @@
 
   <Carousel>
       <Slide v-for="slide in images" :key="slide">
-        <img class="carousel__item" :src='slide' alt="" srcset="">
+        <img class="carousel__item" :src='slide' alt="" srcset="" @click="openImage(slide)">
       </Slide>
       <template #addons>
       <Navigation />
@@ -119,6 +119,10 @@ export default defineComponent({
 
     handleToggleModal() {
       this.toggleModal();
+    },
+
+    openImage(url:string) {
+      window.open(url, '_blank');
     },
   },
 
@@ -283,6 +287,10 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+img {
+  cursor: pointer;
 }
 
 </style>
