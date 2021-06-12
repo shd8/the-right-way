@@ -1,5 +1,8 @@
 <template>
-    <div class="header">
+    <div
+    class="header"
+    :class="{'header-left-mode': !rightMode}"
+    >
         <nav
         class="nav"
         :class="{'right-nav': rightMode}"
@@ -130,6 +133,10 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     z-index: 99;
+}
+
+.header-left-mode {
+    cursor: url(https://cur.cursors-4u.net/cursors/cur-8/cur770.cur), auto;
 }
 
 .nav {
