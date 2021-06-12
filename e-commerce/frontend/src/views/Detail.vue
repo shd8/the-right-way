@@ -15,7 +15,7 @@
     <hr class="hrItem">
     <span class="details__rate">
       <p class='rate'>{{getCurrentProductRate}}</p>
-      <i class="fas fa-star"></i>
+      <em class="fas fa-star"></em>
     </span>
     <p class="details__stock">We have {{currentProduct.stock}} in stock!</p>
     <span class="comments-container">

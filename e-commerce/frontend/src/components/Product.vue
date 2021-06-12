@@ -161,7 +161,7 @@ export default defineComponent({
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    margin: 3.5em 0em 0em -8em;
+    margin: 0.5em 0em 0em -8em;
 
     &:hover {
       cursor: pointer;
@@ -187,7 +187,7 @@ export default defineComponent({
     border-radius: 50%;
     position: absolute;
     z-index: 2;
-    margin: 20.5em 0em 0em 5em;
+    margin: 18em 0em 0em 5em;
 
     &:hover {
       cursor: pointer;
@@ -202,13 +202,13 @@ export default defineComponent({
 
 .modal-heart-right-mode {
   button {
-    margin: 20.5em 0em 0em -8.5em;
+    margin: 18em 0em 0em -8.5em;
   }
 }
 
 .modal-cart-right-mode {
   button {
-    margin: 3.5em 0em 0em 5.5em;
+    margin: 0.5em 0em 0em 5.5em;
   }
 }
 
@@ -243,21 +243,21 @@ export default defineComponent({
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 3.5em 13.5em 0em 0em;
+  margin: 0.5em 13.5em 0em 0em;
 }
 
 .wishlist {
   position: absolute;
   z-index: 1;
-  margin: 20em 0em 0em 14em;
+  margin: 18em 0em 0em 14em;
 }
 
 .right-mode-cart {
-  margin: 3.5em 0em 0em 13.5em;
+  margin: 0.5em 0em 0em 13.5em;
 }
 
 .right-mode-wishlist {
-  margin: 20em 14em 0em 0em;
+  margin: 18em 14em 0em 0em;
 }
 
 </style>

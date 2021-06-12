@@ -1,6 +1,6 @@
 <template>
   <div class="wishlist-container">
-    <i class="fas fa-heart"></i>
+    <em class="fas fa-heart"></em>
     <div v-if="wishlist.length" class="wishlist">
       <h2 class="h2Item">Your wishlist !</h2>
       <hr class="hrItem">

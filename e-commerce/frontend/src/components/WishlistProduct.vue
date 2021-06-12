@@ -5,7 +5,7 @@
         :to="{ name: 'Detail', params: { id: id } }"
         @click="scrollToTop"
         >
-          <li class="product-name">{{name}}</li>
+          <span class="product-name">{{name}}</span>
         </router-link>
     </span>
     <button
@@ -116,23 +116,23 @@ em {
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 2em 13.5em 0em 0em;
+  margin: 0.5em 13.5em 0em 0em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-cart {
-  margin: 2em 0em 0em 13.5em;
+  margin: 0.5em 0em 0em 13.5em;
 }
 
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 19em 0em 0em 14em;
+  margin: 18em 0em 0em 14em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-trash {
-  margin: 19em 14em 0em 0em;
+  margin: 18em 14em 0em 0em;
 }
 
 </style>

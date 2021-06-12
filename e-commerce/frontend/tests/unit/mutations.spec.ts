@@ -179,7 +179,7 @@ describe('Given a mutation', () => {
         _id: '000',
         username: 'test user',
         email: 'test@test.com',
-        password: 'test123',
+        password: '',
         address: {
           country: 'test country',
           city: 'test city',

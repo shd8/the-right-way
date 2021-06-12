@@ -1,6 +1,6 @@
 <template>
   <div class="cart-container">
-    <i class="fas fa-shopping-cart"></i>
+    <em class="fas fa-shopping-cart"></em>
     <div v-if="cart.length" class="cart">
       <h2 class="h2Item">Your cart !</h2>
       <hr class="hrItem">

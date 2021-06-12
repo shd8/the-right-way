@@ -1,7 +1,7 @@
 <template>
 
   <div v-if='$store.state.isUserLogged' class="logged">
-    <i class="fas fa-user"></i>
+    <em class="fas fa-user"></em>
     <h2 class="h2Item">Welcome {{currentUser.username}}</h2>
     <hr class="hrItem">
     <h3>* Remember to check your data before making a purchase</h3>
@@ -46,7 +46,7 @@
     :class="{'right-mode-cart-length': rightMode}"
     >
       <router-link to="/cart" @click="scrollToTop">
-          <i class="fas fa-shopping-cart"></i>
+          <em class="fas fa-shopping-cart"></em>
       </router-link>
       <p class="cart-number">You have {{getCartLength}} products in the cart!</p>
     </span>
@@ -56,7 +56,7 @@
     :class="{'right-mode-wishlist-length': rightMode}"
     >
       <router-link to="/wishlist" @click="scrollToTop">
-          <i class="far fa-heart"></i>
+          <em class="far fa-heart"></em>
       </router-link>
       <p class="wishlist-number">You have {{getWishlistLength}} products in the wishlist!</p>
     </span>
