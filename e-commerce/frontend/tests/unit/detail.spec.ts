@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils';
 import Detail from '@/views/Detail.vue';
 
-test('displays message', async () => {
+test('displays message', () => {
   const wrapper = mount(Detail, {
     global: {
       mocks: {
@@ -42,5 +42,5 @@ test('displays message', async () => {
   isInWishlist.mockResolvedValue(() => true);
 
   // Assert the rendered text of the component
-  await expect(wrapper.text()).toContain('We have 1 in stock!');
+  expect(wrapper.text()).toContain('We have 1 in stock!');
 });

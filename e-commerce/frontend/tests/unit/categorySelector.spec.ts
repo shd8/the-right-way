@@ -3,7 +3,7 @@ import CategorySelector from '@/components/CartProduct.vue';
 import router from '@/router/index';
 
 describe('Given a category selector', () => {
-  test('click on first routes to ./clothes', async () => {
+  test('click on first routes to ./clothes', () => {
     const wrapper = mount(CategorySelector, {
       props: {
         id: '1',
@@ -97,6 +97,6 @@ describe('Given a category selector', () => {
 
     // await wrapper.find('.clothes').trigger('click');
 
-    await expect(wrapper.text()).toContain('');
+    expect(wrapper.text()).toContain('');
   });
 });
