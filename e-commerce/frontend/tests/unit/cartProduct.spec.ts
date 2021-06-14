@@ -202,6 +202,7 @@ describe('Given an Cart Product component', () => {
   });
 
   test('When link is clicked, should call scroll to top', async () => {
+    window.scrollTo = () => null;
     const $store = {
       state: {
         wishlist: ['abcd123'],
