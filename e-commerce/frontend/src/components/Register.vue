@@ -113,7 +113,6 @@
 
           </section>
 
-      </form>
           <section>
               <input
               class="login-form__login-button"
@@ -121,6 +120,7 @@
               value="Register"
               />
           </section>
+      </form>
   </div>
 
 </template>

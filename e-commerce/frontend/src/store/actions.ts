@@ -4,27 +4,31 @@ import { ActionContext } from 'vuex';
 import { State, User } from '@/types/interfaces';
 
 const actions = {
-  fetchProductsFromApi({ commit }:ActionContext<State, State>): void {
-    axios.get(`${process.env.VUE_APP_API_URL}/products`).then((response) => {
-      commit('updateProducts', response.data);
-    });
+  async fetchProductsFromApi({ commit }:ActionContext<State, State>): Promise<any> {
+    const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/products`);
+
+    commit('updateProducts', data);
   },
 
-  fetchProductFromApi({ commit }:ActionContext<State, State>, id:string): void {
-    axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`).then((response) => {
-      commit('updateCurrentProduct', response.data);
-    });
+  async fetchProductFromApi({ commit }:ActionContext<State, State>, id:string): Promise<any> {
+    const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`);
+
+    commit('updateCurrentProduct', data);
   },
 
-  logUserRequest({ commit }:ActionContext<State, State>, userData: User): void {
-    axios.post(process.env.VUE_APP_AUTH_LOGIN_URL, userData)
-      .then((response) => {
-        commit('logUser', response.data);
-      });
+  async logUserRequest({ commit }:ActionContext<State, State>, userData: User): Promise<any> {
+    const { data } = await axios.post(process.env.VUE_APP_AUTH_LOGIN_URL, userData);
+
+    commit('logUser', data);
   },
 
-  registerUserRequest({ commit }:ActionContext<State, State>, userData: User): void {
-    axios.post(process.env.VUE_APP_AUTH_REGISTER_URL, userData);
+  async registerUserRequest({ commit }:ActionContext<State, State>, userData: User): Promise<any> {
+    try {
+      const { data } = await axios.post(process.env.VUE_APP_AUTH_REGISTER_URL, userData);
+    } catch {
+      console.log('email already exists');
+    }
+
     // .then((response) => {
     //   commit('logUser', response.data);
     // });
