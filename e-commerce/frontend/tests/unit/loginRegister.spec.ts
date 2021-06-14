@@ -95,7 +95,7 @@ describe('Given a loginregister component', () => {
     expect(wrapper.text()).toContain('');
   });
 
-  test('Mount a LoginRegister component', () => {
+  test('Should click a Modal component', async () => {
     const wrapper = mount(LoginRegister, {
       global: {
         mocks: {
@@ -183,6 +183,8 @@ describe('Given a loginregister component', () => {
         },
       },
     });
+
+    await wrapper.find('.register-button').trigger('click');
 
     // Assert the rendered text of the component
     expect(wrapper.text()).toContain('Login or create an account to buy stuff, save your Wishlist and your conversations !');
