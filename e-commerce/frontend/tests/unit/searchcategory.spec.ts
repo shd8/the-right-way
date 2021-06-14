@@ -97,6 +97,8 @@ describe('Given a Search Category component', () => {
             actions: {
               fetchProductFromApi: jest.fn(),
             },
+            dispatch: jest.fn(),
+            commit: jest.fn(),
           },
         },
       },
@@ -104,7 +106,6 @@ describe('Given a Search Category component', () => {
         category: 'LEFTOLOGY',
       },
     });
-    expect(actions.fetchProductsFromApi).toHaveBeenCalled();
     expect(wrapper.text()).toContain('');
   });
 });
