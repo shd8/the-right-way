@@ -11,7 +11,7 @@
     <button
     class='trash'
     :class="{'right-mode-trash': rightMode}"
-    @click="$store.dispatch('retrieveFromUserCart', id)">
+    @click="retrieveFromUserCart(id)">
         <em class="fas fa-trash"></em>
     </button>
     <Carousel>
@@ -52,12 +52,12 @@ export default defineComponent({
     scrollToTop() {
       window.scrollTo(0, 0);
     },
-  },
-  computed: {
 
     ...mapActions([
       'retrieveFromUserCart',
     ]),
+  },
+  computed: {
 
     ...mapState([
       'rightMode',
