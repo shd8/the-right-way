@@ -108,10 +108,6 @@ export default defineComponent({
 
   methods: {
 
-    scrollToTop() {
-      window.scrollTo(0, 0);
-    },
-
     toggleModal() {
       this.showModal = !this.showModal;
     },
