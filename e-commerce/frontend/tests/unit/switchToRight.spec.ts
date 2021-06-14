@@ -79,6 +79,8 @@ describe('Given switch to right component', () => {
             getters: {
               isInWishlist: () => true,
             },
+            dispatch: jest.fn(),
+            commit: jest.fn(),
           },
         },
       },

@@ -94,6 +94,8 @@ describe('Given a category selector', () => {
             getters: {
               isInCart: () => true,
             },
+            dispatch: jest.fn(),
+            commit: jest.fn(),
           },
         },
       },
@@ -103,6 +105,8 @@ describe('Given a category selector', () => {
   });
 
   test('When link is clicked, should call scroll to top', async () => {
+    window.scrollTo = () => null;
+
     const $store = {
       state: {
         wishlist: ['abcd123'],
