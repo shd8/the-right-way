@@ -2,8 +2,13 @@ import { mount } from '@vue/test-utils';
 import WishlistProduct from '@/components/WishlistProduct.vue';
 import router from '@/router/index';
 
+const mockRouter = {
+  push: jest.fn(),
+};
 describe('Given a Wishlist Product component', () => {
-  test('Should mount Wishlist Product', () => {
+  test('Should mount Wishlist Product', async () => {
+    window.scrollTo = () => null;
+
     const wrapper = mount(WishlistProduct, {
       props: {
         id: '1',
@@ -12,8 +17,8 @@ describe('Given a Wishlist Product component', () => {
         images: [],
       },
       global: {
-        plugins: [router],
         mocks: {
+          $router: mockRouter,
           $store: {
             state: {
               wishlist: ['abcd123'],
@@ -91,6 +96,12 @@ describe('Given a Wishlist Product component', () => {
         },
       },
     });
+
+    const scrollToTop = jest.fn();
+    scrollToTop();
+
+    await wrapper.find('router-link').trigger('click');
+
     // Assert the rendered text of the component
     expect(wrapper.text()).toContain('');
   });
