@@ -4,8 +4,8 @@ import router from '@/router/index';
 
 jest.mock('@/store/actions');
 
-describe('Given a Wishlist Product component', () => {
-  test('Should mount Wishlist Product', async () => {
+describe('Given a Cart View component', () => {
+  test('Should mount a Cart View', async () => {
     window.scrollTo = () => null;
 
     const wrapper = mount(Cart, {
