@@ -2,6 +2,10 @@ import { mount } from '@vue/test-utils';
 import Product from '@/components/Product.vue';
 import router from '@/router/index';
 
+const mockRouter = {
+  push: jest.fn(),
+};
+
 describe('Given a Product component', () => {
   test('Mount a Product component', () => {
     const wrapper = mount(Product, {
@@ -99,6 +103,116 @@ describe('Given a Product component', () => {
         images: [],
       },
     });
+
+    // Assert the rendered text of the component
+    expect(wrapper.text()).toContain('');
+  });
+
+  test('Click a link and a modal', async () => {
+    window.scrollTo = () => null;
+
+    const wrapper = mount(Product, {
+      global: {
+        mocks: {
+          $router: mockRouter,
+          methods: {
+            handleToggleModal: jest.fn(),
+          },
+          $store: {
+            state: {
+              wishlist: ['abcd123'],
+              cart: ['abcd123', 'abcd321'],
+              products: [
+                {
+                  _id: 'abcd123',
+                  name: 'product1',
+                  category: 'LEFTICIANS',
+                  price: 5,
+                  stock: 0,
+                  images: [],
+                  ratings: [
+                    {
+                      user: 'one',
+                      rating: 1,
+                      comment: 'comment one',
+                    },
+                    {
+                      user: 'two',
+                      rating: 2,
+                      comment: 'comment two',
+                    },
+                  ],
+                },
+                {
+                  _id: 'abcd321',
+                  name: 'product2',
+                  category: 'OFFICE',
+                  price: 0,
+                  stock: 0,
+                  images: [],
+                  ratings: [],
+                },
+              ],
+              currentProduct: {
+                _id: '',
+                name: 'productA',
+                category: '',
+                price: 0,
+                stock: 0,
+                images: [],
+                ratings: [{
+                  user: 'one',
+                  rating: 1,
+                  comment: 'comment one',
+                },
+                {
+                  user: 'two',
+                  rating: 2,
+                  comment: 'comment two',
+                },
+                ],
+              },
+              currentUser: {
+                _id: '',
+                username: '',
+                email: '',
+                password: '',
+                address: {
+                  country: '',
+                  city: '',
+                  street: '',
+                  postalCode: '',
+                },
+              },
+              isUserLogged: false,
+              token: '',
+              rightMode: false,
+            },
+            getters: {
+              getCurrentProductRate: 5,
+              isInWishlist: () => true,
+              isInCart: () => true,
+            },
+            actions: {
+              fetchProductsFromApi: {},
+            },
+          },
+        },
+      },
+      props: {
+        id: '1',
+        name: 'product',
+        price: 3,
+        images: [],
+      },
+    });
+
+    await wrapper.findAll('button')[0].trigger('click');
+
+    const scrollToTop = jest.fn();
+    scrollToTop();
+
+    await wrapper.find('.link').trigger('click');
 
     // Assert the rendered text of the component
     expect(wrapper.text()).toContain('');
