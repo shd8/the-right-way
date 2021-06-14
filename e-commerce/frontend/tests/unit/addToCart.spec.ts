@@ -83,7 +83,7 @@ describe('Given an Add to cart component', () => {
         },
       },
     });
-    // Assert the rendered text of the component
     expect(wrapper.text()).toContain('');
+    // Assert the rendered text of the component
   });
 });
