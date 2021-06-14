@@ -10,6 +10,6 @@ module.exports = {
   ],
   transformIgnorePatterns: [
     // 'node_modules/(?!(vue3-carousel)/)',
-    'node_modules/(?!vue3-carousel|@vueform)'],
+    'node_modules/(?!vue3-carousel|@vueform|vue-router)'],
   modulePathIgnorePatterns: ['src/main.ts'],
 };
