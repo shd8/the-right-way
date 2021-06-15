@@ -22,23 +22,16 @@ const actions = {
     commit('logUser', data);
   },
 
-  async registerUserRequest({ commit }:ActionContext<State, State>, userData: User): Promise<any> {
-    try {
-      const { data } = await axios.post(process.env.VUE_APP_AUTH_REGISTER_URL, userData);
-    } catch {
-      console.log('email already exists');
-    }
-
-    // .then((response) => {
-    //   commit('logUser', response.data);
-    // });
+  async registerUserRequest(
+    { dispatch }:ActionContext<State, State>, userData: User,
+  ): Promise<any> {
+    await axios.post(process.env.VUE_APP_AUTH_REGISTER_URL, userData);
+    dispatch('logUserRequest', userData);
   },
 
   purchaseRequest({ commit, state }:ActionContext<State, State>): void {
-    // axios.post(process.env.VUE_APP_AUTH_LOGIN_URL)
-    //   .then((response) => {
     commit('emptyCart');
-    // });
+
     const data = {
       cart: state.cart,
       _id: state.currentUser._id,
