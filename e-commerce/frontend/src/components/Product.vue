@@ -5,7 +5,9 @@
   class="modal-heart"
   :class="{'modal-heart-right-mode': rightMode}"
   >
-    <button @click='handleToggleModal'>
+    <button
+    class="custom-button"
+    @click='handleToggleModal'>
       <em class="far fa-heart"></em>
     </button>
       <Modal
@@ -23,7 +25,9 @@
   class="modal-cart"
   :class="{'modal-cart-right-mode': rightMode}"
   >
-    <button @click='handleToggleModal'>
+    <button
+    class="custom-button"
+    @click='handleToggleModal'>
       <em class="fas fa-dollar-sign"></em>
     </button>
       <Modal
@@ -150,22 +154,12 @@ export default defineComponent({
 
 .modal-cart {
   button {
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3em;
-    height: 3em;
-    border-style: none;
-    border: 1px solid $purple;
-    border-radius: 50%;
     position: absolute;
     z-index: 2;
     margin: 0.5em 0em 0em -8em;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   em {
@@ -176,22 +170,12 @@ export default defineComponent({
 
 .modal-heart {
   button {
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3em;
-    height: 3em;
-    border-style: none;
-    border: 1px solid $purple;
-    border-radius: 50%;
     position: absolute;
     z-index: 2;
     margin: 18em 0em 0em 5em;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   em {

@@ -206,13 +206,13 @@ p {
   }
 }
 .register-button {
-    background-color: white;
-    border: none;
-    font-size: 1.2em;
-    color: $purple;
-    text-decoration: underline 0.2em;
-    padding-left: 0.5em;
-    cursor: pointer;
+  background-color: white;
+  border: none;
+  font-size: 1.2em;
+  color: $purple;
+  text-decoration: underline 0.2em;
+  padding-left: 0.5em;
+  cursor: pointer;
 }
 
 .logout-button {

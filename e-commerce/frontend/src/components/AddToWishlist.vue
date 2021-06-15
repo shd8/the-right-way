@@ -1,11 +1,16 @@
 <template>
     <button
+      class="custom-button"
       v-if="isInWishlist(id)"
       @click="$store.dispatch('retrieveFromUserWishlist', id)"
       >
         <em class="fas fa-heart"></em>
     </button>
-    <button v-else @click="$store.dispatch('addToUserWishlist' ,id)">
+    <button
+    v-else
+    @click="$store.dispatch('addToUserWishlist' ,id)"
+    class="custom-button"
+    >
       <em class="far fa-heart"></em>
     </button>
 
@@ -47,24 +52,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
 
 button {
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3em;
-  height: 3em;
-  border-style: none;
-  border: 1px solid $purple;
-  border-radius: 50%;
   position: absolute;
   z-index: 2;
   margin: 20.5em 0em 0em 5em;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 em {

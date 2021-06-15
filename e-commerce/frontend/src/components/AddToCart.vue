@@ -1,8 +1,16 @@
 <template>
-  <button v-if="isInCart(id)" @click="$store.dispatch('retrieveFromUserCart', id)" >
+  <button
+  v-if="isInCart(id)"
+  @click="$store.dispatch('retrieveFromUserCart', id)"
+  class="custom-button"
+  >
     <em class="fas fa-shopping-cart"></em>
   </button>
-  <button  v-else @click="$store.dispatch('addToUserCart', id)">
+  <button
+  v-else
+  @click="$store.dispatch('addToUserCart', id)"
+  class="custom-button"
+  >
     <em class="fas fa-dollar-sign"></em>
   </button>
 </template>
@@ -32,24 +40,15 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
 
 button {
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3em;
-  height: 3em;
-  border-style: none;
-  border: 1px solid $purple;
-  border-radius: 50%;
   position: absolute;
   z-index: 2;
   margin: 3.5em 0em 0em -8em;
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 em {

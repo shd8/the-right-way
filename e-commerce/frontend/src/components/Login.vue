@@ -159,12 +159,12 @@ export default defineComponent({
 }
 
 .hrItem {
-    margin: 0;
+  margin: 0;
 }
 
 .h2Item {
-    padding-top: 0.5em;
-    font-size: 1.5em;
+  padding-top: 0.5em;
+  font-size: 1.5em;
 }
 
 .email {
@@ -176,23 +176,22 @@ export default defineComponent({
 }
 
 .credentials {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (min-width: 800px) {
     .credentials {
-        // flex-direction: row;
-        width: 80%;
+      width: 80%;
     }
 
     .email {
-        margin-top: 2em;
+      margin-top: 2em;
     }
 
     .custom-input {
-        margin-bottom: 2em;
+      margin-bottom: 2em;
     }
 }
 

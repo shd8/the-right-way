@@ -9,7 +9,7 @@
         </router-link>
     </span>
     <button
-    class='trash'
+    class='trash custom-button'
     @click="$store.dispatch('retrieveFromUserWishlist', id)"
     :class="{'right-mode-trash': rightMode}"
     >
@@ -77,19 +77,6 @@ export default defineComponent({
 <style scoped lang="scss">
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
-
-button {
-  background-color: white;
-  width: 3em;
-  height: 3em;
-  border-style: none;
-  border-radius: 50%;
-  border: 1px solid $purple;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
 
 em {
   color: $purple;

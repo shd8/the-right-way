@@ -58,16 +58,16 @@ export default defineComponent({
 @import "../styles/mixins.scss";
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    &__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .wishlist {

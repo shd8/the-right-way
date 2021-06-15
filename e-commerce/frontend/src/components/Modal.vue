@@ -163,7 +163,6 @@ export default defineComponent({
 .slide-fade-leave-active {
   // transition: opacity 0.5s;
   animation: slide-fade-in 0.5s reverse;
-
 }
 
 @media (min-width: 720px) {

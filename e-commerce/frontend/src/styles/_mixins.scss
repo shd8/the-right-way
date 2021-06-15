@@ -34,6 +34,19 @@
     width: 80%;
 }
 
+.custom-button {
+    background-color: white;
+    width: 3em;
+    height: 3em;
+    border-style: none;
+    border: 1px solid $purple;
+    border-radius: 50%;  
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 .custom-input {
     display: flex;
     align-self: center;
