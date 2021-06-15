@@ -37,10 +37,7 @@ describe('Given an Cart Product component', () => {
 
   test('When trash button is clicked, should call action retrieve from User Cart', async () => {
     const $store = {
-      state: {
-        ...state,
-        isUserLogged: true,
-      },
+      state,
       getters: {
         isInWishlist: () => true,
       },
@@ -72,10 +69,7 @@ describe('Given an Cart Product component', () => {
   test('When link is clicked, should call scroll to top', async () => {
     window.scrollTo = () => null;
     const $store = {
-      state: {
-        ...state,
-        isUserLogged: true,
-      },
+      state,
       getters: {
         isInWishlist: () => true,
       },

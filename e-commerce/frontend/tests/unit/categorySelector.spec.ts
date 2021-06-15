@@ -35,10 +35,7 @@ describe('Given a category selector', () => {
     window.scrollTo = () => null;
 
     const $store = {
-      state: {
-        ...state,
-        isUserLogged: true,
-      },
+      state,
       getters: {
         isInWishlist: () => true,
       },

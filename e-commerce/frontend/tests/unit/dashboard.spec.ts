@@ -20,10 +20,7 @@ describe('Given a Dashboard component', () => {
         plugins: [router],
         mocks: {
           $store: {
-            state: {
-              ...state,
-              isUserLogged: true,
-            },
+            state,
             getters: {
               isInCart: () => true,
               getProductById: () => 'abc123',

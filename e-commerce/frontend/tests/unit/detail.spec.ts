@@ -9,10 +9,7 @@ test('Should render a detail component', () => {
       plugins: [router],
       mocks: {
         $store: {
-          state: {
-            ...state,
-            isUserLogged: true,
-          },
+          state,
           getters: {
             isInWishlist: () => true,
             isInCart: () => true,
