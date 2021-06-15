@@ -2,8 +2,9 @@ import { mount } from '@vue/test-utils';
 import SearchProduct from '@/components/SearchProduct.vue';
 import router from '@/router/index';
 
-describe('Given an Cart Product component', () => {
-  test('Should mount Cart Product', () => {
+describe('Given a Searhc Product component', () => {
+  test('Should mount Search Product', () => {
+    window.scrollTo = () => null;
     const wrapper = mount(SearchProduct, {
       props: {
         id: '1',
@@ -14,6 +15,9 @@ describe('Given an Cart Product component', () => {
       global: {
         plugins: [router],
         mocks: {
+          $router: {
+            push: jest.fn(),
+          },
           $store: {
             state: {
               wishlist: ['abcd123'],
@@ -88,10 +92,16 @@ describe('Given an Cart Product component', () => {
               isInCart: () => true,
               getRateByProductId: () => 3,
             },
+            dispatch: jest.fn(),
+            commit: jest.fn(),
+          },
+          methods: {
+            scrollToTop: jest.fn(),
           },
         },
       },
     });
+
     // Assert the rendered text of the component
     expect(wrapper.text()).toContain('');
   });
