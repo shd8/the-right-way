@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import CategorySelector from '@/components/CartProduct.vue';
+import CategorySelector from '@/components/CategorySelector.vue';
 import router from '@/router/index';
 
 const mockRouter = {
@@ -9,12 +9,6 @@ const mockRouter = {
 describe('Given a category selector', () => {
   test('Should mount a category selector component', () => {
     const wrapper = mount(CategorySelector, {
-      props: {
-        id: '1',
-        name: 'Product1',
-        price: 3,
-        images: [],
-      },
       global: {
         plugins: [router],
         mocks: {
@@ -188,15 +182,7 @@ describe('Given a category selector', () => {
       scrollToTop: jest.fn(),
     };
 
-    const props = {
-      id: 'abc',
-      name: 'Product1',
-      price: 3,
-      images: [],
-    };
-
     const wrapper = mount(CategorySelector, {
-      props,
       global: {
         mocks: {
           $router: mockRouter,
@@ -209,7 +195,7 @@ describe('Given a category selector', () => {
     const scrollToTop = jest.fn();
     scrollToTop();
 
-    await wrapper.findAll('router-link')[0].trigger('click');
+    await wrapper.find('.clothes').trigger('click');
 
     expect(scrollToTop).toHaveBeenCalled();
   });
