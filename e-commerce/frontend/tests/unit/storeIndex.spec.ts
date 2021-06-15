@@ -1,5 +1,5 @@
 import store from '@/store/index';
 
 test('State call', () => {
-  expect(store).toBe('');
+  expect(store.state.wishlist).toEqual([]);
 });
