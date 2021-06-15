@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
 import WishlistProduct from '@/components/WishlistProduct.vue';
-import router from '@/router/index';
 
 const mockRouter = {
   push: jest.fn(),

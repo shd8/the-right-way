@@ -192,7 +192,7 @@ describe('Given a Modal component', () => {
 
     await wrapper.find('.modal__header-button').trigger('click');
 
-    await wrapper.unmount();
+    wrapper.unmount();
     // Assert the rendered text of the component
     expect(wrapper.text()).toContain('');
   });

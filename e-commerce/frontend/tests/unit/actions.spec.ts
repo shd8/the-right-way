@@ -132,32 +132,32 @@ describe('Given an object of actions', () => {
     expect(axios.post).toHaveBeenCalled();
   });
 
-  test('Make a purchase request', async () => {
-    await actions.purchaseRequest(configActionContextAndState(commit, state));
+  test('Make a purchase request', () => {
+    actions.purchaseRequest(configActionContextAndState(commit, state));
 
     expect(commit).toHaveBeenCalled();
   });
 
-  test('Add to user wishlist', async () => {
-    await actions.addToUserWishlist(configActionContextAndState(commit, state), 'abc123');
+  test('Add to user wishlist', () => {
+    actions.addToUserWishlist(configActionContextAndState(commit, state), 'abc123');
 
     expect(commit).toHaveBeenCalled();
   });
 
-  test('Retrieve from user wishlist', async () => {
-    await actions.retrieveFromUserWishlist(configActionContextAndState(commit, state), 'abc123');
+  test('Retrieve from user wishlist', () => {
+    actions.retrieveFromUserWishlist(configActionContextAndState(commit, state), 'abc123');
 
     expect(commit).toHaveBeenCalled();
   });
 
-  test('Add to user cart', async () => {
-    await actions.addToUserCart(configActionContextAndState(commit, state), 'abc123');
+  test('Add to user cart', () => {
+    actions.addToUserCart(configActionContextAndState(commit, state), 'abc123');
 
     expect(commit).toHaveBeenCalled();
   });
 
-  test('Retrieve from user cart', async () => {
-    await actions.retrieveFromUserCart(configActionContextAndState(commit, state), 'abc123');
+  test('Retrieve from user cart', () => {
+    actions.retrieveFromUserCart(configActionContextAndState(commit, state), 'abc123');
 
     expect(commit).toHaveBeenCalled();
   });

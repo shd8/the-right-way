@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
 import SearchCategory from '@/views/SearchCategory.vue';
-import actions from '@/store/actions';
 import router from '@/router/index';
 
 jest.mock('@/store/actions');

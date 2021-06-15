@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils';
 import Profile from '@/views/Profile.vue';
-import router from '@/router/index';
 
 jest.mock('@/store/actions');
 
