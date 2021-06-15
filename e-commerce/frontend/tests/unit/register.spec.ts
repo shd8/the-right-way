@@ -190,8 +190,9 @@ describe('Given a register component', () => {
             },
             actions: {
               fetchProductsFromApi: {},
-              registerUserRequest: jest.fn(),
             },
+            dispatch: jest.fn(),
+            commit: jest.fn(),
           },
         },
       },
@@ -206,7 +207,8 @@ describe('Given a register component', () => {
           country: 'a',
           city: 'a',
           street: 'a',
-          postalCode: '',
+          postalCode: '123',
+          errors: [],
         };
       },
     });
