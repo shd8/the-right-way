@@ -1,12 +1,17 @@
 import actions from '@/store/actions';
-import { Commit } from 'vuex';
+import { Commit, Dispatch } from 'vuex';
 import { State, User } from '@/types/interfaces';
 import axios from 'axios';
-import { configActionContextAndState, configActionContext } from '../test-utils';
+import {
+  configActionContextAndState,
+  configActionContext,
+  configActionContextDispatch,
+} from '../test-utils';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 const commit = jest.fn() as jest. MockedFunction<Commit>;
+const dispatch = jest.fn() as jest. MockedFunction<Dispatch>;
 
 describe('Given an object of actions', () => {
   let state: State;
@@ -122,7 +127,7 @@ describe('Given an object of actions', () => {
 
     const userData = {} as User;
 
-    await actions.registerUserRequest(configActionContext(commit), userData);
+    await actions.registerUserRequest(configActionContextDispatch(dispatch), userData);
 
     expect(axios.post).toHaveBeenCalled();
   });
@@ -156,16 +161,4 @@ describe('Given an object of actions', () => {
 
     expect(commit).toHaveBeenCalled();
   });
-});
-
-test('Register a new user and catch an error', async () => {
-  mockedAxios.post.mockRejectedValue({
-    data: [],
-  });
-
-  const userData = {} as User;
-
-  await actions.registerUserRequest(configActionContext(commit), userData);
-
-  expect(axios.post).toHaveBeenCalled();
 });
