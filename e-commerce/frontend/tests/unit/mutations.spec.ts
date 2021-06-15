@@ -1,58 +1,12 @@
 import mutations from '@/store/mutations';
 import { State } from '@/types/interfaces';
+import state from '../mocked-state';
 
-let mockedState:State;
+let mockedState: State;
 
 describe('Given a mutation', () => {
   beforeEach(() => {
-    mockedState = {
-      wishlist: ['abcd123'],
-      cart: ['abcd123'],
-      products: [
-        {
-          _id: '',
-          name: 'product1',
-          category: '',
-          price: 0,
-          stock: 0,
-          images: [],
-          ratings: [],
-        },
-        {
-          _id: '',
-          name: 'product2',
-          category: '',
-          price: 0,
-          stock: 0,
-          images: [],
-          ratings: [],
-        },
-      ],
-      currentProduct: {
-        _id: '',
-        name: 'productA',
-        category: '',
-        price: 0,
-        stock: 0,
-        images: [],
-        ratings: [],
-      },
-      currentUser: {
-        _id: '',
-        username: '',
-        email: '',
-        password: '',
-        address: {
-          country: '',
-          city: '',
-          street: '',
-          postalCode: '',
-        },
-      },
-      isUserLogged: false,
-      token: '',
-      rightMode: false,
-    };
+    mockedState = state;
   });
   test('Update products and a payload, update list of products', () => {
     const payload = [
@@ -143,7 +97,7 @@ describe('Given a mutation', () => {
 
     mutations.retrieveFromWishlist(mockedState, payload);
 
-    expect(mockedState.wishlist).toEqual([]);
+    expect(mockedState.wishlist).toEqual(['abcd321']);
   });
 
   test('Add product to cart and a string, should add payload to wishlist', () => {
@@ -155,16 +109,17 @@ describe('Given a mutation', () => {
       [
         'abcd123',
         'abcd321',
+        'abcd321',
       ],
     );
   });
 
-  test('Retrieve product to cart and a string, should delete payload from wishlist', () => {
+  test('Retrieve product from cart and a string, should delete payload from wishlist', () => {
     const payload = 'abcd123';
 
     mutations.retrieveFromCart(mockedState, payload);
 
-    expect(mockedState.cart).toEqual([]);
+    expect(mockedState.cart).toEqual(['abcd321', 'abcd321']);
   });
 
   test('Empty cart, should retrieve every product form cart', () => {
@@ -207,6 +162,6 @@ describe('Given a mutation', () => {
   test('Change right mode, change the right mode', () => {
     mutations.changeRightMode(mockedState);
 
-    expect(mockedState.rightMode).toBe(true);
+    expect(mockedState.rightMode).toBe(false);
   });
 });
