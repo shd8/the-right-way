@@ -11,20 +11,36 @@
             class="nav__buttons"
             :class="{'right-mode-buttons': rightMode}"
             >
-                <router-link to="/cart" @click="scrollToTop">
-                    <em class="fas fa-shopping-cart">
-                        <p class="cart-number">{{getCartLength}}</p>
-                    </em>
+                <section class="links">
+                    <router-link to="/cart" @click="scrollToTop">
+                        <em class="fas fa-shopping-cart">
+                            <p class="cart-number">{{getCartLength}}</p>
+                        </em>
+                    </router-link>
+                    <router-link to="/wishlist" @click="scrollToTop">
+                        <em class="far fa-heart">
+                            <p class="wishlist-number">{{getWishlistLength}}</p>
+                        </em>
+                    </router-link>
+                    <router-link to="/profile" @click="scrollToTop">
+                        <em class="far fa-user"></em>
+                    </router-link>
+                </section>
+
+                <div class='search'>
+                <router-link to="/search" @click="scrollToTop">
+                    <em class="fas fa-search"></em>
                 </router-link>
-                <router-link to="/wishlist" @click="scrollToTop">
-                    <em class="far fa-heart">
-                        <p class="wishlist-number">{{getWishlistLength}}</p>
-                    </em>
-                </router-link>
-                <router-link to="/profile" @click="scrollToTop">
-                    <em class="far fa-user"></em>
-                </router-link>
+                    <input
+                    class="search__input"
+                    type="text"
+                    placeholder="Search something ..."
+                    v-model="searchInput"
+                    v-on:input="filterWithSearchInput"
+                    />
+                </div>
             </div>
+
             <router-link
             class="nav__logo"
             to="/"
@@ -35,18 +51,6 @@
             </router-link>
         </nav>
 
-        <div class='search'>
-                <router-link to="/search" @click="scrollToTop">
-                    <em class="fas fa-search"></em>
-                </router-link>
-                <input
-                class="search__input"
-                type="text"
-                placeholder="Search something ..."
-                v-model="searchInput"
-                v-on:input="filterWithSearchInput"
-                />
-        </div>
     </div>
 
     <div
@@ -147,6 +151,7 @@ export default defineComponent({
         display: flex;
         padding: 0;
         color: white;
+        width: 100%;
     }
 
     &__logo {
@@ -172,7 +177,7 @@ export default defineComponent({
 .fa-user {
     font-size: 1.5em;
     color: $purple;
-    width: 3em;
+    width: 2.5em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,6 +190,10 @@ export default defineComponent({
     }
 }
 
+.fa-user {
+    margin-right: 1em;
+}
+
 .peace-logo {
     margin-right: 2.5em;
 }
@@ -193,10 +202,9 @@ export default defineComponent({
     display: flex;
     align-self: center;
     background-color: white;
-    margin-bottom: 1em;
-    width: 80%;
     border-radius: 1em;
     align-items: center;
+    width: 60%;
 
     &__input {
         font-size: 1em;
@@ -208,6 +216,10 @@ export default defineComponent({
     &__input:focus {
         outline: none;
     }
+}
+
+.links {
+    display: flex;
 }
 
 .cart-number,
@@ -249,6 +261,23 @@ export default defineComponent({
         width: 80%;
         align-self: center;
     }
+}
+
+@media (max-width: 700px) {
+
+    .nav__buttons {
+        flex-direction: column;
+    }
+
+    .peace-logo {
+        margin-bottom: 2.5em;
+    }
+
+    .search {
+        width: 100%;
+        margin: 1em 0em 0em 3em;
+    }
+
 }
 
 </style>
