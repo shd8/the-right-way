@@ -9,9 +9,12 @@
         >
             <div
             class="nav__buttons"
-            :class="{'right-mode-buttons': rightMode}"
+            :class="{'right-mode-nav-buttons': rightMode}"
             >
-                <section class="links">
+                <section
+                class="links"
+                :class="{'right-mode-links': rightMode}"
+                >
                     <router-link to="/cart" @click="scrollToTop">
                         <em class="fas fa-shopping-cart">
                             <p class="cart-number">{{getCartLength}}</p>
@@ -23,11 +26,17 @@
                         </em>
                     </router-link>
                     <router-link to="/profile" @click="scrollToTop">
-                        <em class="far fa-user"></em>
+                        <em
+                        class="far fa-user"
+                        :class="{'right-mode-user': rightMode}"
+                        ></em>
                     </router-link>
                 </section>
 
-                <div class='search'>
+                <div
+                class='search'
+                :class="{'right-mode-search': rightMode}"
+                >
                 <router-link to="/search" @click="scrollToTop">
                     <em class="fas fa-search"></em>
                 </router-link>
@@ -165,6 +174,10 @@ export default defineComponent({
     }
 }
 
+.right-mode-nav-buttons {
+    flex-direction: row-reverse;
+}
+
 .right-nav {
     flex-direction: row-reverse;
 }
@@ -175,7 +188,7 @@ export default defineComponent({
 }
 
 .right-mode-logo {
-    padding-left: 1em;
+    padding-left: 2em;
 }
 
 .fa-shopping-cart,
@@ -279,9 +292,26 @@ export default defineComponent({
         margin-bottom: 2.5em;
     }
 
+    .right-mode-links {
+        justify-content: flex-end;
+    }
+
+    .right-mode-logo {
+        margin: 0em 0em 0em 0em;
+    }
+
     .search {
         width: 100%;
         margin: 1em 0em 0em 3em;
+    }
+
+    .right-mode-search {
+        margin: 1em 5em 0em 0em;
+        width: 110%;
+    }
+
+    .right-mode-user {
+        margin-right: 0.3em;
     }
 
     .filtered-search {

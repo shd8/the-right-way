@@ -103,23 +103,27 @@ em {
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 0.5em 13.5em 0em 0em;
+  margin: 1.5em 13.5em 0em 0em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-cart {
-  margin: 0.5em 0em 0em 13.5em;
+  margin: 1.5em 0em 0em 13.5em;
 }
 
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 18em 0em 0em 14em;
+  margin: 19em 0em 0em 14em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-trash {
-  margin: 18em 14em 0em 0em;
+  margin: 19em 14em 0em 0em;
+}
+
+.products__data {
+  margin-bottom: 1em;
 }
 
 </style>

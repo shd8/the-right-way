@@ -143,6 +143,7 @@ export default defineComponent({
 .product-name {
   color: $purple;
   text-align: center;
+  padding-right: 1em;
 }
 
 .modal-cart,
@@ -159,13 +160,17 @@ export default defineComponent({
     justify-content: center;
     position: absolute;
     z-index: 2;
-    margin: 0.5em 0em 0em -8em;
+    margin: 1.5em 0em 0em -8em;
   }
 
   em {
     color: $purple;
     font-size: 1.5em;
   }
+}
+
+.products__data {
+  margin-bottom: 1em;
 }
 
 .modal-heart {
@@ -175,7 +180,7 @@ export default defineComponent({
     justify-content: center;
     position: absolute;
     z-index: 2;
-    margin: 18em 0em 0em 5em;
+    margin: 19em 0em 0em 5em;
   }
 
   em {
@@ -186,13 +191,13 @@ export default defineComponent({
 
 .modal-heart-right-mode {
   button {
-    margin: 18em 0em 0em -8.5em;
+    margin: 19em 0em 0em -8.5em;
   }
 }
 
 .modal-cart-right-mode {
   button {
-    margin: 0.5em 0em 0em 5.5em;
+    margin: 1.5em 0em 0em 5.5em;
   }
 }
 
@@ -227,21 +232,21 @@ export default defineComponent({
 .cart {
   position: absolute;
   z-index: 1;
-  margin: 0.5em 13.5em 0em 0em;
+  margin: 1.5em 13.5em 0em 0em;
 }
 
 .wishlist {
   position: absolute;
   z-index: 1;
-  margin: 18em 0em 0em 14em;
+  margin: 19em 0em 0em 14em;
 }
 
 .right-mode-cart {
-  margin: 0.5em 0em 0em 13.5em;
+  margin: 1.5em 0em 0em 13.5em;
 }
 
 .right-mode-wishlist {
-  margin: 18em 14em 0em 0em;
+  margin: 19em 14em 0em 0em;
 }
 
 </style>

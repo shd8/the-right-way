@@ -75,13 +75,17 @@ em {
   font-size: 1.5em;
 }
 
+.products__data {
+  margin-bottom: 1em;
+}
+
 .product-name {
   color: $purple;
   padding-bottom: 1em;
 }
 
 .product-price {
-  padding: 0.5em 0em;
+  padding: 1.5em 0em;
 }
 
 .carousel {
@@ -95,12 +99,12 @@ em {
 .trash {
   position: absolute;
   z-index: 1;
-  margin: 0.5em 14em 0em 0em;
+  margin: 1.5em 14em 0em 0em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .right-mode-trash {
-  margin: 0.5em 0em 0em 14em;
+  margin: 1.5em 0em 0em 14em;
 }
 
 </style>
