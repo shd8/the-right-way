@@ -31,13 +31,13 @@
                 <router-link to="/search" @click="scrollToTop">
                     <em class="fas fa-search"></em>
                 </router-link>
-                    <input
-                    class="search__input"
-                    type="text"
-                    placeholder="Search something ..."
-                    v-model="searchInput"
-                    v-on:input="filterWithSearchInput"
-                    />
+                <input
+                class="search__input"
+                type="text"
+                placeholder="Search something ..."
+                v-model="searchInput"
+                v-on:input="filterWithSearchInput"
+                />
                 </div>
             </div>
 
@@ -60,6 +60,7 @@
         v-for='product in filteredProducts'
         :key="product._id"
         class="filtered-search__products"
+        @click='emptyInput'
         >
           <SearchProduct
           :id='product._id'
@@ -96,6 +97,11 @@ export default defineComponent({
 
     scrollToTop() {
       window.scrollTo(0, 0);
+    },
+
+    emptyInput() {
+      this.searchInput = '';
+      this.filteredProducts = [];
     },
 
     filterWithSearchInput() {
@@ -145,7 +151,7 @@ export default defineComponent({
 .nav {
     display: flex;
     justify-content: space-between;
-    margin: 1em 0em 1em 1em;
+    margin: 1em 0em 1em 0em;
 
     &__buttons {
         display: flex;
@@ -195,7 +201,7 @@ export default defineComponent({
 }
 
 .peace-logo {
-    margin-right: 2.5em;
+    margin-right: 1.5em;
 }
 
 .search {
@@ -252,6 +258,7 @@ export default defineComponent({
     flex-direction: column;
     background-color: white;
     margin-bottom: 1em;
+    padding-top: 5em;
     width: 100%;
     border-radius: 1em;
     align-items: center;
@@ -277,6 +284,9 @@ export default defineComponent({
         margin: 1em 0em 0em 3em;
     }
 
+    .filtered-search {
+        padding-top: 8em;
+    }
 }
 
 </style>

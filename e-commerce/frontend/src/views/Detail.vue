@@ -77,6 +77,10 @@ export default defineComponent({
 @import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
 
+.h2Item {
+  padding-top: 0.5em;
+}
+
 .details {
   display: flex;
   flex-direction: column;
