@@ -78,6 +78,53 @@ describe('Given a header component', () => {
     expect(scrollToTop).toHaveBeenCalled();
   });
 
+  test('When filtered search is clicked, should call empty input', async () => {
+    window.scrollTo = () => null;
+    const $store = {
+      state,
+      getters: {
+        isInCart: () => true,
+        getCartLength: () => 1,
+        getWishlistLength: () => 1,
+      },
+      dispatch: jest.fn(),
+      commit: jest.fn(),
+    };
+
+    const methods = {
+      scrollToTop: jest.fn(),
+    };
+
+    const wrapper = mount(Header, {
+      global: {
+        mocks: {
+          $router: mockRouter,
+          $store,
+          methods,
+          data() {
+            return {
+              searchInput: 'a',
+              filteredProducts: [{
+                id: 'id',
+                name: 'a',
+                price: 'price',
+                image: 'image-url',
+                category: 'category',
+              }],
+            };
+          },
+        },
+      },
+    });
+
+    const emptyInput = jest.fn();
+    emptyInput();
+
+    await wrapper.find('.filtered-search').trigger('click');
+
+    expect(emptyInput).toHaveBeenCalled();
+  });
+
   test('And an input', async () => {
     window.scrollTo = () => null;
     const $store = {

@@ -55,12 +55,12 @@
 
     <div
     class="filtered-search"
+    @click='emptyInput'
     >
         <ul
         v-for='product in filteredProducts'
         :key="product._id"
         class="filtered-search__products"
-        @click='emptyInput'
         >
           <SearchProduct
           :id='product._id'
