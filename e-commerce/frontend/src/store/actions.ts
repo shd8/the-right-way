@@ -4,19 +4,19 @@ import { ActionContext } from 'vuex';
 import { State, User } from '@/types/interfaces';
 
 const actions = {
-  async fetchProductsFromApi({ commit }:ActionContext<State, State>): Promise<any> {
+  async fetchProductsFromApi({ commit }:ActionContext<State, State>): Promise<void> {
     const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/products`);
 
     commit('updateProducts', data);
   },
 
-  async fetchProductFromApi({ commit }:ActionContext<State, State>, id:string): Promise<any> {
+  async fetchProductFromApi({ commit }:ActionContext<State, State>, id:string): Promise<void> {
     const { data } = await axios.get(`${process.env.VUE_APP_API_URL}/products/${id}`);
 
     commit('updateCurrentProduct', data);
   },
 
-  async logUserRequest({ commit }:ActionContext<State, State>, userData: User): Promise<any> {
+  async logUserRequest({ commit }:ActionContext<State, State>, userData: User): Promise<void> {
     const { data } = await axios.post(process.env.VUE_APP_AUTH_LOGIN_URL, userData);
 
     commit('logUser', data);

@@ -86,6 +86,12 @@
 import { defineComponent } from 'vue';
 import { mapGetters, mapState } from 'vuex';
 import SearchProduct from '@/components/SearchProduct.vue';
+import { Product } from '@/types/interfaces';
+
+interface Data {
+    searchInput: string,
+    filteredProducts: Array<Product>
+}
 
 export default defineComponent({
   name: 'Header',
@@ -115,7 +121,7 @@ export default defineComponent({
     filterWithSearchInput() {
       if (this.searchInput !== '') {
         this.filteredProducts = this.products
-          .filter((product:any) => product.name.toLowerCase()
+          .filter((product:Product) => product.name.toLowerCase()
             .includes(this.searchInput.toLowerCase()))
           .slice(0, 5);
       } else {
@@ -127,7 +133,7 @@ export default defineComponent({
   components: {
     SearchProduct,
   },
-  data():any {
+  data(): Data {
     return {
       searchInput: '',
       filteredProducts: [],

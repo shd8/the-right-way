@@ -77,10 +77,10 @@ export default defineComponent({
   },
   name: 'Login',
   methods: {
-    loginButtonPressed(e:Event) {
+    loginButtonPressed(e:Event): boolean {
       e.preventDefault();
 
-      let result;
+      let result = false;
 
       if (this.email && this.password) {
         const userData = {
@@ -103,7 +103,7 @@ export default defineComponent({
       return result;
     },
   },
-  data():any {
+  data(): any {
     return {
       errors: [],
       email: '',

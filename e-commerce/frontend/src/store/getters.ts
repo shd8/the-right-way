@@ -34,9 +34,9 @@ const getters = {
   },
 
   getRateByProductId:
-  (state:State) => (id:string):any => {
-    const product:any = state.products
-      .find((element: any) => element._id === id);
+  (state:State) => (id:string):string => {
+    const product: any = state.products
+      .find((element: Product) => element._id === id);
 
     return (product.ratings
       .map((rate: Rating) => rate.rating)
@@ -44,7 +44,7 @@ const getters = {
   },
 
   getProductById:
-  (state:State) => (id: string): any => state.products
+  (state:State) => (id: string): Product | undefined => state.products
     .find((product: Product) => product._id === id),
 
   isInWishlist:

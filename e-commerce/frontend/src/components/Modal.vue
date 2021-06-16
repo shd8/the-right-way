@@ -37,11 +37,11 @@ export default defineComponent({
   props: ['isModalOpen'],
 
   computed: {
-    displayModalClass():any {
+    displayModalClass(): 'modal--displayed' | '' {
       return this.isModalOpen ? 'modal--displayed' : '';
     },
 
-    displayWindowClass():any {
+    displayWindowClass(): 'modal__window--displayed' | '' {
       return this.isModalOpen ? 'modal__window--displayed' : '';
     },
   },
