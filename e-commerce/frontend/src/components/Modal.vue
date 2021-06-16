@@ -113,31 +113,32 @@ export default defineComponent({
         transition: height ease-in 0.3s;
         transition: opacity ease-in 0.2s;
         background: get-color('white');
-        width: 80%;
+        width: 100%;
         height: 100vh;
 
     &--displayed {
       transform: translateY(0%);
       width: 100%;
+      height: 100%;
     }
 }
     &__header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: solid 1px get-color('grey-5');
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px get-color('grey-5');
 
-    &-title {
+      &-title {
         font-size: rem(22px);
         font-weight: get-font-weight('bold');
+      }
     }
-    }
-        .button {
-          padding: 0;
+  .button {
+    padding: 0;
 
-          &-icon {
-              width: auto;
-          }
-        }
+    &-icon {
+      width: auto;
+    }
+  }
 }
 
 .modal__header-button {
@@ -174,6 +175,11 @@ export default defineComponent({
   .modal__header-button {
     right: 3em;
     top: 3em;
+  }
+
+  .modal__window {
+    width: 80%;
+    height: 80%;
   }
 
   .modal__window--displayed {
