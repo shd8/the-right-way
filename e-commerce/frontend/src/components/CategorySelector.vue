@@ -2,15 +2,13 @@
     <h2>Select a category to start looking products</h2>
     <div class="categories">
       <span>
-        <h3 class="all">All our products</h3>
-        <hr class="line hrItem">
+        <h3>All our products</h3>
+        <hr class="hrItem">
         <router-link
-        class="clothes"
         :to="{ name: 'Search' }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/52CNKnW/for-sale.jpg"
           alt="all"
           srcset=""
@@ -19,15 +17,13 @@
       </span>
 
       <span>
-        <h3 class="subtitle">Leftology</h3>
-        <hr class="line hrItem">
+        <h3>Leftology</h3>
+        <hr class="hrItem">
         <router-link
-        class="leftology category"
         :to="{ name: 'SearchCategory', params: { category: 'leftology' } }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/6gxLC4J/tecnologia-zurdo.jpg"
           alt="leftology"
           srcset=""
@@ -36,15 +32,13 @@
       </span>
 
       <span>
-        <h3 class="subtitle">Lefticians</h3>
-        <hr class="line hrItem">
+        <h3>Lefticians</h3>
+        <hr class="hrItem">
         <router-link
-        class="lefticians category"
         :to="{ name: 'SearchCategory', params: { category: 'lefticians' } }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/yqLTYf4/instrumentos-zurdo.webp"
           alt="lefticians"
           srcset=""
@@ -53,15 +47,13 @@
       </span>
 
       <span>
-        <h3 class="subtitle">Office</h3>
-        <hr class="line hrItem">
+        <h3>Office</h3>
+        <hr class="hrItem">
         <router-link
-        class="office category"
         :to="{ name: 'SearchCategory', params: { category: 'office' } }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/wNvQCsv/oficina-zurdo.jpg"
           alt="office"
           srcset=""
@@ -70,15 +62,13 @@
       </span>
 
       <span>
-        <h3 class="subtitle">Kitchen</h3>
-        <hr class="line hrItem">
+        <h3>Kitchen</h3>
+        <hr class="hrItem">
         <router-link
-        class="kitchen"
         :to="{ name: 'SearchCategory', params: { category: 'kitchen' } }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/5cTDgD9/cocina-zurdo.jpg"
           alt="kitchen"
           srcset=""
@@ -87,15 +77,14 @@
       </span>
 
       <span>
-        <h3 class="subtitle">Clothes</h3>
-        <hr class="line hrItem">
+        <h3>Clothes</h3>
+        <hr class="hrItem">
         <router-link
         class="clothes"
         :to="{ name: 'SearchCategory', params: { category: 'clothes' } }"
         @click="scrollToTop"
         >
           <img
-          class="category__image"
           src="https://i.ibb.co/ccbDDTZ/ropa-zurdo.jpg"
           alt="clothes"
           srcset=""
@@ -135,18 +124,18 @@ h2 {
   padding: 1em 0em;
 }
 
-  img {
-    height: 12em;
-    width: 20em;
-    object-fit: cover;
-    border-radius: 1em 1em 0em 1em;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  }
+img {
+  height: 12em;
+  width: 20em;
+  object-fit: cover;
+  border-radius: 1em 1em 0em 1em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 
-  img:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
+img:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 
 .categories {
   display: flex;

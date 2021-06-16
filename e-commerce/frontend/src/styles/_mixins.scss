@@ -17,6 +17,23 @@
     align-items: center;
 }
 
+.carousel {
+    max-width: 12em;
+    margin: 0em 2em;
+}
+
+.carouselItem {
+    height: 15em;
+    width: 12em;
+    object-fit: cover;
+    border-radius: 1em 1em 0em 1em;
+    border: 1px solid $dead-purple;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hrItem {
     width: 80%;
     background-color: $purple;
@@ -69,7 +86,7 @@
         outline: none;
     }
 
-    i, em {
+    em {
         padding: 0.2em 0.5em;
         color: $purple;
     }

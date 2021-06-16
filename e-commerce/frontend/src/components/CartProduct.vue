@@ -1,5 +1,5 @@
 <template>
-    <span class="products__data">
+    <span class="product">
       <router-link
       class="link"
       :to="{ name: 'Detail', params: { id: id } }"
@@ -16,11 +16,11 @@
     </button>
     <Carousel>
         <Slide v-for="slide in images" :key="slide">
-            <router-link class="link"
+            <router-link
             :to="{ name: 'Detail', params: { id: id } }"
             @click="scrollToTop"
             >
-              <img class="carousel__item" :src='slide' alt="" srcset="">
+              <img class="carouselItem" :src='slide' alt="" srcset="">
             </router-link>
         </Slide>
         <template #addons>
@@ -75,7 +75,7 @@ em {
   font-size: 1.5em;
 }
 
-.products__data {
+.product {
   margin-bottom: 1em;
 }
 
@@ -86,14 +86,6 @@ em {
 
 .product-price {
   padding: 1.5em 0em;
-}
-
-.carousel {
-  @include carousel;
-}
-
-.carousel__item {
-  @include carouselItem;
 }
 
 .trash {
