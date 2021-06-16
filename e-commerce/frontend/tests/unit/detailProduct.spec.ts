@@ -122,7 +122,7 @@ describe('Given an detail product component', () => {
     const scrollToTop = jest.fn();
     scrollToTop();
 
-    await wrapper.find('.carousel__item').trigger('click');
+    await wrapper.find('img').trigger('click');
 
     expect(scrollToTop).toHaveBeenCalled();
   });

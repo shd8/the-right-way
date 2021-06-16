@@ -40,7 +40,7 @@ describe('Given a register component', () => {
     wrapper.find('form').trigger('submit');
 
     // Assert the rendered text of the component
-    expect(wrapper.text()).toContain('Fill in all the fields and click on register Please, check the following errors: Credentials  Address');
+    expect(wrapper.text()).toContain('Fill in all the fields and click on register  Please, check the following errors:  Credentials  Address');
   });
 
   test('Click register with all data', () => {
@@ -93,7 +93,7 @@ describe('Given a register component', () => {
     wrapper.find('form').trigger('submit');
 
     // Assert the rendered text of the component
-    expect(wrapper.text()).toContain('Fill in all the fields and click on register Please, check the following errors: Credentials  Address');
+    expect(wrapper.text()).toContain('Fill in all the fields and click on register  Please, check the following errors:  Credentials  Address');
   });
 
   test('Mount a Register component when user is logged', () => {
