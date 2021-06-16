@@ -15,7 +15,8 @@
                 :id='getProductById(product)._id'
                 :name='getProductById(product).name'
                 :price='getProductById(product).price'
-                :images='getProductById(product).images' />
+                :images='getProductById(product).images'
+              />
           </ul>
         </div>
         <div
@@ -23,10 +24,14 @@
         :class="{'right-mode-purchase': rightMode}"
         >
           <button
-          class="purchase__button"
-          @click="purchase"
-          >Purchase !</button>
-          <p class="purchase__price">{{getCartPrice}}</p>
+            class="purchase__button"
+            @click="purchase"
+          >
+            Purchase !
+          </button>
+          <span class="purchase__price">
+            {{getCartPrice}}
+          </span>
         </div>
     </div>
 
@@ -79,16 +84,16 @@ export default defineComponent({
 @import "../styles/mixins.scss";
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    &__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .cart {

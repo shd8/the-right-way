@@ -58,26 +58,14 @@ export default defineComponent({
 @import "../styles/_mixins.scss";
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    &__list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.product {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 2em;
+  flex-wrap: wrap;
+  justify-content: center;
 
-  &__data {
+  &__list {
+    list-style: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
   }
 }

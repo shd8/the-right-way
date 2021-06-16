@@ -250,12 +250,14 @@ export default defineComponent({
 }
 
 .register-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    .top-user-icon {
-      display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 1em;
+
+  .top-user-icon {
+    display: none;
   }
 }
 

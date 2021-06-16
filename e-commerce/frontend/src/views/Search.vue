@@ -1,21 +1,20 @@
 <template>
 <div class="search">
-    <h2 class="h2Item">All our products</h2>
-    <hr class="hrItem">
-    <div class='products'>
-        <ul
-        v-for='product in products'
-        :key="product._id"
-        class="products__list"
-        >
-          <Product
-          :id='product._id'
-          :name='product.name'
-          :price='product.price'
-          :images='product.images' />
-        </ul>
-    </div>
-
+  <h2 class="h2Item">All our products</h2>
+  <hr class="hrItem">
+  <div class='products'>
+      <ul
+      v-for='product in products'
+      :key="product._id"
+      class="products__list"
+      >
+        <Product
+        :id='product._id'
+        :name='product.name'
+        :price='product.price'
+        :images='product.images' />
+      </ul>
+  </div>
 </div>
 </template>
 
@@ -53,18 +52,13 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "../styles/_colors.scss";
 @import "../styles/_mixins.scss";
+@import '../styles/_colors.scss';
 
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  &__data {
-    display: flex;
-    align-items: center;
-  }
 
   &__list {
     list-style: none;

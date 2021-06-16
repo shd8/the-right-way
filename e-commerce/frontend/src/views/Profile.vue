@@ -48,7 +48,9 @@
       <router-link to="/cart" @click="scrollToTop">
           <em class="fas fa-shopping-cart"></em>
       </router-link>
-      <p class="cart-number">You have {{getCartLength}} products in the cart!</p>
+      <p class="cart-number">
+        You have {{getCartLength}} products in the cart!
+      </p>
     </span>
 
     <span
@@ -58,14 +60,18 @@
       <router-link to="/wishlist" @click="scrollToTop">
           <em class="far fa-heart"></em>
       </router-link>
-      <p class="wishlist-number">You have {{getWishlistLength}} products in the wishlist!</p>
+      <p class="wishlist-number">
+        You have {{getWishlistLength}} products in the wishlist!
+      </p>
     </span>
 
     <span>
       <button
       class="logout-button"
       @click="logoutUser"
-      >Logout</button>
+      >
+        Logout
+      </button>
     </span>
 
   </div>

@@ -15,7 +15,8 @@
                 :id='getProductById(product)._id'
                 :name='getProductById(product).name'
                 :price='getProductById(product).price'
-                :images='getProductById(product).images' />
+                :images='getProductById(product).images'
+              />
           </ul>
         </div>
     </div>

@@ -20,7 +20,7 @@
     <p class="details__stock">We have {{currentProduct.stock}} in stock!</p>
     <span class="comments-container">
       <ul
-      class="comments"
+      class="comments-container__comments"
       v-for='rating in currentProduct.ratings' :key='rating._id'>
         <Comment
         :user='rating.user'
@@ -103,21 +103,13 @@ export default defineComponent({
   }
 }
 
-.carousel {
-    @include carousel;
-}
-
-.carousel__item {
-    @include carouselItem;
-}
-
 .comments-container {
   padding-bottom: 3em;
-}
 
-.comments {
-  display: flex;
-  justify-content: center;
+  &__comments {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .rate {
@@ -136,21 +128,6 @@ export default defineComponent({
   position: absolute;
   z-index: 1;
   margin: 10em 10em 0em 0em;
-}
-
-@media (min-width: 600px) {
-    .carousel {
-      max-width: 34em;
-  }
-
-  .carousel__item {
-    height: 26em;
-    width: 34em;
-  }
-
-  .add-to-wishlist {
-    margin: 10em 36em 0em 0em;
-  }
 }
 
 </style>

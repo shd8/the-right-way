@@ -23,7 +23,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+@import '../styles/_colors.scss';
 
 .comment {
     width: 70%;

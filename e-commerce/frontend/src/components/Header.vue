@@ -137,7 +137,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import "../styles/_colors.scss";
+@import "../styles/_mixins.scss";
+@import '../styles/_colors.scss';
 
 * {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
