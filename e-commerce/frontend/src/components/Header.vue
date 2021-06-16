@@ -247,7 +247,6 @@ export default defineComponent({
 
 .filtered-search {
     position: fixed;
-    padding-top: 7.5em;
     z-index: 98;
     display: flex;
     flex-direction: column;

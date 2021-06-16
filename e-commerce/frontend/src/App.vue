@@ -62,9 +62,15 @@ body,
 }
 
 .switch-right-toggle {
-  padding-top: 8em;
+  padding-top: 6em;
   margin: 0em 1em;
   z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .switch-right-toggle {
+    padding-top: 8em;
+  }
 }
 
 </style>
