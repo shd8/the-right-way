@@ -151,21 +151,21 @@ em {
 }
 
 .cart {
-  margin: 8.5em 14em 0em 0em;
+  margin: 7.5em 14em 0em 0em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .wishlist {
-  margin: 25.5em 0em 0em 14em;
+  margin: 24.5em 0em 0em 14em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 .cart-right-mode {
-  margin: 8.5em 0em 0em 13.5em;
+  margin: 7em 0em 0em 13.5em;
 }
 
 .wishlist-right-mode {
-  margin: 25.5em 13.5em 0em 0em;
+  margin: 24em 13.5em 0em 0em;
 }
 
 .modal-heart,
@@ -212,19 +212,19 @@ em {
   }
 
   .cart {
-    margin: 6.5em 30em 0em 0em;
+    margin: 5em 30em 0em 0em;
   }
 
   .wishlist {
-    margin: 29em 0em 0em 31em;
+    margin: 28em 0em 0em 31em;
   }
 
   .cart-right-mode {
-    margin: 6em 0em 0em 30.5em;
+    margin: 5em 0em 0em 30.5em;
   }
 
   .wishlist-right-mode {
-    margin: 29em 31em 0em 0em;
+    margin: 28em 31em 0em 0em;
   }
 
   button {

@@ -69,7 +69,7 @@
           :to="{ name: 'Detail', params: { id: id } }"
           @click="scrollToTop"
           >
-            <img class="carousel__item" :src='slide' alt="" srcset="">
+            <img class="carouselItem" :src='slide' alt="" srcset="">
           </router-link>
       </Slide>
       <template #addons>
@@ -214,14 +214,6 @@ export default defineComponent({
 .product-price {
   padding: 0.5em 0em;
   text-align: center;
-}
-
-.carousel {
-  @include carousel;
-}
-
-.carousel__item {
-  @include carouselItem;
 }
 
 .cart,

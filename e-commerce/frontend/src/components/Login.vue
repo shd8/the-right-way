@@ -1,6 +1,7 @@
 <template>
   <div
-  v-if="!isUserLogged" class="login-container"
+  v-if="!isUserLogged"
+  class="login-container"
   >
       <em class="fas fa-user"></em>
       <hr class="hrItem">

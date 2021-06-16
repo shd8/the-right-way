@@ -37,16 +37,16 @@
                 class='search'
                 :class="{'right-mode-search': rightMode}"
                 >
-                <router-link to="/search" @click="scrollToTop">
-                    <em class="fas fa-search"></em>
-                </router-link>
-                <input
-                class="search__input"
-                type="text"
-                placeholder="Search something ..."
-                v-model="searchInput"
-                v-on:input="filterWithSearchInput"
-                />
+                    <router-link to="/search" @click="scrollToTop">
+                        <em class="fas fa-search"></em>
+                    </router-link>
+                    <input
+                    class="search__input"
+                    type="text"
+                    placeholder="Search something ..."
+                    v-model="searchInput"
+                    v-on:input="filterWithSearchInput"
+                    />
                 </div>
             </div>
 
@@ -59,7 +59,6 @@
                 <img class="peace-logo" src="../images/peace.svg" alt="" srcset="">
             </router-link>
         </nav>
-
     </div>
 
     <div

@@ -4,7 +4,11 @@
         @click="scrollToTop"
         class="product"
         >
-        <img class="product__image" :src='image' alt="" srcset="">
+        <img
+        class="product__image"
+        :src='image'
+        :alt='image'
+        srcset="">
         <span class="product__info info">
             <ul>
                 <li class="info__name">{{name}}</li>
@@ -86,6 +90,7 @@ ul {
 }
 
 @media (min-width: 750px) {
+
     .info {
         flex-direction: row;
         align-items: center;
@@ -114,7 +119,6 @@ ul {
     .info__rate {
         padding-left: 2em;
     }
-
 }
 
 </style>

@@ -2,125 +2,129 @@
   <div
   v-if="!isUserLogged" class="register-container"
   >
-      <em class="fas fa-user top-user-icon"></em>
-      <hr class="hrItem top-hrItem">
-      <h2 class="h2Item">
-          Fill in all the fields and click on register
-      </h2>
-      <hr class="hrItem">
-      <form
-      class="login-form"
-      method="post"
-      @submit.prevent="register"
-      >
+    <em class="fas fa-user top-user-icon"></em>
+    <hr class="hrItem top-hrItem">
+    <h2 class="h2Item">
+      Fill in all the fields and click on register
+    </h2>
+    <hr class="hrItem">
+    <form
+    class="login-form"
+    method="post"
+    @submit.prevent="register"
+    >
       <p v-show="errors.length">
-          <strong>Please, check the following errors:</strong>
-          <ul>
-          <li v-for="error in errors" :key="error">{{ error }}</li>
-          </ul>
+        <strong>
+          Please, check the following errors:
+        </strong>
+        <ul>
+          <li v-for="error in errors" :key="error">
+            {{ error }}
+          </li>
+        </ul>
       </p>
-          <section class="login-form__credential credentials">
-            <div class="form-credentials">
-                <div class="credentials-title">
-                  <h3>
-                      <em class="fas fa-user fa-user-input"></em>
-                      Credentials
-                  </h3>
-                  <hr class="hrItem">
-              </div>
-
-              <div class='custom-input username-input'>
-                  <em class="fas fa-user fa-user-input"></em>
-                  <input
-                  name="username"
-                  type="username"
-                  placeholder="username ..."
-                  v-model="username"
-                  />
-              </div>
-
-              <div class='custom-input'>
-                  <em class="fas fa-at"></em>
-                  <input
-                  name="email"
-                  type="email"
-                  placeholder="email ..."
-                  v-model="email"
-                  />
-              </div>
-
-              <div class='custom-input'>
-                  <em class="fas fa-key"></em>
-                  <input
-                  autocomplete="pass"
-                  type="password"
-                  placeholder="password"
-                  name="password"
-                  v-model="password"
-                  />
-              </div>
-            </div>
-
-          <div class="form-address">
-               <div class="address-title">
-              <h3>
-                  <em class="fas fa-map-marker-alt"></em>
-                  Address
-              </h3>
-              <hr class="hrItem">
-              </div>
-
-              <div class='custom-input'>
-                  <em class="fas fa-globe-europe"></em>
-                  <input
-                  type="text"
-                  placeholder="country ..."
-                  name="country"
-                  v-model="country"
-                  />
-              </div>
-
-              <div class='custom-input'>
-                  <em class="fas fa-city"></em>
-                  <input
-                  type="text"
-                  placeholder="city ..."
-                  name="city"
-                  v-model="city"
-                  />
-              </div>
-
-              <div class='custom-input'>
-                  <em class="fas fa-road"></em>
-                  <input
-                  type="text"
-                  placeholder="street ..."
-                  name="street"
-                  v-model="street"
-                  />
-              </div>
-
-              <div class='custom-input'>
-                  <em class="far fa-envelope"></em>
-                  <input
-                  type="text"
-                  placeholder="postal code ..."
-                  name="postalCode"
-                  v-model="postalCode"
-                  />
-              </div>
+      <section class="login-form__credential credentials">
+        <div class="form-credentials">
+          <div class="credentials-title">
+            <h3>
+                <em class="fas fa-user fa-user-input"></em>
+                Credentials
+            </h3>
+            <hr class="hrItem">
           </div>
 
-          </section>
-
-          <section>
+          <div class='custom-input username-input'>
+              <em class="fas fa-user fa-user-input"></em>
               <input
-              class="login-form__login-button"
-              type="submit"
-              value="Register"
+              name="username"
+              type="username"
+              placeholder="username ..."
+              v-model="username"
               />
-          </section>
-      </form>
+          </div>
+
+          <div class='custom-input'>
+              <em class="fas fa-at"></em>
+              <input
+              name="email"
+              type="email"
+              placeholder="email ..."
+              v-model="email"
+              />
+          </div>
+
+          <div class='custom-input'>
+              <em class="fas fa-key"></em>
+              <input
+              autocomplete="pass"
+              type="password"
+              placeholder="password"
+              name="password"
+              v-model="password"
+              />
+          </div>
+        </div>
+
+      <div class="form-address">
+        <div class="address-title">
+          <h3>
+            <em class="fas fa-map-marker-alt"></em>
+            Address
+          </h3>
+          <hr class="hrItem">
+        </div>
+
+        <div class='custom-input'>
+            <em class="fas fa-globe-europe"></em>
+            <input
+            type="text"
+            placeholder="country ..."
+            name="country"
+            v-model="country"
+            />
+        </div>
+
+        <div class='custom-input'>
+            <em class="fas fa-city"></em>
+            <input
+            type="text"
+            placeholder="city ..."
+            name="city"
+            v-model="city"
+            />
+        </div>
+
+        <div class='custom-input'>
+            <em class="fas fa-road"></em>
+            <input
+            type="text"
+            placeholder="street ..."
+            name="street"
+            v-model="street"
+            />
+        </div>
+
+        <div class='custom-input'>
+            <em class="far fa-envelope"></em>
+            <input
+            type="text"
+            placeholder="postal code ..."
+            name="postalCode"
+            v-model="postalCode"
+            />
+        </div>
+      </div>
+
+      </section>
+
+      <section>
+        <input
+        class="login-form__login-button"
+        type="submit"
+        value="Register"
+        />
+      </section>
+    </form>
   </div>
 
 </template>
@@ -217,32 +221,32 @@ export default defineComponent({
 }
 
 .login-form {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__buttons {
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
 
-    &__buttons {
-        margin-top: 1em;
-        display: flex;
-        flex-direction: column;
-    }
+  &__login-button {
+    background-color: $light-purple;
+    font-size: 1.5em;
+    border-style: none;
+    border-radius: 1em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-bottom: 1em;
+  }
 
-    &__login-button {
-        background-color: $light-purple;
-        font-size: 1.5em;
-        border-style: none;
-        border-radius: 1em;
-        padding: 0.2em 0.5em;
-        cursor: pointer;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        margin-bottom: 1em;
-    }
-
-    &__login-button:hover {
-        box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
-    }
+  &__login-button:hover {
+    box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
+  }
 }
 
 .register-container {

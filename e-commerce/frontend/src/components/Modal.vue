@@ -80,6 +80,19 @@ export default defineComponent({
 @import "../styles/mixins.scss";
 
 .modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  transition: all 500ms ease;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
 
   @keyframes slide-fade-in {
     0% {
@@ -89,55 +102,31 @@ export default defineComponent({
       transform: translateY(0%);
     }
   }
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: center;
-    transition: all 500ms ease;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 999;
-    background: rgba(0, 0, 0, 0.7);
-    width: 100vw;
-    height: 100vh;
 
     &--displayed {
     visibility: visible;
     opacity: 1;
     overflow-y: scroll;
-}
+  }
+
     &__window {
-        position: relative;
-        transition: height ease-in 0.3s;
-        transition: opacity ease-in 0.2s;
-        background: get-color('white');
-        width: 100%;
-        height: 100vh;
+      position: relative;
+      transition: height ease-in 0.3s;
+      transition: opacity ease-in 0.2s;
+      background: get-color('white');
+      width: 100%;
+      height: 100vh;
 
     &--displayed {
       transform: translateY(0%);
       width: 100%;
       height: 100%;
     }
-}
-    &__header {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: solid 1px get-color('grey-5');
-
-      &-title {
-        font-size: rem(22px);
-        font-weight: get-font-weight('bold');
-      }
-    }
-  .button {
-    padding: 0;
-
-    &-icon {
-      width: auto;
-    }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px get-color('grey-5');
   }
 }
 
@@ -157,12 +146,10 @@ export default defineComponent({
 }
 
 .slide-fade-enter-active {
-  // transition: opacity 0.5s;
   animation: slide-fade-in 0.5s;
 }
 
 .slide-fade-leave-active {
-  // transition: opacity 0.5s;
   animation: slide-fade-in 0.5s reverse;
 }
 
