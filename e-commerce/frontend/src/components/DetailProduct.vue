@@ -261,8 +261,14 @@ em {
   background-color: white;
   border-radius: 1em;
   display: flex;
+  height: 100%;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.modal--displayed {
+  padding-top: 0em;
 }
 
 img {
