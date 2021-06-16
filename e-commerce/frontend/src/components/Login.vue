@@ -117,39 +117,39 @@ export default defineComponent({
 @import "../styles/mixins.scss";
 
 .login-form {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__buttons {
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+  }
 
-    &__buttons {
-        margin-top: 1em;
-        display: flex;
-        flex-direction: column;
-    }
+  &__login-button {
+    background-color: $light-purple;
+    font-size: 1.5em;
+    border-style: none;
+    border-radius: 1em;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin-bottom: 1em;
+  }
 
-    &__login-button {
-        background-color: $light-purple;
-        font-size: 1.5em;
-        border-style: none;
-        border-radius: 1em;
-        padding: 0.2em 0.5em;
-        cursor: pointer;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        margin-bottom: 1em;
-    }
-
-    &__login-button:hover {
-        box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
-    }
+  &__login-button:hover {
+    box-shadow: 3px 3px 10px 7px rgba(0,0,0, 0.22);
+  }
 }
 
 .login-container,
 .logged-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .fa-user {
@@ -168,11 +168,11 @@ export default defineComponent({
 }
 
 .email {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 .custom-input {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .credentials {
@@ -182,17 +182,17 @@ export default defineComponent({
 }
 
 @media (min-width: 800px) {
-    .credentials {
-      width: 80%;
-    }
+  .credentials {
+    width: 80%;
+  }
 
-    .email {
-      margin-top: 2em;
-    }
+  .email {
+    margin-top: 2em;
+  }
 
-    .custom-input {
-      margin-bottom: 2em;
-    }
+  .custom-input {
+    margin-bottom: 2em;
+  }
 }
 
 </style>

@@ -1,14 +1,14 @@
 <template>
-    <span class="comment">
-        <span class='head'>
-            <p class="head__username">{{user}}</p>
+    <div class="comment">
+        <section class='head'>
+            <span class="head__username">{{user}}</span>
             <div class="head__rate">
-                <p class="rate">{{rating}}</p>
+                <span class="rate">{{rating}}</span>
                 <em class="fas fa-star"></em>
             </div>
-        </span>
-        <p class="content">{{comment}}</p>
-    </span>
+        </section>
+        <p class="comment__content">{{comment}}</p>
+    </div>
 </template>
 
 <script lang="ts">
@@ -33,6 +33,10 @@ export default defineComponent({
     border-radius: 1em 1em 0em 1em;
     padding: 1.5em 2em;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 5px 10px 10px rgba(0,0,0,0.22);
+
+    &__content {
+        line-height: 2em;
+    }
 }
 
 .head {
@@ -49,10 +53,6 @@ export default defineComponent({
         display: flex;
         align-items: center;
     }
-}
-
-.content {
-    line-height: 2em;
 }
 
 .rate {

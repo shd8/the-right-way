@@ -53,7 +53,7 @@
 
   <Carousel>
       <Slide v-for="slide in images" :key="slide">
-        <img class="carousel__item" :src='slide' alt="" srcset="" @click="openImage(slide)">
+        <img class="carouselItem" :src='slide' alt="" srcset="" @click="openImage(slide)">
       </Slide>
       <template #addons>
       <Navigation />
@@ -150,14 +150,6 @@ em {
   padding: 0.5em 0em;
 }
 
-.carousel {
-  @include carousel;
-}
-
-.carousel__item {
-  @include carouselItem;
-}
-
 .cart {
   margin: 8.5em 14em 0em 0em;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -187,11 +179,11 @@ em {
 }
 
 .modal-dollar {
-  margin: 7em 11em 0em 0em;
+  margin: 6em 11em 0em 0em;
 }
 
 .modal-heart {
-  margin: 21em 0em 0em 11em;
+  margin: 20em 0em 0em 11em;
 }
 
 .modal-heart-right-mode {
@@ -239,7 +231,7 @@ em {
     font-size: 1.1em;
   }
 
-  .carousel__item {
+  .carouselItem {
     height: 26em;
     width: 34em;
   }
@@ -249,11 +241,11 @@ em {
   }
 
   .modal-dollar {
-    margin: 7em 33.5em 0em 0em;
+    margin: 6em 33.5em 0em 0em;
   }
 
   .modal-heart {
-    margin: 32em 0em 0em 33em;
+    margin: 31em 0em 0em 33em;
   }
 
   .modal-heart-right-mode {

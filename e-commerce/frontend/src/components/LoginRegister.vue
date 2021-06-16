@@ -78,7 +78,6 @@ export default defineComponent({
   color: $purple;
   text-decoration: underline 0.2em;
   padding-left: 0.5em;
-  cursor: pointer;
 }
 
 .login,
@@ -86,10 +85,6 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.register--displayed {
-  display: none;
 }
 
 @media (min-width: 800px) {
