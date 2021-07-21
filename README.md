@@ -2,7 +2,7 @@
 
 ## Steps to use the app
 
-1. git clone git@github.com:shd8/the-right-way.git
+1. git clone https://github.com/shd8/the-right-way.git
 2. cd the-right-way
 3. cd e-commerce
 
