@@ -1,0 +1,162 @@
+[{
+  "_id": {
+    "$oid": "60b0cf1ef741ba2274e3e654"
+  },
+  "email": "ferlopeta@gomez.com",
+  "password": "125",
+  "__v": 0,
+  "cart": [
+    {
+      "$oid": "60b4f51798177d446685d00a"
+    }
+  ],
+  "wishlist": [
+    {
+      "$oid": "60b4cb9998177d446685cfdd"
+    }
+  ],
+  "address": {
+    "country": "Espein"
+  }
+},{
+  "_id": {
+    "$oid": "60be4c39ee826171724f5168"
+  },
+  "wishlist": [
+    {
+      "$oid": "60b4e7ce98177d446685cfe7"
+    },
+    {
+      "$oid": "60c49abc59fc6d475ef83cd9"
+    }
+  ],
+  "cart": [
+    {
+      "$oid": "60b4cb9998177d446685cfdd"
+    },
+    {
+      "$oid": "60c49abc59fc6d475ef83cd9"
+    },
+    {
+      "$oid": "60b4f5d798177d446685d00d"
+    }
+  ],
+  "email": "ferlopeta@gmail.com",
+  "password": "success3",
+  "address": {
+    "country": "Espein",
+    "city": "Barsalona",
+    "street": "carre arago",
+    "postalCode": "123"
+  },
+  "username": "ferlopetaATope",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c7164d59fc6d475ef83ceb"
+  },
+  "wishlist": [],
+  "cart": [],
+  "email": "a@mail.com",
+  "password": "a",
+  "address": {
+    "country": "a",
+    "city": "a",
+    "street": "a",
+    "postalCode": "a"
+  },
+  "username": "a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c7173559fc6d475ef83cec"
+  },
+  "wishlist": [],
+  "cart": [],
+  "email": "a@mail",
+  "password": "a",
+  "address": {
+    "country": "a",
+    "city": "a",
+    "street": "a",
+    "postalCode": "a"
+  },
+  "username": "a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c8cbce59fc6d475ef83cee"
+  },
+  "wishlist": [],
+  "cart": [],
+  "email": "shadyfast8@gmail.com",
+  "password": "1234",
+  "address": {
+    "country": "Espein",
+    "city": "Barsalone",
+    "street": "Carre Roc Buronat",
+    "postalCode": "08005"
+  },
+  "username": "shadyfast8",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60cb271c009702a7a8f809ea"
+  },
+  "wishlist": [],
+  "cart": [],
+  "email": "gilbe@zurdo.com",
+  "password": "1234",
+  "address": {
+    "country": "Espein",
+    "city": "Barsalona",
+    "street": "Carrer Roc Buronat",
+    "postalCode": "08805"
+  },
+  "username": "lamuralla",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60cf29a8ca5897ba4a8eb25b"
+  },
+  "wishlist": [
+    {
+      "$oid": "60c499a159fc6d475ef83cd6"
+    }
+  ],
+  "cart": [
+    {
+      "$oid": "60c49abc59fc6d475ef83cd9"
+    }
+  ],
+  "email": "danielramongallardo@gmail.com",
+  "password": "ferlopeta",
+  "address": {
+    "country": "Espein",
+    "city": "Marnesa",
+    "street": "Sobre las rocas",
+    "postalCode": "08241"
+  },
+  "username": "daniel.ramon",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60d10e4e0bcddec8368bc8ed"
+  },
+  "wishlist": [],
+  "cart": [
+    {
+      "$oid": "60b4ef9c98177d446685cffe"
+    }
+  ],
+  "email": "test@email.com",
+  "password": "12345678",
+  "address": {
+    "country": "mycountry",
+    "city": "mycity",
+    "street": "mystreet",
+    "postalCode": "01234"
+  },
+  "username": "testUser",
+  "__v": 0
+}]

@@ -1,0 +1,762 @@
+[{
+  "_id": {
+    "$oid": "60b4cb9998177d446685cfdd"
+  },
+  "images": [
+    "https://i.ibb.co/StPGzB1/raton-zurdos.webp",
+    "https://i.ibb.co/1TBmBBX/raton-zurdo.jpg"
+  ],
+  "name": "Mouse",
+  "category": "LEFTOLOGY",
+  "price": 4.99,
+  "stock": 10,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4cb9998177d446685cfde"
+      },
+      "user": "Razer official",
+      "rating": 4,
+      "comment": "If you think £150 for a mouse is insane then... youre right. However, its just amazing. Its almost worth it just for the ease of the charging dock which adds some rgb to your desk and its so useful. If im playing a game with controller, i pop my mouse on the dock and boom, instant charging, no cables. The mouse just fits into your hand perfectly, it just feels right. The mouse wheel has adjustable tension for either a super smooth feel or a tactile click with each scroll. The buttons on the side have a nice click to them aswell. The 'sensitivity clutch' button is really useful for you snipers out there, temporarily dropping your dpi to whatever youve chosen while holding it. My rbg brightness is set to 20% to preserve battery but it still pops and looks amazing. If you're worried about latency then dont, i swear its faster than my previous razer mamba elite, wireless technology has came a long way and some tests show its actually better. The buttons are light enough to be instant when you click, very little travel, but not too light you accidentally click them. Take the plunge, get this mouse and take your game to the next level!"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4e45d98177d446685cfdf"
+  },
+  "images": [
+    "https://i.ibb.co/bFSf9Zr/ukelele-zurdo.jpg",
+    "https://i.ibb.co/LPnXZhh/ukelele-zurdo.jpg"
+  ],
+  "name": "Ukelele",
+  "category": "LEFTICIANS",
+  "price": 24.99,
+  "stock": 15,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4e45d98177d446685cfe0"
+      },
+      "user": "Benjamin",
+      "rating": 5,
+      "comment": "The Horse brand has really done well with this concert ukulele. It is a well-built, good quality ukulele and offers a lot more than the brand names at this price point. The finish is smooth and a nice mahogany wood color. There aren't any noticeable dings or anything that protrudes from the finish. Even a quick look inside of the ukulele and there doesn't seem to be any build errors. The frets are smooth and the fret board feels nice when sliding and playing chords on it. The tuners are enclosed, which is awesome, especially at this price point. This prevents dirt, grime, and other stuff from getting into your tuners, and makes them last longer.I didn't have to stretch the strings after I tuned it, and it remained in tune while playing it for a while. I like how the headstock has a unique wave shape and the logo is actually inlay and not a plastic sticker or anything like that."
+    },
+    {
+      "_id": {
+        "$oid": "60b4e45d98177d446685cfe1"
+      },
+      "user": "Martin",
+      "rating": 3,
+      "comment": "A pretty basic looking ukulele that, to be fair is put together reasonably well in some departments. The outer satin finish is also pretty tidy. Sadly the wood on the bridge and fingerboard on mine are really scruffy, the fret ends are sharp and the tuners are not screwed on the headstock straight. Poor quality control. The volume is pretty good, but the sustain is poor meaning there is little character to the tone."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4e66298177d446685cfe2"
+  },
+  "images": [
+    "https://i.ibb.co/3RzytHD/violin-zurdo.jpg",
+    "https://i.ibb.co/sPhvMB6/violin-zurdo.webp"
+  ],
+  "name": "Violin",
+  "category": "LEFTICIANS",
+  "price": 84.99,
+  "stock": 7,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4e66298177d446685cfe3"
+      },
+      "user": "Martin",
+      "rating": 3,
+      "comment": "The instrument looks and feels good, however when it arrived the hair on both bows was very loose, and as a new learner I don't trust myself to fit the bridge myself so I will have to take it to someone to be done."
+    },
+    {
+      "_id": {
+        "$oid": "60b4e66298177d446685cfe4"
+      },
+      "user": "Christoph",
+      "rating": 4.9,
+      "comment": "Bought as a birthday present for the wife, she absolutely loves it."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4e7ce98177d446685cfe7"
+  },
+  "images": [
+    "https://i.ibb.co/kBxCXH0/guitarra-zurdo.jpg",
+    "https://i.ibb.co/NLhSFTQ/guitarra-zurdo.jpg"
+  ],
+  "name": "Guitar",
+  "category": "LEFTICIANS",
+  "price": 12.99,
+  "stock": 17,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4e7ce98177d446685cfe8"
+      },
+      "user": "Alfred",
+      "rating": 1.5,
+      "comment": "As a professional guitarist and teacher these are not guitars that I'm happy to recommend."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4e96798177d446685cfe9"
+  },
+  "images": [
+    "https://i.ibb.co/m8BJCDx/regla-zurdo.jpg",
+    "https://i.ibb.co/mNZQHWj/regla-zurdo.jpg"
+  ],
+  "name": "Ruler",
+  "category": "OFFICE",
+  "price": 1.99,
+  "stock": 78,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4e96798177d446685cfea"
+      },
+      "user": "Michael",
+      "rating": 4.8,
+      "comment": "After some almost 50 years of using right hand items I finally ordered a left hand ruler and my brain finds it very strange as it is wired for right handed items now. But my children will find it useful and practical. Definitely worth having and cheap too. So everything went fine with my order apart from the fact that the actual package was damaged."
+    },
+    {
+      "_id": {
+        "$oid": "60b4e96798177d446685cfeb"
+      },
+      "user": "Barbara",
+      "rating": 4.2,
+      "comment": "Nice quality. I have taught for 20 yrs and it never occurred to me lefties struggle for a reason. My student and grandson like using it."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4ea6798177d446685cfec"
+  },
+  "images": [
+    "https://i.ibb.co/9VNN8Fz/zuaderno.jpg",
+    "https://i.ibb.co/YZwPzWV/cuaderno-zurdo.jpg"
+  ],
+  "name": "Notebook",
+  "category": "OFFICE",
+  "price": 9.99,
+  "stock": 65,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4ea6798177d446685cfed"
+      },
+      "user": "Leva",
+      "rating": 5,
+      "comment": "Bought this for my 17 year old daughter who is left handed. She loves it"
+    },
+    {
+      "_id": {
+        "$oid": "60b4ea6798177d446685cfee"
+      },
+      "user": "Kendra",
+      "rating": 4.9,
+      "comment": "Love it !"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4eb2b98177d446685cfef"
+  },
+  "images": [
+    "https://i.ibb.co/9vQGsjJ/boligrafo-zurdos.jpg",
+    "https://i.ibb.co/8BtkmDV/boligrafo-zurdo.jpg"
+  ],
+  "name": "Pen",
+  "category": "OFFICE",
+  "price": 4.99,
+  "stock": 75,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4eb2b98177d446685cff0"
+      },
+      "user": "Sam",
+      "rating": 4.7,
+      "comment": "Bought for use during my Chinese exams as my hand always smudges the characters to the point they're unreadable. The ink is very light (not for those who like really dark pens). But it certainly improved my handwriting by a mile. Wish I had one as a kid."
+    },
+    {
+      "_id": {
+        "$oid": "60b4eb2b98177d446685cff1"
+      },
+      "user": "Angela",
+      "rating": 5,
+      "comment": "This pen makes a surprising difference for a left-handed person. I'm pleased."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4ec3e98177d446685cff2"
+  },
+  "images": [
+    "https://i.ibb.co/p6qZPQY/escritorio-zurdo.jpg",
+    "https://i.ibb.co/PQW13Y7/escritorio-zurdo.jpg"
+  ],
+  "name": "Laptop desktop",
+  "category": "OFFICE",
+  "price": 24.99,
+  "stock": 15,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4ec3e98177d446685cff3"
+      },
+      "user": "Channelle",
+      "rating": 1,
+      "comment": "Does not support any laptop there’s too much movement it could let your laptop drop off"
+    },
+    {
+      "_id": {
+        "$oid": "60b4ec3e98177d446685cff4"
+      },
+      "user": "Steve",
+      "rating": 1.5,
+      "comment": "Very complicated to use. Quite flimsy, unsteady and impractical. Not suitable to carry around as it’s quite large and bulky."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4ed3498177d446685cff5"
+  },
+  "images": [
+    "https://i.ibb.co/0hnV4Dv/jarra-zurdo.jpg",
+    "https://i.ibb.co/55CwnYN/jarra-zurdo.jpg"
+  ],
+  "name": "Measuring jug",
+  "category": "KITCHEN",
+  "price": 6.99,
+  "stock": 27,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4ed3498177d446685cff6"
+      },
+      "user": "Connor",
+      "rating": 4,
+      "comment": "Very good so far, and are stackable"
+    },
+    {
+      "_id": {
+        "$oid": "60b4ed3498177d446685cff7"
+      },
+      "user": "Margaret",
+      "rating": 4.5,
+      "comment": "Ordered this set as I like using clear bowls when using microwave."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4edff98177d446685cff8"
+  },
+  "images": [
+    "https://i.ibb.co/YbTrLj2/pelador-zurdo.webp",
+    "https://i.ibb.co/p1sdd2d/pelador-zurdo.jpg"
+  ],
+  "name": "Peeler",
+  "category": "KITCHEN",
+  "price": 1.99,
+  "stock": 289,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4edff98177d446685cff9"
+      },
+      "user": "Billy",
+      "rating": 3.9,
+      "comment": "The only problem worth mentioning regarding this peeler is how far the peels fly. OXO make great kitchen toys and this one is no different. Cuts clean, doesn’t take to much meat off of what you are peeling, and works the same in both hands. It just sends those peels flying for 2 to 3 feet. While I listed this as a negative, if you are as crazy as I am, it can actually be a blast. After peeling a few spuds I started to experiment to see if I could aim my “shot”. The direction the peels go is dependent on the peeler’s angle to the food item, and the distance it goes is based on the force of the stroke. I was able to put a good length of potato peel into a standard sized counter-top green bin at 4 ½ feet. Think you can beat that?"
+    },
+    {
+      "_id": {
+        "$oid": "60b4edff98177d446685cffa"
+      },
+      "user": "Fer Lo Peta",
+      "rating": 4,
+      "comment": "Ended up cutting myself while washing it the first time, but this thing peels like nobody's business. No pressure needed, it just glides over the potatoes, carrots whatever and slices off super thin peels. I'm not a pro in the kitchen by any means and this was super easy for me to use as well as a nice comfy grip. I've used the old-fashioned metal ones and find them uncomfortable to use. Recommend."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4eec198177d446685cffb"
+  },
+  "images": [
+    "https://i.ibb.co/PTqvqSW/cuchillo-zurdo.jpg",
+    "https://i.ibb.co/hDx83nj/cuchillo-zurdo.jpg"
+  ],
+  "name": "Knife",
+  "category": "KITCHEN",
+  "price": 19.99,
+  "stock": 26,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4eec198177d446685cffc"
+      },
+      "user": "Tracy",
+      "rating": 4,
+      "comment": "Nice knife, the handle gives good grip though the blade isn't as think as I'd like and for the that it isn't very heavy and blends ever so slightly"
+    },
+    {
+      "_id": {
+        "$oid": "60b4eec198177d446685cffd"
+      },
+      "user": "Shady Fast",
+      "rating": 2,
+      "comment": "This went dull and I cut my finger now for I had to force hard to cut some lamb meat."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4ef9c98177d446685cffe"
+  },
+  "images": [
+    "https://i.ibb.co/t2G2T3q/abrelatas-zurdo.jpg",
+    "https://i.ibb.co/k2sk9xy/abrelatas-zurdo.jpg"
+  ],
+  "name": "Can opener",
+  "category": "KITCHEN",
+  "price": 9.99,
+  "stock": 155,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4ef9c98177d446685cfff"
+      },
+      "user": "Abe Right",
+      "rating": 1,
+      "comment": "It is impossible to use this opener. No matter what way we hold it, we’ve been unable to open a can with it. I think it is impossible to use the right hand to use it"
+    },
+    {
+      "_id": {
+        "$oid": "60b4ef9c98177d446685d000"
+      },
+      "user": "Igor",
+      "rating": 4,
+      "comment": "I was a bit scared, cause have had some problems with other can openers. This one is really nice, sturdy, has spare blades and its really useful to open every kind of can!"
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f13298177d446685d001"
+  },
+  "images": [
+    "https://i.ibb.co/thtfRxs/manopla-zurdo.jpg",
+    "https://i.ibb.co/QJfSH62/manopla-zurdo.jpg"
+  ],
+  "name": "Baseball glove",
+  "category": "CLOTHES",
+  "price": 32.99,
+  "stock": 58,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f13298177d446685d002"
+      },
+      "user": "Shawn",
+      "rating": 2,
+      "comment": "I didn't realize it was a kid's size"
+    },
+    {
+      "_id": {
+        "$oid": "60b4f13298177d446685d003"
+      },
+      "user": "Tiago",
+      "rating": 4.5,
+      "comment": "Fit's my 9 year old's hand perfectly with a little room to grow. Good materials, good protection. Just needs to be broken in as the wlone we received was hard even for me to close, but it is perfect for me to introduce my son to baseball."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f21198177d446685d004"
+  },
+  "images": [
+    "https://i.ibb.co/Byv8Jj1/calcetines-zurdo.jpg",
+    "https://i.ibb.co/wSnzg5c/calcetines-zurdo.jpg"
+  ],
+  "name": "Socks",
+  "category": "CLOTHES",
+  "price": 4.99,
+  "stock": 2234,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f21198177d446685d005"
+      },
+      "user": "Jim",
+      "rating": 5,
+      "comment": "I spend my life looking for comfortable socks. Ones that don't hurt my toes, don't make my ankles swell leaving a deep painful mark. These socks are everything I've wanted, they are brilliant. I know to some people my opening comment seem unimportant, to the rest of us finding a product like these is magic, enjoy! "
+    },
+    {
+      "_id": {
+        "$oid": "60b4f21198177d446685d006"
+      },
+      "user": "Patricia",
+      "rating": 4.9,
+      "comment": "My husband suffers with a Swollen ankle after a heart bypass many years ago were they removed a vein & ordinary socks with elasticated tops irritate the ankle.He has tried Woollen soft top socks but they male his ankle hot & red.So I looked on Amazon and seen these Cotton Socks soft top so I thought I would try the cotton my husband said they are excellent keep his feet cool no redness or heat on his ankles so rate them 5 star ideal also for Diabetics."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f44498177d446685d007"
+  },
+  "images": [
+    "https://i.ibb.co/hHdH65T/reloj-zurdo.png",
+    "https://i.ibb.co/5c24Q00/reloj-zurdo.jpg"
+  ],
+  "name": "Watch",
+  "category": "CLOTHES",
+  "price": 54.99,
+  "stock": 20,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f44498177d446685d008"
+      },
+      "user": "Mike",
+      "rating": 5,
+      "comment": "Really like the watch, very smart so glad I bought it. Makes a change from all my other watches."
+    },
+    {
+      "_id": {
+        "$oid": "60b4f44498177d446685d009"
+      },
+      "user": "Ursulla",
+      "rating": 4.9,
+      "comment": "Red face looks so nice. Casio quality. Excellent service."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f51798177d446685d00a"
+  },
+  "images": [
+    "https://i.ibb.co/rpmMhmx/camiseta-zurdo.png",
+    "https://i.ibb.co/GMLD2L1/camiseta-zrudo.jpg"
+  ],
+  "name": "Shirt",
+  "category": "CLOTHES",
+  "price": 14.99,
+  "stock": 220,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f51798177d446685d00b"
+      },
+      "user": "Emerson",
+      "rating": 3.8,
+      "comment": "Value for Money, fairly slim fitting so if I put any more timber on I might be struggling, not worn enough as it's been too hot, but I like the style and look."
+    },
+    {
+      "_id": {
+        "$oid": "60b4f51798177d446685d00c"
+      },
+      "user": "Ursulla",
+      "rating": 2.4,
+      "comment": "The body size is OK but I am just shy of 6 feet tall, but not an orang utan, sleeves are at least 3 (75mm) too long."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f5d798177d446685d00d"
+  },
+  "images": [
+    "https://i.ibb.co/BtVkWX2/teclado-zurdo.jpg",
+    "https://i.ibb.co/T8WQtbV/teclado-zurdo.webp"
+  ],
+  "name": "Keyboard",
+  "category": "LEFTOLOGY",
+  "price": 44.99,
+  "stock": 16,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f5d798177d446685d00e"
+      },
+      "user": "Ashok",
+      "rating": 1,
+      "comment": "The keyboard itself looks and feels very nice while typing. It appears to be well made and has that satisfying clickety clack of a mechanical keyboard. The RGB is decent enough and while I would like a little more customisation I'm aware that for the price point I can't expect too much. There is also a good amount of space between the keys without the keyboard being too cumbersome, making it an easy typing experience."
+    },
+    {
+      "_id": {
+        "$oid": "60b4f5d798177d446685d00f"
+      },
+      "user": "Steven",
+      "rating": 5,
+      "comment": "I got this keyboard at £37.99 but I can see it has increased to £44.99 now. It's my first mechanical keyboard so I can't compare or reference against any other brands/models. What I can say is that I have been very pleasantly surprised by the quality of this keyboard. As a newcomer to PC gaming my priorities were to find something cheap in case I couldn't get on with KBM, and something with red switches (my research suggested these would be best for me over blue or brown)."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60b4f69398177d446685d010"
+  },
+  "images": [
+    "https://i.ibb.co/K08dLjn/tijeras-zurdo.jpg",
+    "https://i.ibb.co/8NqTRN0/tijeras-zurdo.jpg"
+  ],
+  "name": "Scissors",
+  "category": "OFFICE",
+  "price": 4.99,
+  "stock": 1656,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60b4f69398177d446685d011"
+      },
+      "user": "Dogbite",
+      "rating": 5,
+      "comment": "I write this review based on my decades of experiences as a consumer and user of this type of product. I have taken to making rubber latex moulds. Latex is sturdy and need sharpness to cut and trim. I have tried many variants and whilst a Stanley blade does the job it is tiresome and awkward. I have tried other scissors finding a pair of fiskars capable but pricey as I keep loosing them. I decided to try these cheapies which work out to less than a third of the cost of the F,s. I found them to be well made, similar in size, weight and design. More comfortable to hold and every bit as capable as the fiskars."
+    },
+    {
+      "_id": {
+        "$oid": "60b4f69398177d446685d012"
+      },
+      "user": "Lorena",
+      "rating": 5,
+      "comment": "I am very happy with his set of two scissors. They are a good size at about 21cm long, the blades are lovely and sharp and the soft silicone inside to the finger holes helps with comfort of use. I bought this set for my husband to use in the garden and one down the allotment for cutting garden twine, minor pruning and cutting flowers etc."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c499a159fc6d475ef83cd6"
+  },
+  "images": [
+    "https://i.ibb.co/kQZMNNG/cards-left.jpg",
+    "https://i.ibb.co/ZmXZY6F/cards-left.jpg"
+  ],
+  "name": "Cards",
+  "category": "OFFICE",
+  "price": 5.99,
+  "stock": 247,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c499a159fc6d475ef83cd7"
+      },
+      "user": "Troy",
+      "rating": 4,
+      "comment": "These are legit left handed cards, not ambidextrous. Unfortunately, the image they show of the product is not of the box, that's actually what the back of every card looks like. It kind of spoils any fun of confusing your right handed opponents."
+    },
+    {
+      "_id": {
+        "$oid": "60c499a159fc6d475ef83cd8"
+      },
+      "user": "Lindsey",
+      "rating": 5,
+      "comment": "I have always had to fan cards out upside down. I had no idea what I was missing. I'm glad they aren't ambidextrous. Make right handed people deal with a minor inconvenience. It's everyday life for a lefty."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c49abc59fc6d475ef83cd9"
+  },
+  "images": [
+    "https://i.ibb.co/k2mSB1b/gamuza-zurdo.jpg",
+    "https://i.ibb.co/bQk7W5w/gamuza-zurdo.jpg"
+  ],
+  "name": "Mouse Pad",
+  "category": "LEFTOLOGY",
+  "price": 2.99,
+  "stock": 547,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c49abc59fc6d475ef83cda"
+      },
+      "user": "Whiskers",
+      "rating": 5,
+      "comment": "It was economically priced. It's a thin, black mouse pad. I bought one. Then I bought another. Now my mouse has a pad. This mouse pad sure works. It works well. It's a mouse pad. If you don't have a mouse pad, you could buy this one. Then you would have a mouse pad. I have two of these mouse pads. They are perfectly nice. Mouse pad."
+    },
+    {
+      "_id": {
+        "$oid": "60c49abc59fc6d475ef83cdb"
+      },
+      "user": "Abe",
+      "rating": 3,
+      "comment": "I got this because my mouse doesn't track well on my other mousepad, and it doesn't track well on this one either. It's not pure black, it's like a black cloth on top, and the weave pattern confuses my mouse, causing it to travel diagonally when you move up and down, or side to side."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c4a1b659fc6d475ef83cdc"
+  },
+  "images": [
+    "https://i.ibb.co/9NbYwcY/rgb-keyboard.jpg",
+    "https://i.ibb.co/zVm0p11/rgb-keyboard.jpg",
+    "https://i.ibb.co/41Xz2bW/left-keyboard.jpg",
+    "https://i.ibb.co/VwyjvzC/left-keyboard.jpg"
+  ],
+  "name": "RGB Keyboard",
+  "category": "LEFTOLOGY",
+  "price": 30.99,
+  "stock": 45,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c4a1b659fc6d475ef83cdd"
+      },
+      "user": "Kelly",
+      "rating": 4,
+      "comment": "I use this for playing WOW. I also have the other unit (The Pro) that has analog keys that allow half presses, and I think I like this unit better though it doesn't have that feature. It's very clicky, which I find satisfying."
+    },
+    {
+      "_id": {
+        "$oid": "60c4a1b659fc6d475ef83cde"
+      },
+      "user": "Miller",
+      "rating": 5,
+      "comment": "A lot of online reviews said that the keys make a lot of sound and stuff but it's not so noisy that you'd put your headset aside and stand up surprised. It is totally bearable and one involved in a game would not notice it that much."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c4a29759fc6d475ef83cdf"
+  },
+  "images": [
+    "https://i.ibb.co/G71yqXW/taza-zurdo.jpg",
+    "https://i.ibb.co/Qbt30jM/taza-zurdo.jpg"
+  ],
+  "name": "Cup",
+  "category": "KITCHEN",
+  "price": 9.99,
+  "stock": 345,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c4a29759fc6d475ef83ce0"
+      },
+      "user": "Darlene",
+      "rating": 4,
+      "comment": "I'm a little disappointed. I bought this for my left handed daughter but when she holds it in her left hand the picture faces her. They should put that on the other side for other people to see. It's made well."
+    },
+    {
+      "_id": {
+        "$oid": "60c4a29759fc6d475ef83ce1"
+      },
+      "user": "Tig",
+      "rating": 5,
+      "comment": "Very charming - I bought it as a gift for my left handed daughter, and she likes it very much, since she has often complained that most things are designed with right handed people in mind. This mug is a good size, has a comfortable handle and is a pretty shade of blue."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c4a39159fc6d475ef83ce2"
+  },
+  "images": [
+    "https://i.ibb.co/55LLWbr/sudadera-zurdo.jpg",
+    "https://i.ibb.co/prVyhsh/sudadera-zurdo.jpg"
+  ],
+  "name": "Sweatshirt",
+  "category": "CLOTHES",
+  "price": 39.99,
+  "stock": 35,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c4a39159fc6d475ef83ce3"
+      },
+      "user": "Snuggly",
+      "rating": 3,
+      "comment": "A regular hoodie, the fabric is a bit rougher than expected."
+    },
+    {
+      "_id": {
+        "$oid": "60c4a39159fc6d475ef83ce4"
+      },
+      "user": "Rebecca",
+      "rating": 5,
+      "comment": "It arrived on time and is perfect. The graphic is good quality not cheap. I have washed it a few times and it has not started to peel. The hoodie it’s self is warm, well warm enough for where I live. I get a lot of comments about it. Some good and some bad, cause like with all things some people are stupid. If you are a lefty or have one in your life this is perfect. Would buy again. Only in a different color."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c4a45a59fc6d475ef83ce5"
+  },
+  "images": [
+    "https://i.ibb.co/8sQ2Wm0/silla-zurdo.jpg",
+    "https://i.ibb.co/mvSzv6C/silla-zurdo.jpg"
+  ],
+  "name": "Chair",
+  "category": "OFFICE",
+  "price": 49.99,
+  "stock": 376,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c4a45a59fc6d475ef83ce6"
+      },
+      "user": "Theresa",
+      "rating": 1,
+      "comment": "Not as I pictured, just a simple chair and it is still incomplete as of this day. Tired and frustrated with this matter!!!!!"
+    },
+    {
+      "_id": {
+        "$oid": "60c4a45a59fc6d475ef83ce7"
+      },
+      "user": "Grace",
+      "rating": 2,
+      "comment": "Ordered 3 and only one came with needed hardware."
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "60c4a52f59fc6d475ef83ce8"
+  },
+  "images": [
+    "https://i.ibb.co/TMfcjj6/cubiertos-zurdo.jpg",
+    "https://i.ibb.co/pjFmNgD/cubiertos-zurdo.jpg"
+  ],
+  "name": "Cutlery",
+  "category": "KITCHEN",
+  "price": 19.99,
+  "stock": 3376,
+  "ratings": [
+    {
+      "_id": {
+        "$oid": "60c4a52f59fc6d475ef83ce9"
+      },
+      "user": "Chela",
+      "rating": 1,
+      "comment": "Didn't work at all for my disabled client."
+    },
+    {
+      "_id": {
+        "$oid": "60c4a52f59fc6d475ef83cea"
+      },
+      "user": "Olmamma",
+      "rating": 1,
+      "comment": "I missed that these are definitely a size for a toddler. Not good for an adult."
+    }
+  ],
+  "__v": 0
+}]
