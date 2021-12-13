@@ -1,5 +1,5 @@
-import { State } from '@/types/interfaces';
 import { Commit, Dispatch } from 'vuex';
+import { State } from '@/types/interfaces';
 
 const configActionContextAndState = (commit: Commit, state: State): any => ({
   commit,

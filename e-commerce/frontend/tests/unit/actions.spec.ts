@@ -1,7 +1,7 @@
-import actions from '@/store/actions';
 import { Commit, Dispatch } from 'vuex';
-import { User } from '@/types/interfaces';
 import axios from 'axios';
+import actions from '@/store/actions';
+import { User } from '@/types/interfaces';
 import {
   configActionContextAndState,
   configActionContext,
@@ -12,8 +12,8 @@ import state from '../mocked-state';
 
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
-const commit = jest.fn() as jest. MockedFunction<Commit>;
-const dispatch = jest.fn() as jest. MockedFunction<Dispatch>;
+const commit = jest.fn() as jest.MockedFunction<Commit>;
+const dispatch = jest.fn() as jest.MockedFunction<Dispatch>;
 
 describe('Given an object of actions', () => {
   test('Fetch all products from API', async () => {
