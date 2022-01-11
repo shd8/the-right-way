@@ -70,13 +70,13 @@ export default defineComponent({
       'isUserLogged',
     ]),
 
+  },
+  name: 'Login',
+  methods: {
     ...mapActions([
       'logUserRequest',
     ]),
 
-  },
-  name: 'Login',
-  methods: {
     loginButtonPressed(e:Event): boolean {
       e.preventDefault();
 

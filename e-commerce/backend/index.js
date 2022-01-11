@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const cors = require('cors');
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3003;
 
 require('dotenv').config();
 require('./src/database/mongoose.config');
@@ -24,9 +24,9 @@ server.use('/api/auth/', authRoutes);
 server.use('/api/users/', passport.authenticate('jwt', { session: false }), userProtectedRoutes);
 server.use('/api/products/', productsRoutes);
 
-server.use((err, req, res) => {
-  res.status(err.status || 500);
-  res.json({ error: err });
-});
+// server.use((err, req, res) => {
+//   res.status(err.status || 500);
+//   res.json({ error: err });
+// });
 
-server.listen(PORT, debug(`server is running on port ${PORT}`));
+server.listen(PORT || 3003, debug(`server is running on port ${PORT}`));

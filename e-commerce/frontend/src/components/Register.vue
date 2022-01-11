@@ -141,12 +141,13 @@ export default defineComponent({
       'isUserLogged',
     ]),
 
-    ...mapActions([
-      'registerUserRequest',
-    ]),
   },
 
   methods: {
+    ...mapActions([
+      'registerUserRequest',
+    ]),
+
     register(e:Event) {
       e.preventDefault();
 
